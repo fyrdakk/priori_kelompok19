@@ -1,0 +1,32 @@
+{
+  "name": "priori-kelompok19",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.{js,jsx,css}\" package.json eslint.config.js vitest.config.js index.html .prettierrc",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css}\" package.json eslint.config.js vitest.config.js index.html .prettierrc",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@vitejs/plugin-react": "^5.0.4",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "globals": "latest",
+    "prettier": "latest",
+    "vite": "^7.1.12",
+    "vitest": "latest"
+  }
+}

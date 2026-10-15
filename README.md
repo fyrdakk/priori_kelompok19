@@ -1,197 +1,280 @@
-# Priori --- Smart Priority Task
+# Priori: Smart Priority Task
 
-**Module 7 \| VINIX Batch 5 \| Group 19**\
-**Division:** Web & UI/UX Developer
+**Modul 7 | VINIX Batch 5 | Kelompok 19**
+Divisi: Web & UI/UX Developer
 
-## About the Project
+## Tentang Proyek
 
-Priori is a student task-management website prototype designed to help
-university students organize coursework, monitor deadlines, track task
-status, and identify assignments that need attention. The project
-addresses common student challenges, including scattered assignment
-information, closely spaced deadlines, and difficulty deciding which
-task to complete first.
+Priori adalah prototipe website pengelolaan tugas untuk mahasiswa. Website ini memusatkan pencatatan tugas kuliah, memantau status pengerjaan, menampilkan deadline, dan membantu mengenali tugas yang perlu diprioritaskan.
 
-The Module 7 work transforms the team's previous research and Figma
-design into an interactive web prototype. The implemented features
-should be distinguished from any screens or interactions that are only
-simulated.
+Proyek ini menjawab masalah yang sering dialami mahasiswa: informasi tugas yang tersebar, deadline yang berdekatan, dan kesulitan menentukan tugas mana yang harus dikerjakan lebih dulu.
 
-## Project Team
+Pekerjaan Modul 7 mengubah hasil riset dan desain Figma tim sebelumnya menjadi prototipe web interaktif. Fitur yang benar-benar berjalan dibedakan dengan jelas dari layar atau interaksi yang hanya simulasi (lihat bagian Status Fitur).
 
--   Firda Nabilah
--   Deni Anugrah Hasibuan
--   Dewangga Arka Putra
--   Luthfi Eka Saputra
--   Komsiata Amelia Sari
+## Tautan
 
-## Design and Project Links
+| Item | Link |
+|---|---|
+| Desain Figma (Modul 5) | [Buka desain Priori](https://www.figma.com/design/JFSkyYMAdzRiTfJcK7KjiL/Prototipe-Kelompok-19?node-id=0-1&t=a5sTTIdJfLxgTS2p-1) |
+| Repositori GitHub | https://github.com/fyrdakk/priori_kelompok19 |
+| Demo (opsional) | `[ISI]` |
+| PRD | `docs/PRD_Priori_Kelompok19_Modul7.pdf` |
 
--   **Figma prototype:** [Open the Priori
-    design](https://www.figma.com/design/JFSkyYMAdzRiTfJcK7KjiL/Prototipe-Kelompok-19?node-id=0-1&t=a5sTTIdJfLxgTS2p-1)
--   **GitHub repository:** https://github.com/fyrdakk/priori_kelompok19
+## Anggota Kelompok 19
 
-## Main Features
+- Firda Nabilah
+- Deni Anugrah Hasibuan
+- Dewangga Arka Putra
+- Luthfi Eka Saputra
+- Komsiata Amelia Sari
 
-The prototype is planned around the following user flows. Availability
-and behavior depend on the features actually implemented in the
-repository.
+---
 
--   Landing page with access to Login and Registration
--   Login and Registration forms with validation feedback
--   Dashboard with task summaries by status
--   All Tasks page with task search or filters, where implemented
--   Add Task form with relevant task information and validation
--   Task Details and Edit Task pages
--   Task status updates and task deletion, where implemented
--   Success, empty, validation, and error states
--   Navigation to Notifications, Profile, and Settings according to the
-    implemented scope
--   Responsive layout for mobile and desktop screens
+## Status Fitur
 
-## Task Information and Status
+| Kemampuan | Status |
+|---|---|
+| Navigasi, hamburger/drawer mobile | Nyata berjalan |
+| Tambah, lihat, edit, hapus tugas; ubah status terpisah | Nyata berjalan (data di localStorage browser) |
+| Pencarian dan filter tugas | Nyata berjalan |
+| Validasi form, umpan balik sukses/kosong/error | Nyata berjalan |
+| Dashboard ringkasan status | Nyata berjalan |
+| Pengingat H-3 / H-1 / Terlambat | Terbatas: dihitung saat halaman Notifikasi dibuka, **bukan** notifikasi otomatis terjadwal |
+| Login dan Registrasi | **Simulasi** (akun demo di localStorage, tanpa backend, tanpa keamanan produksi) |
+| Profil dan Pengaturan | Simulasi / sebagian |
+| Database server, sinkron lintas perangkat, notifikasi push, integrasi pihak ketiga | Di luar cakupan |
 
-Task information may include:
+> Perbarui tabel ini setiap ada fitur yang berubah status.
 
--   Course
--   Task title
--   Deadline
--   Difficulty level
--   Status
--   Description or notes
--   Estimated completion time and priority information, if implemented
+## Fitur Utama
 
-Task statuses:
+- 13 halaman: Indeks, Login, Registrasi, Dashboard, Semua Tugas, Detail, Tambah, Edit, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan.
+- Landing page dengan akses ke Login dan Registrasi.
+- Form Login dan Registrasi dengan umpan balik validasi.
+- Dashboard dengan ringkasan tugas per status.
+- Halaman Semua Tugas dengan pencarian dan filter.
+- Form Tambah Tugas, serta halaman Detail dan Edit Tugas.
+- Ubah status tugas dan hapus tugas (dengan modal konfirmasi).
+- Kondisi sukses, kosong, validasi, dan error.
+- Prioritas berbasis aturan sederhana (deadline + tingkat kesulitan), bukan AI.
+- Tata letak responsif untuk layar mobile dan desktop.
 
--   Not Started
--   In Progress
--   Completed
+### Data Tugas
 
-## Technology Stack
+- Mata kuliah
+- Judul tugas
+- Deadline
+- Tingkat kesulitan
+- Status
+- Estimasi waktu pengerjaan (opsional)
+- Deskripsi atau catatan
 
-Update this section to match the technologies actually used in the final
-prototype.
+### Status Tugas
 
--   **Structure:** \[e.g., HTML5\]
--   **Styling:** \[e.g., CSS3 / Bootstrap\]
--   **Interactions:** \[e.g., JavaScript\]
--   **Additional tools or frameworks:** \[list only tools actually
-    used\]
+- Belum Dikerjakan
+- Sedang Dikerjakan
+- Selesai Dikerjakan
 
-## Requirements
+---
 
--   A modern web browser
--   A code editor such as Visual Studio Code or Antigravity
--   Any additional runtime or dependencies required by the selected
-    technology stack
+## Teknologi
 
-## How to Run Locally
+- Vite 7 + React 19 + React Router 7
+- JavaScript dengan CSS biasa, mobile-first
+- ESLint dengan flat config
+- Prettier untuk format kode
+- Vitest untuk unit test fungsi murni
+- Alat AI: GitHub Copilot
 
-1.  Clone the repository:
+> Penyimpanan localStorage dan design token akan ditambahkan pada fase implementasi fitur terkait.
 
-    ``` bash
-    git clone https://github.com/fyrdakk/priori_kelompok19.git
-    ```
+## Kebutuhan
 
-2.  Open the project folder in your code editor:
+- Browser modern
+- Code editor seperti Visual Studio Code atau Antigravity
+- [Node.js](https://nodejs.org) versi LTS dan Git
 
-    ``` bash
-    cd priori_kelompok19
-    ```
+## Menjalankan Secara Lokal
 
-3.  Run the project using the method that matches the implementation:
+```bash
+# 1. Clone repositori
+git clone https://github.com/fyrdakk/priori_kelompok19.git
+cd priori_kelompok19
 
-    -   **Static HTML/CSS/JavaScript:** open the main HTML file (for
-        example, `index.html`) in a browser or use a local development
-        extension such as Live Server.
-    -   **A framework or build tool:** install the dependencies and run
-        the development command documented by that tool.
+# 2. Pasang dependensi
+npm install
 
-4.  Open the local address shown by your development server, if one is
-    used.
-
-> Before submission, replace or remove any run instructions that do not
-> match the actual files and technology in this repository. Do not
-> document a backend, database, or automated notification system unless
-> it has been implemented.
-
-## Project Structure
-
-The exact structure depends on the files committed to the repository.
-Keep this section updated to reflect the actual project structure.
-
-``` text
-priori_kelompok19/
-├── README.md
-├── PRD.txt
-└── [application source files and assets]
+# 3. Jalankan server pengembangan
+npm run dev
 ```
 
-## Team Contributions
+Buka alamat yang tampil di terminal (biasanya `http://localhost:5173`).
 
-Fill in each contribution based on the work actually completed by each
-member.
+Build produksi dan pratinjau:
 
-  Team Member             Role / Contribution
-  ----------------------- ----------------------------------
-  Firda Nabilah           \[Describe actual contribution\]
-  Deni Anugrah Hasibuan   \[Describe actual contribution\]
-  Dewangga Arka Putra     \[Describe actual contribution\]
-  Luthfi Eka Saputra      \[Describe actual contribution\]
-  Komsiata Amelia Sari    \[Describe actual contribution\]
+```bash
+npm run build
+npm run preview
+```
 
-## AI-Assisted Development Log
+### Akun Demo (simulasi)
 
-Record the AI tools and prompts used during development. Include real
-examples from the team's work rather than invented prompts.
+Daftar lewat halaman Registrasi, atau gunakan akun contoh: `[ISI jika disediakan]`.
 
-  ---------------------------------------------------------------------------
-  AI Tool        Purpose        Prompt / Task  Result         Manual Changes
-  -------------- -------------- -------------- -------------- ---------------
-  \[Tool name\]  \[Purpose\]    \[Actual       \[Result       \[Corrections
-                                prompt used\]  obtained\]     made by the
-                                                              team\]
+---
 
-  \[Tool name\]  \[Purpose\]    \[Actual       \[Result       \[Corrections
-                                prompt used\]  obtained\]     made by the
-                                                              team\]
-  ---------------------------------------------------------------------------
+## Struktur Proyek
 
-### Manual Review
+```text
+priori_kelompok19/
+├── docs/                 # Dokumentasi proyek
+├── public/assets/        # Logo, ikon, gambar
+├── src/
+│   ├── components/       # Komponen UI bersama
+│   ├── pages/            # Halaman aplikasi
+│   ├── store/            # State tugas dan localStorage
+│   ├── utils/            # Fungsi murni dan utilitas
+│   └── styles/           # Gaya global dan design token
+├── eslint.config.js      # Konfigurasi ESLint
+├── vite.config.js        # Konfigurasi Vite dan React
+├── vitest.config.js      # Konfigurasi Vitest
+├── .prettierrc           # Konfigurasi Prettier
+├── index.html
+├── package.json
+├── README.md
+└── PRD.md
+```
 
-Before submitting, record the manual checks and fixes completed by the
-team, such as:
+PDF desain dan PRD teks juga tersedia di root repositori pada Fase 0.
 
--   Visual comparison against the Figma design
--   Responsive layout checks on mobile and desktop
--   Navigation and interaction testing
--   Form validation and feedback testing
--   Fixes for layout issues, broken links, or runtime errors
+---
 
-Only mark a check as complete after it has actually been tested.
+## Tahapan Pengerjaan: dari Prototipe Figma ke MVP
 
-## Testing Checklist
+Centang saat selesai. Detail lengkap ada di PRD bagian 8.
 
--   [ ] Main navigation links lead to the intended pages
--   [ ] Forms show validation feedback for missing or invalid input
--   [ ] Task actions work as implemented (add, view, edit, status
-    update, and delete)
--   [ ] At least two dynamic interactions can be demonstrated
--   [ ] Empty, error, and success states provide understandable feedback
--   [ ] Layout remains usable on mobile and desktop
--   [ ] No primary button or link leads to a dead end
--   [ ] The prototype runs without known runtime errors
+- [x] **Fase 0, Setup repo dan PRD:** repo publik, inisialisasi proyek, PRD dan README awal
+- [x] **Fase 1, Ekstraksi desain:** petakan frame/komponen Figma, ekstrak design token dan aset
+- [ ] **Fase 2, Fondasi UI:** routing, layout, komponen dasar (Button, Input, Card, Badge, Modal, Navbar/Drawer)
+- [ ] **Fase 3, Halaman publik:** Indeks, Login, Registrasi dengan validasi (autentikasi simulasi)
+- [ ] **Fase 4, Inti pengelolaan tugas:** store + localStorage, Tambah, Semua Tugas (cari/filter), Detail, Edit, ubah status, hapus dengan modal
+- [ ] **Fase 5, Halaman pendukung:** Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan
+- [ ] **Fase 6, Responsif dan poles:** uji 360 / 768 / 1280 px, perbaiki layout, aksesibilitas dasar
+- [ ] **Fase 7, Audit dan pengumpulan:** uji semua AC, lengkapi dokumentasi, ekspor PRD ke PDF
 
-## Project Scope Note
+### Definisi MVP Selesai
 
-Priori is being developed as a Module 7 interactive web prototype.
-Features that require a production backend, database synchronization,
-scheduled device notifications, third-party integrations, or advanced AI
-recommendations are not assumed to be available unless the team has
-implemented and tested them.
+- Alur utama berjalan tanpa hambatan: Indeks → Login/Registrasi → Dashboard → Semua Tugas → Tambah → Detail → Edit / Ubah status / Hapus → kembali.
+- Acceptance criteria AC-01 sampai AC-15 lulus uji manual.
+- Minimal 2 interaksi dinamis dapat didemonstrasikan; tidak ada crash atau runtime error.
+- Tidak ada klaim fitur backend, database, atau notifikasi otomatis yang belum dibuat.
 
-## Acknowledgment
+---
 
-This project builds on the team's previous user research, persona, user
-flow, wireframe, and Figma prototype. The implementation and
-documentation are prepared for the VINIX Batch 5 Module 7 assignment.
+## Alur Kerja Git
+
+- Repositori publik; branch `main` selalu bisa dijalankan.
+- Pekerjaan per fitur di branch `feat/<nama-fitur>`, lalu digabung lewat pull request atau merge yang rapi.
+- Format pesan commit: `tipe: deskripsi singkat`
+
+| Tipe | Penggunaan |
+|---|---|
+| `feat` | Fitur baru |
+| `fix` | Perbaikan bug |
+| `style` | Perubahan tampilan/gaya |
+| `docs` | Dokumentasi |
+| `chore` | Setup dan konfigurasi |
+| `refactor` | Perapian kode tanpa ubah perilaku |
+
+Contoh: `feat: add task store and add-task form`, `fix: responsive layout on mobile`.
+
+Target: minimal 5 commit deskriptif (syarat rubrik); target tim ≥ 15 commit dari semua anggota.
+
+---
+
+## Kontribusi Anggota
+
+Isi sesuai pembagian kerja nyata, dengan bukti dari commit atau PR.
+
+| Anggota | Tanggung jawab utama | Bukti (commit/PR) |
+|---|---|---|
+| Firda Nabilah | `[ISI]` | `[ISI]` |
+| Deni Anugrah Hasibuan | `[ISI]` | `[ISI]` |
+| Dewangga Arka Putra | `[ISI]` | `[ISI]` |
+| Luthfi Eka Saputra | `[ISI]` | `[ISI]` |
+| Komsiata Amelia Sari | `[ISI]` | `[ISI]` |
+
+---
+
+## Log Pengembangan dengan AI
+
+Catat setiap prompt yang berarti, berdasarkan pekerjaan nyata tim, bukan prompt karangan. Kerangka prompt yang dipakai: **Peran → Konteks (potongan PRD + token + frame Figma) → Tugas (satu halaman/komponen) → Batasan → Keluaran**.
+
+| No | Fase | Tool AI | Ringkasan prompt | Hasil | Perbaikan manual setelahnya |
+|---|---|---|---|---|---|
+| 1 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
+| 2 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
+| 3 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
+
+### Contoh Bentuk Prompt (ganti dengan prompt asli tim)
+
+```text
+Peran: Kamu frontend developer yang mengimplementasikan desain Figma "Priori".
+Konteks: [tempel potongan PRD halaman Tambah Tugas + design token + deskripsi frame Figma]
+Tugas: Buat halaman Tambah Tugas dengan form mata kuliah, judul, deadline,
+       tingkat kesulitan, status, estimasi jam, dan deskripsi.
+Batasan: React + Vite, tanpa backend, simpan ke localStorage lewat store,
+         validasi sesuai PRD, mobile-first, tidak ada tombol yang mati.
+Keluaran: kode komponen + daftar asumsi.
+```
+
+### Log Perbaikan Manual
+
+| No | Masalah dari keluaran AI | Perbaikan manual | Pelaku | Commit |
+|---|---|---|---|---|
+| 1 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
+| 2 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
+
+### Tinjauan Manual
+
+Sebelum dikumpulkan, catat pengecekan dan perbaikan manual yang sudah dilakukan tim, misalnya:
+
+- Perbandingan tampilan dengan desain Figma
+- Pengecekan layout responsif di mobile dan desktop
+- Pengujian navigasi dan interaksi
+- Pengujian validasi form dan umpan balik
+- Perbaikan masalah layout, tautan rusak, atau runtime error
+
+Tandai sebuah pengecekan selesai hanya setelah benar-benar diuji.
+
+---
+
+## Pengujian
+
+Ceklis uji per acceptance criteria ada di PRD bagian 10. Ringkasnya:
+
+- [ ] Semua tombol/tautan utama mengarah ke halaman yang benar (tidak ada dead end)
+- [ ] Validasi form tampil untuk input kosong/tidak valid
+- [ ] Tambah, edit, ubah status, dan hapus berjalan; data bertahan setelah refresh
+- [ ] Pencarian dan filter bekerja; hasil kosong ditangani
+- [ ] Drawer mobile dan modal hapus berfungsi
+- [ ] Minimal dua interaksi dinamis bisa didemonstrasikan
+- [ ] Kondisi sukses, kosong, dan error memberi umpan balik yang jelas
+- [ ] Tampilan tidak rusak di 360, 768, dan 1280 px
+- [ ] Konsol browser bersih dari error
+
+Tangkapan layar: `[ISI: tautkan ke docs/screenshots/]`
+
+---
+
+## Cakupan Proyek
+
+Priori dikembangkan sebagai prototipe web interaktif Modul 7. Fitur yang butuh backend produksi, sinkronisasi database, notifikasi terjadwal di perangkat, integrasi pihak ketiga, atau rekomendasi AI tingkat lanjut tidak dianggap tersedia, kecuali tim sudah membuat dan mengujinya. Jangan dokumentasikan backend, database, atau notifikasi otomatis yang belum ada.
+
+## Lisensi dan Catatan
+
+Proyek ini dibuat untuk keperluan akademik (VINIX Batch 5, Modul 7). Autentikasi bersifat simulasi dan tidak boleh dipakai untuk menyimpan data sensitif.
+
+## Ucapan Terima Kasih
+
+Proyek ini dibangun di atas hasil riset pengguna, persona, user flow, wireframe, dan prototipe Figma tim sebelumnya.
