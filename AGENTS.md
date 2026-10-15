@@ -53,7 +53,7 @@ Keadaan UI
 
 Setiap halaman yang memuat data punya keadaan: normal, kosong, dan error. Setiap form punya keadaan: awal, tidak valid, sukses.
 Aturan Git
-Kerja di branch feat/<nama-fitur>, jangan commit langsung ke main.
+Kerja di branch baru feat/<nama-fitur>, jangan commit langsung ke main.
 Commit kecil dan sering, format tipe: deskripsi singkat (feat, fix, style, docs, chore, refactor). Satu commit satu perubahan yang masuk akal.
 main harus selalu bisa dijalankan.
 Cara Kerja Setiap Fase
