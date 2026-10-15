@@ -23,7 +23,7 @@ Aturan Kejujuran (paling penting)
 Jangan membuat atau mengklaim fitur yang tidak berjalan. Login/Registrasi itu simulasi, pengingat itu dihitung saat halaman Notifikasi dibuka, bukan notifikasi otomatis.
 Tidak boleh ada tombol atau tautan mati. Kalau suatu fitur di luar cakupan, tombolnya dihilangkan atau diberi keterangan jelas, bukan dibiarkan tidak melakukan apa-apa.
 Jangan menandai checklist pengujian atau fase sebagai selesai kalau belum benar-benar dijalankan dan diverifikasi.
-Kalau ada hal yang tidak pasti, tulis sebagai asumsi dan tanyakan. Jangan diam-diam memilih.
+Kalau ada hal yang tidak pasti, tulis sebagai asumsi dan tanyakan kepada saya. Jangan diam-diam memilih.
 Standar Kualitas (berlaku di setiap fase)
 
 Fidelitas desain
