@@ -34,7 +34,7 @@ Active university students, especially those in semesters 3–7, who have multip
 
 - **Age**: Approximately 19–20 years old
 - **Status**: Active university student
-- **Semester**: 3–5
+- **Semester**: 3–7
 
 #### Characteristics
 - Active, independent, practical, and focused on completing tasks.
