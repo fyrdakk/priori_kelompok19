@@ -13,12 +13,12 @@ Pekerjaan Modul 7 mengubah hasil riset dan desain Figma tim sebelumnya menjadi p
 
 ## Tautan
 
-| Item | Link |
-|---|---|
+| Item                   | Link                                                                                                                             |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Desain Figma (Modul 5) | [Buka desain Priori](https://www.figma.com/design/JFSkyYMAdzRiTfJcK7KjiL/Prototipe-Kelompok-19?node-id=0-1&t=a5sTTIdJfLxgTS2p-1) |
-| Repositori GitHub | https://github.com/fyrdakk/priori_kelompok19 |
-| Demo (opsional) | `[ISI]` |
-| PRD | `docs/PRD_Priori_Kelompok19_Modul7.pdf` |
+| Repositori GitHub      | https://github.com/fyrdakk/priori_kelompok19                                                                                     |
+| Demo (opsional)        | `[ISI]`                                                                                                                          |
+| PRD                    | `docs/PRD_Priori_Kelompok19_Modul7.pdf`                                                                                          |
 
 ## Anggota Kelompok 19
 
@@ -32,17 +32,19 @@ Pekerjaan Modul 7 mengubah hasil riset dan desain Figma tim sebelumnya menjadi p
 
 ## Status Fitur
 
-| Kemampuan | Status |
-|---|---|
-| Navigasi, hamburger/drawer mobile | Nyata berjalan |
-| Tambah, lihat, edit, hapus tugas; ubah status terpisah | Nyata berjalan (data di localStorage browser) |
-| Pencarian dan filter tugas | Nyata berjalan |
-| Validasi form, umpan balik sukses/kosong/error | Nyata berjalan |
-| Dashboard ringkasan status | Nyata berjalan |
-| Pengingat H-3 / H-1 / Terlambat | Terbatas: dihitung saat halaman Notifikasi dibuka, **bukan** notifikasi otomatis terjadwal |
-| Login dan Registrasi | **Simulasi** (akun demo di localStorage, tanpa backend, tanpa keamanan produksi) |
-| Profil dan Pengaturan | Simulasi / sebagian |
-| Database server, sinkron lintas perangkat, notifikasi push, integrasi pihak ketiga | Di luar cakupan |
+| Kemampuan                                                                          | Status                                                                                          |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Routing 13 halaman, route 404, layout publik/aplikasi                              | Nyata berjalan                                                                                  |
+| Navigasi, hamburger/drawer mobile                                                  | Nyata berjalan; Drawer mobile memiliki focus trap dan dukungan Escape                           |
+| Indeks, Login, Registrasi                                                          | Nyata berjalan; autentikasi simulasi berbasis localStorage                                      |
+| Tambah, lihat, edit, hapus tugas; ubah status terpisah                             | Placeholder rute; implementasi fitur pada Fase 4                                                |
+| Pencarian dan filter tugas                                                         | Placeholder rute; implementasi fitur pada Fase 4                                                |
+| Validasi form, umpan balik sukses/kosong/error                                     | Nyata berjalan                                                                                  |
+| Dashboard ringkasan status                                                         | Placeholder rute; implementasi fitur pada Fase 5                                                |
+| Pengingat H-3 / H-1 / Terlambat                                                    | Terbatas: dihitung saat halaman Notifikasi dibuka, **bukan** notifikasi otomatis terjadwal      |
+| Login dan Registrasi                                                               | **Simulasi nyata** (akun demo dan sesi di localStorage, tanpa backend, tanpa keamanan produksi) |
+| Profil dan Pengaturan                                                              | Placeholder rute pada Fase 2                                                                    |
+| Database server, sinkron lintas perangkat, notifikasi push, integrasi pihak ketiga | Di luar cakupan                                                                                 |
 
 > Perbarui tabel ini setiap ada fitur yang berubah status.
 
@@ -58,6 +60,7 @@ Pekerjaan Modul 7 mengubah hasil riset dan desain Figma tim sebelumnya menjadi p
 - Kondisi sukses, kosong, validasi, dan error.
 - Prioritas berbasis aturan sederhana (deadline + tingkat kesulitan), bukan AI.
 - Tata letak responsif untuk layar mobile dan desktop.
+- Halaman rujukan internal `/_komponen` untuk melihat varian komponen Fase 2.
 
 ### Data Tugas
 
@@ -86,7 +89,7 @@ Pekerjaan Modul 7 mengubah hasil riset dan desain Figma tim sebelumnya menjadi p
 - Vitest untuk unit test fungsi murni
 - Alat AI: GitHub Copilot
 
-> Penyimpanan localStorage dan design token akan ditambahkan pada fase implementasi fitur terkait.
+> Design token tersedia di `src/styles/tokens.css`. Akun demo dan sesi autentikasi Fase 3 menggunakan localStorage.
 
 ## Kebutuhan
 
@@ -130,7 +133,7 @@ priori_kelompok19/
 ├── docs/                 # Dokumentasi proyek
 ├── public/assets/        # Logo, ikon, gambar
 ├── src/
-│   ├── components/       # Komponen UI bersama
+│   ├── components/       # Button, Input, Select, Textarea, Card, Badge, Modal, Navbar, Drawer
 │   ├── pages/            # Halaman aplikasi
 │   ├── store/            # State tugas dan localStorage
 │   ├── utils/            # Fungsi murni dan utilitas
@@ -155,8 +158,8 @@ Centang saat selesai. Detail lengkap ada di PRD bagian 8.
 
 - [x] **Fase 0, Setup repo dan PRD:** repo publik, inisialisasi proyek, PRD dan README awal
 - [x] **Fase 1, Ekstraksi desain:** petakan frame/komponen Figma, ekstrak design token dan aset
-- [ ] **Fase 2, Fondasi UI:** routing, layout, komponen dasar (Button, Input, Card, Badge, Modal, Navbar/Drawer)
-- [ ] **Fase 3, Halaman publik:** Indeks, Login, Registrasi dengan validasi (autentikasi simulasi)
+- [x] **Fase 2, Fondasi UI:** routing, layout, komponen dasar (Button, Input, Card, Badge, Modal, Navbar/Drawer)
+- [x] **Fase 3, Halaman publik:** Indeks, Login, Registrasi dengan validasi (autentikasi simulasi)
 - [ ] **Fase 4, Inti pengelolaan tugas:** store + localStorage, Tambah, Semua Tugas (cari/filter), Detail, Edit, ubah status, hapus dengan modal
 - [ ] **Fase 5, Halaman pendukung:** Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan
 - [ ] **Fase 6, Responsif dan poles:** uji 360 / 768 / 1280 px, perbaiki layout, aksesibilitas dasar
@@ -177,13 +180,13 @@ Centang saat selesai. Detail lengkap ada di PRD bagian 8.
 - Pekerjaan per fitur di branch `feat/<nama-fitur>`, lalu digabung lewat pull request atau merge yang rapi.
 - Format pesan commit: `tipe: deskripsi singkat`
 
-| Tipe | Penggunaan |
-|---|---|
-| `feat` | Fitur baru |
-| `fix` | Perbaikan bug |
-| `style` | Perubahan tampilan/gaya |
-| `docs` | Dokumentasi |
-| `chore` | Setup dan konfigurasi |
+| Tipe       | Penggunaan                        |
+| ---------- | --------------------------------- |
+| `feat`     | Fitur baru                        |
+| `fix`      | Perbaikan bug                     |
+| `style`    | Perubahan tampilan/gaya           |
+| `docs`     | Dokumentasi                       |
+| `chore`    | Setup dan konfigurasi             |
 | `refactor` | Perapian kode tanpa ubah perilaku |
 
 Contoh: `feat: add task store and add-task form`, `fix: responsive layout on mobile`.
@@ -196,13 +199,13 @@ Target: minimal 5 commit deskriptif (syarat rubrik); target tim ≥ 15 commit da
 
 Isi sesuai pembagian kerja nyata, dengan bukti dari commit atau PR.
 
-| Anggota | Tanggung jawab utama | Bukti (commit/PR) |
-|---|---|---|
-| Firda Nabilah | `[ISI]` | `[ISI]` |
-| Deni Anugrah Hasibuan | `[ISI]` | `[ISI]` |
-| Dewangga Arka Putra | `[ISI]` | `[ISI]` |
-| Luthfi Eka Saputra | `[ISI]` | `[ISI]` |
-| Komsiata Amelia Sari | `[ISI]` | `[ISI]` |
+| Anggota               | Tanggung jawab utama | Bukti (commit/PR) |
+| --------------------- | -------------------- | ----------------- |
+| Firda Nabilah         | `[ISI]`              | `[ISI]`           |
+| Deni Anugrah Hasibuan | `[ISI]`              | `[ISI]`           |
+| Dewangga Arka Putra   | `[ISI]`              | `[ISI]`           |
+| Luthfi Eka Saputra    | `[ISI]`              | `[ISI]`           |
+| Komsiata Amelia Sari  | `[ISI]`              | `[ISI]`           |
 
 ---
 
@@ -210,11 +213,11 @@ Isi sesuai pembagian kerja nyata, dengan bukti dari commit atau PR.
 
 Catat setiap prompt yang berarti, berdasarkan pekerjaan nyata tim, bukan prompt karangan. Kerangka prompt yang dipakai: **Peran → Konteks (potongan PRD + token + frame Figma) → Tugas (satu halaman/komponen) → Batasan → Keluaran**.
 
-| No | Fase | Tool AI | Ringkasan prompt | Hasil | Perbaikan manual setelahnya |
-|---|---|---|---|---|---|
-| 1 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
-| 2 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
-| 3 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
+| No  | Fase    | Tool AI | Ringkasan prompt | Hasil   | Perbaikan manual setelahnya |
+| --- | ------- | ------- | ---------------- | ------- | --------------------------- |
+| 1   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
+| 2   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
+| 3   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
 
 ### Contoh Bentuk Prompt (ganti dengan prompt asli tim)
 
@@ -230,10 +233,10 @@ Keluaran: kode komponen + daftar asumsi.
 
 ### Log Perbaikan Manual
 
-| No | Masalah dari keluaran AI | Perbaikan manual | Pelaku | Commit |
-|---|---|---|---|---|
-| 1 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
-| 2 | `[ISI]` | `[ISI]` | `[ISI]` | `[ISI]` |
+| No  | Masalah dari keluaran AI | Perbaikan manual | Pelaku  | Commit  |
+| --- | ------------------------ | ---------------- | ------- | ------- |
+| 1   | `[ISI]`                  | `[ISI]`          | `[ISI]` | `[ISI]` |
+| 2   | `[ISI]`                  | `[ISI]`          | `[ISI]` | `[ISI]` |
 
 ### Tinjauan Manual
 

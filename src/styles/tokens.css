@@ -13,6 +13,15 @@
   --color-status-warning: #f3bd4c;
   --color-status-success: #4a9b73;
   --color-status-info: #5d9ed1;
+  --color-overlay: rgb(17 24 39 / 0.48);
+  --color-on-brand: #ffffff;
+  --color-on-danger: #ffffff;
+  --color-button-hover: #1f2f73;
+  --color-button-secondary: #dbe7ff;
+  --color-button-danger: #c63f4a;
+  --color-input-disabled: #eef1f5;
+  --color-error-surface: #fff0f1;
+  --color-success-surface: #edf9f1;
 
   --font-family-display: Georgia, 'Times New Roman', serif;
   --font-family-body: Arial, sans-serif;
@@ -26,6 +35,7 @@
   --font-weight-bold: 700;
   --line-height-tight: 0.98;
   --line-height-body: 1.6;
+  --line-height-label: 1.25;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -36,6 +46,7 @@
   --space-12: 3rem;
   --space-16: 4rem;
   --space-32: 8rem;
+  --space-20: 5rem;
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -44,8 +55,12 @@
 
   --shadow-card: 0 0.25rem 1rem rgb(17 24 39 / 0.08);
   --shadow-focus: 0 0 0 0.1875rem rgb(70 120 211 / 0.3);
+  --shadow-modal: 0 1rem 3rem rgb(17 24 39 / 0.18);
 
   --viewport-min: 20rem;
   --breakpoint-tablet: 48rem;
   --breakpoint-desktop: 80rem;
+  --content-max: 75rem;
+  --control-min-height: 2.75rem;
+  --auth-max: 32rem;
 }
