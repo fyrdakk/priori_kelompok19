@@ -1,0 +1,2622 @@
+/* Semua Tugas */
+
+position: relative;
+width: 402px;
+height: 874px;
+
+background: #F7FAFF;
+
+
+/* Navbar Footer */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 8px 24px 24px;
+gap: 8px;
+
+position: absolute;
+height: 61px;
+left: 0px;
+right: 0px;
+top: 812px;
+
+background: #FFFFFF;
+border-top: 1px solid #5E686D;
+
+
+/* Nav */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-end;
+padding: 0px;
+gap: 16px;
+
+width: 402px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Nav1 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 85px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Home
+
+Keywords: house, living
+*/
+
+width: 25px;
+height: 25px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 8.33%;
+bottom: 8.33%;
+
+border: 2px solid #5E686D;
+
+
+/* Home */
+
+width: 86px;
+height: 25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 58px;
+/* or 483% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #5E686D;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Nav2 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 85px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* List
+
+Keywords: options
+*/
+
+width: 25px;
+height: 26px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 25%;
+bottom: 25%;
+
+border: 3px solid #226CE6;
+
+
+/* Tugas */
+
+width: 86px;
+height: 25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 58px;
+/* or 483% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #226CE6;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Nav3 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 85px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Bell
+
+Keywords: alarm, notification, sound
+*/
+
+width: 25px;
+height: 25px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 8.33%;
+bottom: 8.35%;
+
+border: 2.5px solid #5E686D;
+
+
+/* Notifikasi */
+
+width: 130px;
+height: 25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 58px;
+/* or 483% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #5E686D;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Nav4 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 85px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Settings */
+
+width: 25px;
+height: 25px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 4.17%;
+bottom: 4.17%;
+
+border: 2.5px solid #5E686D;
+
+
+/* Pengaturan */
+
+width: 146px;
+height: 23px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 58px;
+/* or 483% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #5E686D;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 34 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 16px;
+
+position: absolute;
+width: 370px;
+height: 498px;
+left: 16px;
+top: 237px;
+overflow-y: scroll;
+
+
+
+/* Frame 20 */
+
+width: 370px;
+height: 150px;
+
+background: #DDE9FF;
+border-radius: 15px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Group 1 */
+
+position: absolute;
+width: 354px;
+height: 134px;
+left: 8px;
+top: 8px;
+
+
+
+/* Judul Tugas: Membuat Wireframe */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 8px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 31px;
+
+/* Work.it H8 Semi */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Group 11 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+border-radius: 8px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+background: #2B2A2A;
+border-radius: 8px;
+
+
+/* Belum Dikerjakan */
+
+position: absolute;
+width: 89.61px;
+height: 11.21px;
+left: 19.53px;
+top: 79.9px;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Lihat Detail */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 100px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Lihat Detail */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Edit Tugas */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 123px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Edit Tugas */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Group 32 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+
+
+/* Rectangle 28 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+background: #DDE9FF;
+
+
+/* Deadline: H-3 */
+
+position: absolute;
+width: 66.89px;
+height: 13.22px;
+left: 21.38px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 3 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 95.47px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Tinggi */
+
+position: absolute;
+width: 108.05px;
+height: 13.22px;
+left: 104.73px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 4 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 219.99px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Prioritas : Tinggi */
+
+position: absolute;
+width: 66.89px;
+height: 13.22px;
+left: 229.25px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Frame 21 */
+
+width: 370px;
+height: 150px;
+
+background: #DDE9FF;
+border-radius: 15px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Group 2 */
+
+position: absolute;
+width: 354px;
+height: 134px;
+left: 8px;
+top: 8px;
+
+
+
+/* Judul Tugas: Membuat Prototipe */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 8px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 31px;
+
+/* Work.it H8 Semi */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Group 11 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+border-radius: 8px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+background: #2B2A2A;
+border-radius: 8px;
+
+
+/* Sedang Dikerjakan */
+
+position: absolute;
+width: 89.61px;
+height: 11.21px;
+left: 19.53px;
+top: 79.9px;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Group 32 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+
+
+/* Rectangle 28 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+background: #DDE9FF;
+
+
+/* Deadline: H-3 */
+
+position: absolute;
+width: 66.89px;
+height: 13.22px;
+left: 21.38px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 3 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 95.47px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Sedang */
+
+position: absolute;
+width: 108.05px;
+height: 13.22px;
+left: 104.73px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 4 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 219.99px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Prioritas : Sedang */
+
+position: absolute;
+width: 74px;
+height: 14px;
+left: 229px;
+top: 57px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Edit Tugas */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 123px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Edit Tugas */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Lihat Detail */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 100px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Lihat Detail */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Frame 22 */
+
+width: 370px;
+height: 150px;
+
+background: #DDE9FF;
+border-radius: 15px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Group 3 */
+
+position: absolute;
+width: 354px;
+height: 134px;
+left: 8px;
+top: 8px;
+
+
+
+/* Judul Tugas: Membuat UseCase */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 8px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 31px;
+
+/* Work.it H8 Semi */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Group 11 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+border-radius: 8px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+background: #2B2A2A;
+border-radius: 8px;
+
+
+/* Selesai Dikerjakan */
+
+position: absolute;
+width: 89.61px;
+height: 11.21px;
+left: 19.53px;
+top: 79.9px;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Group 32 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+
+
+/* Rectangle 28 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+background: #DDE9FF;
+
+
+/* Deadline: H-3 */
+
+position: absolute;
+width: 66.89px;
+height: 13.22px;
+left: 21.38px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 3 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 95.47px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Mudah */
+
+position: absolute;
+width: 108.05px;
+height: 13.22px;
+left: 104.73px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 4 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 219.99px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Prioritas : Rendah */
+
+position: absolute;
+width: 72px;
+height: 14px;
+left: 229px;
+top: 57px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Edit Tugas */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 123px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Edit Tugas */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Lihat Detail */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 100px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Lihat Detail */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Frame 23 */
+
+width: 370px;
+height: 150px;
+
+background: #DDE9FF;
+border-radius: 15px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Group 4 */
+
+position: absolute;
+width: 354px;
+height: 134px;
+left: 8px;
+top: 8px;
+
+
+
+/* Judul Tugas: Membuat Flowchart */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 8px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 31px;
+
+/* Work.it H8 Semi */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Group 11 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+border-radius: 8px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+background: #2B2A2A;
+border-radius: 8px;
+
+
+/* Selesai Dikerjakan */
+
+position: absolute;
+width: 89.61px;
+height: 11.21px;
+left: 19.53px;
+top: 79.9px;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Group 32 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+
+
+/* Rectangle 28 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+background: #DDE9FF;
+
+
+/* Deadline: H-3 */
+
+position: absolute;
+width: 66.89px;
+height: 13.22px;
+left: 21.38px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 3 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 95.47px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Tinggi */
+
+position: absolute;
+width: 108.05px;
+height: 13.22px;
+left: 104.73px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 4 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 219.99px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Prioritas : Tinggi */
+
+position: absolute;
+width: 66.89px;
+height: 13.22px;
+left: 229.25px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Lihat Detail */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 100px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Lihat Detail */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Edit Tugas */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 123px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Edit Tugas */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Frame 24 */
+
+width: 370px;
+height: 150px;
+
+background: #DDE9FF;
+border-radius: 15px;
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Group 5 */
+
+position: absolute;
+width: 354px;
+height: 134px;
+left: 8px;
+top: 8px;
+
+
+
+/* Judul Tugas: Membuat User Persona */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 8px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 31px;
+
+/* Work.it H8 Semi */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Group 11 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+border-radius: 8px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 112.67px;
+height: 19px;
+left: 8px;
+top: 77px;
+
+background: #2B2A2A;
+border-radius: 8px;
+
+
+/* Selesai Dikerjakan */
+
+position: absolute;
+width: 89.61px;
+height: 11.21px;
+left: 19.53px;
+top: 79.9px;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Group 32 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+
+
+/* Rectangle 28 */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 54px;
+
+background: #DDE9FF;
+
+
+/* Deadline: H-3 */
+
+position: absolute;
+width: 66.89px;
+height: 13.22px;
+left: 21.38px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 3 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 95.47px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Tinggi */
+
+position: absolute;
+width: 108.05px;
+height: 13.22px;
+left: 104.73px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Line 4 */
+
+position: absolute;
+width: 13.22px;
+height: 0px;
+left: 219.99px;
+top: 57.3px;
+
+border: 0.5px solid #000000;
+transform: rotate(90deg);
+
+
+/* Prioritas : Tinggi */
+
+position: absolute;
+width: 66.89px;
+height: 13.22px;
+left: 229.25px;
+top: 57.3px;
+
+/* Work.it H11 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Lihat Detail */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 100px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Lihat Detail */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Edit Tugas */
+
+position: absolute;
+width: 354px;
+height: 19px;
+left: 8px;
+top: 123px;
+
+border-radius: 6px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #293681;
+border-radius: 15px;
+
+
+/* Edit Tugas */
+
+position: absolute;
+left: 25.71%;
+right: 25.94%;
+top: 27.27%;
+bottom: 25.97%;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #DDE9FF;
+
+
+
+/* Status */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px;
+gap: 8px;
+
+position: absolute;
+width: 370px;
+height: 32px;
+left: 16px;
+top: 180px;
+
+background: #FFFFFF;
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+border-radius: 6px;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px;
+gap: 8px;
+
+width: 100px;
+height: 24px;
+
+background: #F7FAFF;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 6px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Semua */
+
+width: 44px;
+height: 16px;
+
+/* Work.it H8 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #393E46;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px;
+gap: 8px;
+
+width: 120px;
+height: 24px;
+
+background: #F7FAFF;
+border-radius: 6px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Belum Dikerjakan */
+
+width: 110px;
+height: 16px;
+
+/* Work.it H8 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #393E46;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px;
+gap: 8px;
+
+width: 100px;
+height: 24px;
+
+background: #F7FAFF;
+border-radius: 6px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Selesai */
+
+width: 46px;
+height: 16px;
+
+/* Work.it H8 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #393E46;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Search */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px;
+gap: 8px;
+isolation: isolate;
+
+position: absolute;
+height: 56px;
+left: 8px;
+right: 8px;
+top: 68px;
+
+
+
+/* Input */
+
+box-sizing: border-box;
+
+width: 370px;
+height: 40px;
+
+background: #FFFFFF;
+border: 1px solid #4274D9;
+box-shadow: 0px 2px 2px #DDE9FF;
+border-radius: 8px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+z-index: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+height: 24px;
+left: 27px;
+right: 64px;
+top: 8px;
+
+
+
+/* Search */
+
+width: 279px;
+height: 24px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+display: flex;
+align-items: center;
+
+color: #393E46;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+position: absolute;
+width: 24px;
+right: 33px;
+top: 37.5%;
+bottom: 37.5%;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+z-index: 1;
+
+
+/* Icon */
+
+position: absolute;
+width: 24px;
+height: 24px;
+left: 0px;
+top: -4px;
+
+background: #000000;
+
+
+/* Frame 45 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+padding: 0px;
+gap: 104px;
+
+position: absolute;
+width: 362px;
+height: 24px;
+left: 20px;
+top: 140px;
+
+
+
+/* Filter */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 100px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Group 31 */
+
+width: 61px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* dehaze */
+
+position: absolute;
+height: 24px;
+left: 0%;
+right: 76%;
+top: 0px;
+
+
+
+/* Bounding box */
+
+position: absolute;
+left: 0%;
+right: 76%;
+top: 0%;
+bottom: 0%;
+
+background: #D9D9D9;
+
+
+/* dehaze */
+
+position: absolute;
+left: 3%;
+right: 79%;
+top: 20.83%;
+bottom: 20.83%;
+
+background: #1C1B1F;
+
+
+/* Filter */
+
+position: absolute;
+left: 28%;
+right: 39%;
+top: 16.67%;
+bottom: 16.67%;
+
+/* Work.it H8 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Group 35 */
+
+width: 100px;
+height: 100px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Group 34 */
+
+position: absolute;
+left: 0%;
+right: 8%;
+top: 133.33%;
+bottom: -133.33%;
+
+
+
+/* Group 32 */
+
+position: absolute;
+left: 0%;
+right: 8%;
+top: 133.33%;
+bottom: -133.33%;
+
+
+
+/* dehaze */
+
+position: absolute;
+height: 24px;
+left: 0%;
+right: 76%;
+top: 32px;
+
+
+
+/* Bounding box */
+
+position: absolute;
+left: 0%;
+right: 76%;
+top: 133.33%;
+bottom: -133.33%;
+
+background: #D9D9D9;
+
+
+/* dehaze */
+
+position: absolute;
+left: 3%;
+right: 79%;
+top: 154.17%;
+bottom: -112.5%;
+
+background: #1C1B1F;
+
+
+/* Pilih Filter */
+
+position: absolute;
+left: 28%;
+right: 8%;
+top: 150%;
+bottom: -116.67%;
+
+/* Work.it H8 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+
+/* Pilihan Filter */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 275%;
+bottom: -450%;
+
+border: 0.1px solid #5E686D;
+
+
+/* Frame 35 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px;
+gap: 8px;
+
+position: absolute;
+width: 100px;
+height: 22px;
+left: 0px;
+top: 0px;
+
+background: #F3F3F3;
+border: 0.1px solid #5E686D;
+
+
+/* Prioritas */
+
+width: 38px;
+height: 12px;
+
+/* Work.it H10 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 35 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px;
+gap: 8px;
+
+position: absolute;
+width: 100px;
+height: 22px;
+left: 0.1px;
+top: 22.1px;
+
+background: #F3F3F3;
+border: 0.1px solid #5E686D;
+
+
+/* Deadline */
+
+width: 39px;
+height: 12px;
+
+/* Work.it H10 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 35 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px;
+gap: 8px;
+
+position: absolute;
+width: 100px;
+height: 22px;
+left: 0.1px;
+top: 44.1px;
+
+background: #F3F3F3;
+border: 0.1px solid #5E686D;
+
+
+/* Tingkat Kesulitan */
+
+width: 78px;
+height: 12px;
+
+/* Work.it H10 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Tombol Tambah Tugas */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px;
+gap: 8px;
+
+width: 152px;
+height: 24px;
+
+background: #293681;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 6px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Icon */
+
+width: 8px;
+height: 8px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+
+width: 93px;
+height: 16px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Tambah Tugas */
+
+width: 93px;
+height: 16px;
+
+/* Work.it H8 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 38 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 16px;
+gap: 8px;
+
+position: absolute;
+width: 150px;
+height: 68px;
+left: 0px;
+top: 0px;
+
+
+
+/* Transparan Priori 1 1 */
+
+width: 32px;
+height: 32px;
+
+background: url(Transparan Priori 1.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* PRIORI */
+
+width: 78px;
+height: 36px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.16em;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;

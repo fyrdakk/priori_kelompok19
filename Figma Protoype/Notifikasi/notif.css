@@ -1,0 +1,1223 @@
+/* Notifikasi */
+
+position: relative;
+width: 402px;
+height: 874px;
+
+background: #F7FAFF;
+
+
+/* Frame 35 */
+
+position: absolute;
+width: 363px;
+height: 48px;
+left: 19px;
+top: 60px;
+
+
+
+/* Rectangle 29 */
+
+position: absolute;
+width: 363px;
+height: 48px;
+left: calc(50% - 363px/2);
+top: 0px;
+
+background: #EA1515;
+opacity: 0.65;
+border-radius: 8px;
+
+
+/* H-1 Judul Tugas: Membuat Wireframe */
+
+position: absolute;
+width: 222px;
+height: 15px;
+left: 33px;
+top: 17px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Lihat Tugas */
+
+position: absolute;
+width: 55px;
+height: 12px;
+left: 298px;
+top: 18px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+text-decoration-line: underline;
+
+color: #FFFFFF;
+
+
+
+/* X
+
+Keywords: cancel, close, delete, remove, times, clear
+*/
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 11px;
+top: 16px;
+
+
+
+/* Icon */
+
+position: absolute;
+left: 25%;
+right: 25%;
+top: 25%;
+bottom: 25%;
+
+border: 1.6px solid #F3F3F3;
+
+
+/* Tambah Tugas */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+position: absolute;
+width: 191px;
+height: 32px;
+left: 17px;
+top: 85px;
+
+
+
+/* arrow_back_ios */
+
+width: 32px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Bounding box */
+
+position: absolute;
+width: 32px;
+height: 32px;
+left: 0px;
+top: 0px;
+
+background: #D9D9D9;
+
+
+/* arrow_back_ios */
+
+position: absolute;
+left: 0%;
+right: 91.78%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #1C1B1F;
+
+
+/* Notifikasi Tugas */
+
+width: 151px;
+height: 27px;
+
+/* Work.it H4 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 38 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 16px;
+gap: 8px;
+
+position: absolute;
+width: 150px;
+height: 68px;
+left: 0px;
+top: 0px;
+
+
+
+/* Transparan Priori 1 1 */
+
+width: 32px;
+height: 32px;
+
+background: url(Transparan Priori 1.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* PRIORI */
+
+width: 78px;
+height: 36px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.16em;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Navbar Footer */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 8px 24px 24px;
+gap: 8px;
+
+position: absolute;
+height: 61px;
+left: 0px;
+right: 0px;
+top: 812px;
+
+background: #FFFFFF;
+border-top: 1px solid #5E686D;
+
+
+/* Nav */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-end;
+padding: 0px;
+gap: 16px;
+
+width: 402px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Nav1 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 85px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Home
+
+Keywords: house, living
+*/
+
+width: 25px;
+height: 25px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 8.33%;
+bottom: 8.33%;
+
+border: 2px solid #5E686D;
+
+
+/* Home */
+
+width: 86px;
+height: 25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 58px;
+/* or 483% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #5E686D;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Nav2 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 85px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* List
+
+Keywords: options
+*/
+
+width: 25px;
+height: 26px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 25%;
+bottom: 25%;
+
+border: 3px solid #5E686D;
+
+
+/* Tugas */
+
+width: 86px;
+height: 25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 58px;
+/* or 483% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #5E686D;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Nav3 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 85px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Bell
+
+Keywords: alarm, notification, sound
+*/
+
+width: 25px;
+height: 25px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 8.33%;
+bottom: 8.35%;
+
+border: 2.5px solid #226CE6;
+
+
+/* Notifikasi */
+
+width: 130px;
+height: 25px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 58px;
+/* or 483% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #226CE6;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Nav4 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 85px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Settings */
+
+width: 25px;
+height: 25px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Icon */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 4.17%;
+bottom: 4.17%;
+
+border: 2.5px solid #5E686D;
+
+
+/* Pengaturan */
+
+width: 146px;
+height: 23px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 58px;
+/* or 483% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #5E686D;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Group 14 */
+
+position: absolute;
+width: 371px;
+height: 110px;
+left: 15px;
+top: 134px;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 371px;
+height: 110px;
+left: 15px;
+top: 134px;
+
+background: #A9DDED;
+border-radius: 15px;
+
+
+/* Judul Tugas: Membuat Wireframe */
+
+position: absolute;
+width: 288px;
+height: 24px;
+left: 32px;
+top: 146px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 288px;
+height: 24px;
+left: 33px;
+top: 170px;
+
+/* Work.it H8 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+
+
+
+/* Group 15 */
+
+position: absolute;
+width: 333px;
+height: 24px;
+left: 32px;
+top: 201px;
+
+
+
+/* Deadline: H-1 */
+
+position: absolute;
+width: 80px;
+height: 16px;
+left: 32px;
+top: 205.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 113.5px;
+top: 201px;
+
+border: 1px solid #393E46;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Tinggi */
+
+position: absolute;
+width: 136px;
+height: 16px;
+left: 123px;
+top: 205.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* Line 2 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 262px;
+top: 201px;
+
+border: 1px solid #393E46;
+transform: rotate(90deg);
+
+
+/* Prioritas: Tinggi */
+
+position: absolute;
+width: 96px;
+height: 16px;
+left: 269px;
+top: 205.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* arrow_forward_ios */
+
+position: absolute;
+height: 20.38px;
+left: 88.81%;
+right: 8.21%;
+top: 146px;
+
+
+
+/* arrow_forward_ios */
+
+position: absolute;
+left: 88.81%;
+right: 8.21%;
+top: 16.7%;
+bottom: 80.96%;
+
+background: #000000;
+
+
+/* Group 15 */
+
+position: absolute;
+width: 371px;
+height: 110px;
+left: 15px;
+top: 268px;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 371px;
+height: 110px;
+left: 15px;
+top: 268px;
+
+background: #A9DDED;
+border-radius: 15px;
+
+
+/* Judul Tugas: Membuat Prototipe */
+
+position: absolute;
+width: 288px;
+height: 24px;
+left: 32px;
+top: 280px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 288px;
+height: 24px;
+left: 33px;
+top: 304px;
+
+/* Work.it H8 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+
+
+
+/* Group 15 */
+
+position: absolute;
+width: 333px;
+height: 24px;
+left: 32px;
+top: 335px;
+
+
+
+/* Deadline: H-3 */
+
+position: absolute;
+width: 80px;
+height: 16px;
+left: 32px;
+top: 339.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 113.5px;
+top: 335px;
+
+border: 1px solid #393E46;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Tinggi */
+
+position: absolute;
+width: 136px;
+height: 16px;
+left: 123px;
+top: 339.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* Line 2 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 262px;
+top: 335px;
+
+border: 1px solid #393E46;
+transform: rotate(90deg);
+
+
+/* Prioritas: Tinggi */
+
+position: absolute;
+width: 96px;
+height: 16px;
+left: 269px;
+top: 339.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* arrow_forward_ios */
+
+position: absolute;
+height: 20.38px;
+left: 88.81%;
+right: 8.21%;
+top: 280px;
+
+
+
+/* arrow_forward_ios */
+
+position: absolute;
+left: 88.81%;
+right: 8.21%;
+top: 32.04%;
+bottom: 65.63%;
+
+background: #000000;
+
+
+/* Group 16 */
+
+position: absolute;
+width: 371px;
+height: 110px;
+left: 15px;
+top: 402px;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 371px;
+height: 110px;
+left: 15px;
+top: 402px;
+
+background: #E9F9FF;
+border-radius: 15px;
+
+
+/* Judul Tugas: Membuat UseCase Diagram */
+
+position: absolute;
+width: 288px;
+height: 24px;
+left: 32px;
+top: 414px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 288px;
+height: 24px;
+left: 33px;
+top: 438px;
+
+/* Work.it H8 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+
+
+
+/* Group 15 */
+
+position: absolute;
+width: 343px;
+height: 24px;
+left: 32px;
+top: 469px;
+
+
+
+/* Deadline: H-2 */
+
+position: absolute;
+width: 80px;
+height: 16px;
+left: 32px;
+top: 473.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 113.5px;
+top: 469px;
+
+border: 1px solid #393E46;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Sedang */
+
+position: absolute;
+width: 139px;
+height: 16px;
+left: 123px;
+top: 473px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* Line 2 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 272px;
+top: 469px;
+
+border: 1px solid #393E46;
+transform: rotate(90deg);
+
+
+/* Prioritas: Tinggi */
+
+position: absolute;
+width: 96px;
+height: 16px;
+left: 279px;
+top: 473.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* arrow_forward_ios */
+
+position: absolute;
+height: 20.38px;
+left: 88.81%;
+right: 8.21%;
+top: 414px;
+
+
+
+/* arrow_forward_ios */
+
+position: absolute;
+left: 88.81%;
+right: 8.21%;
+top: 47.37%;
+bottom: 50.3%;
+
+background: #000000;
+
+
+/* Group 17 */
+
+position: absolute;
+width: 371px;
+height: 110px;
+left: 15px;
+top: 536px;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 371px;
+height: 110px;
+left: 15px;
+top: 536px;
+
+background: #E9F9FF;
+border-radius: 15px;
+
+
+/* Judul Tugas: Membuat Flowchart */
+
+position: absolute;
+width: 288px;
+height: 24px;
+left: 32px;
+top: 548px;
+
+/* Work.it H6 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 18px;
+
+color: #000000;
+
+
+
+/* Mata Kuliah: UI/UX Design */
+
+position: absolute;
+width: 288px;
+height: 24px;
+left: 33px;
+top: 572px;
+
+/* Work.it H8 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+
+color: #000000;
+
+
+
+/* Group 15 */
+
+position: absolute;
+width: 333px;
+height: 24px;
+left: 32px;
+top: 603px;
+
+
+
+/* Deadline: H-2 */
+
+position: absolute;
+width: 80px;
+height: 16px;
+left: 32px;
+top: 607.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 113.5px;
+top: 603px;
+
+border: 1px solid #393E46;
+transform: rotate(90deg);
+
+
+/* Tingkat Kesulitan: Rendah */
+
+position: absolute;
+width: 139px;
+height: 16px;
+left: 118px;
+top: 607px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* Line 2 */
+
+position: absolute;
+width: 24px;
+height: 0px;
+left: 262px;
+top: 603px;
+
+border: 1px solid #393E46;
+transform: rotate(90deg);
+
+
+/* Prioritas: Rendah */
+
+position: absolute;
+width: 96px;
+height: 16px;
+left: 269px;
+top: 607.17px;
+
+/* Work.it H9 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+
+color: #393E46;
+
+
+
+/* arrow_forward_ios */
+
+position: absolute;
+height: 20.38px;
+left: 88.81%;
+right: 8.21%;
+top: 548px;
+
+
+
+/* arrow_forward_ios */
+
+position: absolute;
+left: 88.81%;
+right: 8.21%;
+top: 62.7%;
+bottom: 34.97%;
+
+background: #000000;

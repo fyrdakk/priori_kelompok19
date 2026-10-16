@@ -37,8 +37,8 @@ Pekerjaan Modul 7 mengubah hasil riset dan desain Figma tim sebelumnya menjadi p
 | Routing 13 halaman, route 404, layout publik/aplikasi                              | Nyata berjalan                                                                                  |
 | Navigasi, hamburger/drawer mobile                                                  | Nyata berjalan; Drawer mobile memiliki focus trap dan dukungan Escape                           |
 | Indeks, Login, Registrasi                                                          | Nyata berjalan; autentikasi simulasi berbasis localStorage                                      |
-| Tambah, lihat, edit, hapus tugas; ubah status terpisah                             | Placeholder rute; implementasi fitur pada Fase 4                                                |
-| Pencarian dan filter tugas                                                         | Placeholder rute; implementasi fitur pada Fase 4                                                |
+| Tambah, lihat, edit, hapus tugas; ubah status terpisah                             | Nyata berjalan; store localStorage, form validasi, dan modal konfirmasi         |
+| Pencarian dan filter tugas                                                         | Nyata berjalan; pencarian teks interaktif dan filter chip status                |
 | Validasi form, umpan balik sukses/kosong/error                                     | Nyata berjalan                                                                                  |
 | Dashboard ringkasan status                                                         | Placeholder rute; implementasi fitur pada Fase 5                                                |
 | Pengingat H-3 / H-1 / Terlambat                                                    | Terbatas: dihitung saat halaman Notifikasi dibuka, **bukan** notifikasi otomatis terjadwal      |
@@ -160,7 +160,7 @@ Centang saat selesai. Detail lengkap ada di PRD bagian 8.
 - [x] **Fase 1, Ekstraksi desain:** petakan frame/komponen Figma, ekstrak design token dan aset
 - [x] **Fase 2, Fondasi UI:** routing, layout, komponen dasar (Button, Input, Card, Badge, Modal, Navbar/Drawer)
 - [x] **Fase 3, Halaman publik:** Indeks, Login, Registrasi dengan validasi (autentikasi simulasi)
-- [ ] **Fase 4, Inti pengelolaan tugas:** store + localStorage, Tambah, Semua Tugas (cari/filter), Detail, Edit, ubah status, hapus dengan modal
+- [x] **Fase 4, Inti pengelolaan tugas:** store + localStorage, Tambah, Semua Tugas (cari/filter), Detail, Edit, ubah status, hapus dengan modal
 - [ ] **Fase 5, Halaman pendukung:** Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan
 - [ ] **Fase 6, Responsif dan poles:** uji 360 / 768 / 1280 px, perbaiki layout, aksesibilitas dasar
 - [ ] **Fase 7, Audit dan pengumpulan:** uji semua AC, lengkapi dokumentasi, ekspor PRD ke PDF
@@ -213,11 +213,11 @@ Isi sesuai pembagian kerja nyata, dengan bukti dari commit atau PR.
 
 Catat setiap prompt yang berarti, berdasarkan pekerjaan nyata tim, bukan prompt karangan. Kerangka prompt yang dipakai: **Peran → Konteks (potongan PRD + token + frame Figma) → Tugas (satu halaman/komponen) → Batasan → Keluaran**.
 
-| No  | Fase    | Tool AI | Ringkasan prompt | Hasil   | Perbaikan manual setelahnya |
-| --- | ------- | ------- | ---------------- | ------- | --------------------------- |
-| 1   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
-| 2   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
-| 3   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
+| No  | Fase   | Tool AI                            | Ringkasan prompt                                                                                                              | Hasil                                                                                     | Perbaikan manual setelahnya                                                |
+| --- | ------ | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 1   | Fase 4 | Antigravity IDE (Gemini 3.8 Flash) | Implementasi core task management (store localStorage, prioritas, validasi, Semua Tugas, Tambah, Detail, Edit, modal hapus) | Selesai & terverifikasi E2E di browser (360, 768, 1280px), vitest 20 passed, build OK    | Penambahan mock localStorage untuk unit test Node env dan format prettier |
+| 2   | `[ISI]`| `[ISI]`                            | `[ISI]`                                                                                                                       | `[ISI]`                                                                                   | `[ISI]`                                                                    |
+| 3   | `[ISI]`| `[ISI]`                            | `[ISI]`                                                                                                                       | `[ISI]`                                                                                   | `[ISI]`                                                                    |
 
 ### Contoh Bentuk Prompt (ganti dengan prompt asli tim)
 

@@ -1,0 +1,525 @@
+/* Login Gagal */
+
+position: relative;
+width: 402px;
+height: 874px;
+
+/* Regis Login BG gradient */
+background: linear-gradient(191.48deg, #64C9F2 0.4%, #8ED7F3 5.88%, #ABE2EF 18.61%, #E9F9FF 26.24%, #E4F5F4 95.66%);
+
+
+/* Rectangle 6 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 345px;
+height: 528px;
+left: 28px;
+top: 173px;
+
+background: #F3F3F3;
+border: 0.5px solid rgba(0, 0, 0, 0.6);
+box-shadow: 0px 4px 20px 1.5px rgba(41, 54, 129, 0.32);
+
+
+/* Belum punya akun? Daftar */
+
+position: absolute;
+width: 142px;
+height: 14px;
+left: 52px;
+top: 668px;
+
+
+
+/* Belum punya akun? Daftar */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Work.it H7 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+display: flex;
+align-items: center;
+
+color: #1245AC;
+
+
+
+/* Frame 39 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 24px;
+gap: 8px;
+
+position: absolute;
+width: 345px;
+height: 135px;
+left: 28px;
+top: 273px;
+
+
+
+/* SMART PRIORITY TASK */
+
+width: 297px;
+height: 21px;
+
+/* Work.it H11 Medium */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 9px;
+line-height: 11px;
+display: flex;
+align-items: center;
+
+color: #1745A2;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Selamat Datang */
+
+width: 297px;
+height: 42px;
+
+/* Work.it H3 */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 38px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Silahkan Login. Susun semua tugas-tugasmu menjadi suatu urutan prioritas yang rapi. */
+
+width: 297px;
+height: 40px;
+
+/* Work.it H7 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+display: flex;
+align-items: center;
+
+color: rgba(0, 0, 0, 0.7);
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 38 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 32px 16px;
+gap: 8px;
+
+position: absolute;
+width: 150px;
+height: 100px;
+left: 28px;
+top: 173px;
+
+
+
+/* Transparan Priori 1 1 */
+
+width: 32px;
+height: 32px;
+
+background: url(Transparan Priori 1.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* PRIORI */
+
+width: 78px;
+height: 36px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.16em;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 40 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 0px;
+gap: 8px;
+
+position: absolute;
+width: 294px;
+height: 77px;
+left: 52px;
+top: 402px;
+
+
+
+/* Email */
+
+width: 294px;
+height: 20px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 11px;
+line-height: 20px;
+/* identical to box height, or 182% */
+display: flex;
+align-items: center;
+letter-spacing: 0.04em;
+
+color: rgba(0, 0, 0, 0.77);
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 36 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 152px 8px 8px;
+gap: 8px;
+
+width: 294px;
+height: 33px;
+
+background: #D9D9D9;
+border-radius: 4px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Contoh: kamu@gmail.com */
+
+width: 128px;
+height: 20px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 10px;
+line-height: 20px;
+/* identical to box height, or 200% */
+display: flex;
+align-items: center;
+letter-spacing: 0.04em;
+
+color: rgba(0, 0, 0, 0.65);
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 34 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 0px;
+gap: 8px;
+
+position: absolute;
+width: 294px;
+height: 77px;
+left: 52px;
+top: 479px;
+
+
+
+/* Kata Sandi */
+
+width: 294px;
+height: 20px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 11px;
+line-height: 20px;
+/* identical to box height, or 182% */
+display: flex;
+align-items: center;
+letter-spacing: 0.04em;
+
+color: rgba(0, 0, 0, 0.77);
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Password */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 152px 8px 8px;
+gap: 8px;
+
+width: 294px;
+height: 33px;
+
+background: #D9D9D9;
+border-radius: 4px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Masukkan password anda */
+
+width: 241px;
+height: 20px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 10px;
+line-height: 20px;
+/* identical to box height, or 200% */
+display: flex;
+align-items: center;
+letter-spacing: 0.04em;
+
+color: rgba(0, 0, 0, 0.65);
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* visibility_off */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Bounding box */
+
+position: absolute;
+width: 24px;
+height: 24px;
+left: 257px;
+top: 4.5px;
+
+background: #D9D9D9;
+
+
+/* visibility_off */
+
+position: absolute;
+left: 87.76%;
+right: 4.76%;
+top: 22.12%;
+bottom: 17.88%;
+
+background: #1C1B1F;
+
+
+/* Tombol Masuk */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 122px 13px 129px;
+gap: 8px;
+
+position: absolute;
+width: 294px;
+height: 40px;
+left: 52px;
+top: 612px;
+
+background: #293681;
+border-radius: 6px;
+
+
+/* Masuk */
+
+width: 43px;
+height: 16px;
+
+/* Work.it H8 Bold */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 41 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+position: absolute;
+width: 294px;
+height: 24px;
+left: 53px;
+top: 572px;
+
+
+
+/* error */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Bounding box */
+
+position: absolute;
+width: 24px;
+height: 24px;
+left: 0px;
+top: 0px;
+
+background: #D9D9D9;
+
+
+/* error */
+
+position: absolute;
+left: 0.68%;
+right: 92.52%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #EA1515;
+
+
+/* Login gagal. Silakan periksa kembali email dan password Anda */
+
+width: 240px;
+height: 24px;
+
+/* Work.it H10 Reguler */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+display: flex;
+align-items: center;
+
+color: #EA1515;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;

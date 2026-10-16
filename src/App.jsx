@@ -2,37 +2,21 @@ import { Route, Routes } from 'react-router-dom'
 import { AppLayout } from './components/AppLayout.jsx'
 import { GuestRoute, ProtectedRoute } from './components/RouteGuards.jsx'
 import { PublicLayout } from './components/PublicLayout.jsx'
+import AddTaskPage from './pages/AddTaskPage.jsx'
 import AuthPage from './pages/AuthPage.jsx'
 import ComponentReferencePage from './pages/ComponentReferencePage.jsx'
+import EditTaskPage from './pages/EditTaskPage.jsx'
 import IndexPage from './pages/IndexPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 import PlaceholderPage from './pages/PlaceholderPage.jsx'
+import TaskDetailPage from './pages/TaskDetailPage.jsx'
+import TasksPage from './pages/TasksPage.jsx'
 
-const appPages = [
+const appPlaceholderPages = [
   {
     path: '/dashboard',
     title: 'Dashboard',
     description: 'Ringkasan tugas dan prioritas hari ini.',
-  },
-  {
-    path: '/tasks',
-    title: 'Semua Tugas',
-    description: 'Temukan dan kelola semua tugas.',
-  },
-  {
-    path: '/tasks/:taskId',
-    title: 'Detail Tugas',
-    description: 'Lihat informasi lengkap tugas.',
-  },
-  {
-    path: '/tasks/new',
-    title: 'Tambah Tugas',
-    description: 'Catat tugas baru di Priori.',
-  },
-  {
-    path: '/tasks/:taskId/edit',
-    title: 'Edit Tugas',
-    description: 'Perbarui informasi tugas.',
   },
   {
     path: '/notifications',
@@ -77,7 +61,11 @@ function App() {
       </Route>
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
-          {appPages.map((page) => (
+          <Route path="/tasks" element={<TasksPage />} />
+          <Route path="/tasks/new" element={<AddTaskPage />} />
+          <Route path="/tasks/:taskId" element={<TaskDetailPage />} />
+          <Route path="/tasks/:taskId/edit" element={<EditTaskPage />} />
+          {appPlaceholderPages.map((page) => (
             <Route
               key={page.path}
               path={page.path}
