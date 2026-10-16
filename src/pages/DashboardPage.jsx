@@ -41,31 +41,34 @@ export default function DashboardPage() {
 
   return (
     <section className="page-section" aria-labelledby="dashboard-title">
-      <div className="dashboard-hero">
-        <h1 id="dashboard-title">Halo, {userName}!</h1>
-        <p>Ayo atur tugasmu agar perkuliahan lebih terencana dan terkendali.</p>
-      </div>
+      <h1 id="dashboard-title">Halo, {userName}!</h1>
+      <p className="page-intro">
+        Ayo atur tugasmu agar perkuliahan lebih terencana dan terkendali.
+      </p>
 
-      <div
-        className="stats-grid"
-        role="region"
-        aria-label="Ringkasan status tugas"
-      >
-        <div className="stat-card stat-card--total">
-          <span className="stat-card__value">{stats.total}</span>
-          <span className="stat-card__label">Total Tugas</span>
-        </div>
-        <div className="stat-card stat-card--done">
-          <span className="stat-card__value">{stats.completed}</span>
-          <span className="stat-card__label">Selesai</span>
-        </div>
-        <div className="stat-card stat-card--progress">
-          <span className="stat-card__value">{stats.inProgress}</span>
-          <span className="stat-card__label">Sedang Dikerjakan</span>
-        </div>
-        <div className="stat-card stat-card--pending">
-          <span className="stat-card__value">{stats.notStarted}</span>
-          <span className="stat-card__label">Belum Dikerjakan</span>
+      <div className="dashboard-hero">
+        <h2>Lihat Tugas Kamu</h2>
+        <div
+          className="stats-grid"
+          role="region"
+          aria-label="Ringkasan status tugas"
+        >
+          <div className="stat-card stat-card--total">
+            <span className="stat-card__value">{stats.total}</span>
+            <span className="stat-card__label">Total Tugas</span>
+          </div>
+          <div className="stat-card stat-card--done">
+            <span className="stat-card__value">{stats.completed}</span>
+            <span className="stat-card__label">Selesai</span>
+          </div>
+          <div className="stat-card stat-card--progress">
+            <span className="stat-card__value">{stats.inProgress}</span>
+            <span className="stat-card__label">Sedang Dikerjakan</span>
+          </div>
+          <div className="stat-card stat-card--pending">
+            <span className="stat-card__value">{stats.notStarted}</span>
+            <span className="stat-card__label">Belum Dikerjakan</span>
+          </div>
         </div>
       </div>
 
@@ -99,10 +102,10 @@ export default function DashboardPage() {
                 <span className="task-card__course">{task.course}</span>
                 <h3 className="task-card__title">{task.title}</h3>
                 <div className="task-card__meta">
-                  <span>📅 Deadline: {task.deadline}</span>
-                  <span>⚡ Kesulitan: {task.difficulty}</span>
+                  <span>Deadline: {task.deadline}</span>
+                  <span>Kesulitan: {task.difficulty}</span>
                   {task.estimatedTime ? (
-                    <span>⏱️ Estimasi: {task.estimatedTime}</span>
+                    <span>Estimasi: {task.estimatedTime}</span>
                   ) : null}
                 </div>
                 <div className="preview-card__actions">

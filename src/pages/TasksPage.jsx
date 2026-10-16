@@ -117,10 +117,10 @@ export default function TasksPage() {
               <h2 className="task-card__title">{task.title}</h2>
 
               <div className="task-card__meta">
-                <span>📅 Deadline: {task.deadline}</span>
-                <span>⚡ Kesulitan: {task.difficulty}</span>
+                <span>Deadline: {task.deadline}</span>
+                <span>Kesulitan: {task.difficulty}</span>
                 {task.estimatedTime ? (
-                  <span>⏱️ Estimasi: {task.estimatedTime}</span>
+                  <span>Estimasi: {task.estimatedTime}</span>
                 ) : null}
               </div>
 
