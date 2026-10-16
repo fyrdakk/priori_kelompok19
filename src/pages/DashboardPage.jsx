@@ -4,6 +4,7 @@ import { EmptyState } from '../components/EmptyState.jsx'
 import { PriorityBadge } from '../components/PriorityBadge.jsx'
 import { StatusBadge } from '../components/StatusBadge.jsx'
 import { getSession } from '../store/auth.js'
+import { formatDate } from '../utils/formatDate.js'
 import { getTasks } from '../store/tasks.js'
 
 export default function DashboardPage() {
@@ -102,7 +103,7 @@ export default function DashboardPage() {
                 <span className="task-card__course">{task.course}</span>
                 <h3 className="task-card__title">{task.title}</h3>
                 <div className="task-card__meta">
-                  <span>Deadline: {task.deadline}</span>
+                  <span>Deadline: {formatDate(task.deadline)}</span>
                   <span>Kesulitan: {task.difficulty}</span>
                   {task.estimatedTime ? (
                     <span>Estimasi: {task.estimatedTime}</span>

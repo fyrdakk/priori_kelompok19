@@ -9,6 +9,7 @@ import { Select } from '../components/Select.jsx'
 import { StatusBadge } from '../components/StatusBadge.jsx'
 import { deleteTask, getTaskById, updateTaskStatus } from '../store/tasks.js'
 import { TASK_STATUSES } from '../utils/priority.js'
+import { formatDate } from '../utils/formatDate.js'
 
 export default function TaskDetailPage() {
   const { taskId } = useParams()
@@ -95,7 +96,7 @@ export default function TaskDetailPage() {
               Informasi Tenggat & Waktu
             </h2>
             <p>
-              <strong>Deadline:</strong> {task.deadline}
+              <strong>Deadline:</strong> {formatDate(task.deadline)}
             </p>
             <p>
               <strong>Tingkat Kesulitan:</strong> {task.difficulty}
