@@ -628,7 +628,7 @@ h1 {
 .drawer {
   align-self: stretch;
   margin-left: auto;
-  max-width: 22rem;
+  max-width: min(16rem, 76vw);
   padding: var(--space-6);
 }
 
