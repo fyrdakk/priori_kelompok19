@@ -151,8 +151,17 @@ h1 {
 .component-reference,
 .not-found {
   margin: 0 auto;
+  padding: var(--space-6);
+}
+
+.page-section {
+  max-width: var(--content-max);
+}
+
+.component-reference,
+.not-found {
   max-width: var(--breakpoint-tablet);
-  padding: var(--space-12) var(--space-6);
+  padding-top: var(--space-12);
 }
 
 .page-section h1,
@@ -457,6 +466,7 @@ h1 {
   font-family: var(--font-family-body);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
+  white-space: nowrap;
 }
 
 .status-badge {
@@ -1064,6 +1074,32 @@ h1 {
     padding-right: var(--space-8);
   }
 
+  h1,
+  .page-section h1,
+  .auth-page h1 {
+    font-size: 2.25rem;
+  }
+
+  .page-section {
+    padding: var(--space-8);
+  }
+
+  .page-section h1 {
+    max-width: none;
+  }
+
+  .task-card__badges {
+    flex-wrap: nowrap;
+  }
+
+  .dashboard-hero {
+    padding: var(--space-6);
+  }
+
+  .tasks-grid {
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  }
+
   .reference-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1075,10 +1111,14 @@ h1 {
   }
 
   .tasks-toolbar__search {
-    max-width: 22rem;
+    max-width: 24rem;
   }
 
   .stats-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .auth-card {
+    padding: var(--space-8);
   }
 }
