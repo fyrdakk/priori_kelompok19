@@ -350,6 +350,18 @@ h1 {
   width: var(--control-min-height);
 }
 
+.logout-button {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-brand-900);
+  font-weight: var(--font-weight-semibold);
+}
+
+.logout-button:hover:not(:disabled) {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
 .field {
   display: grid;
   gap: var(--space-2);
@@ -771,9 +783,15 @@ h1 {
   gap: var(--space-2);
 }
 
-.task-card__meta span + span {
-  border-left: 1px solid var(--color-border);
-  padding-left: var(--space-2);
+.task-card .preview-card__actions {
+  flex-wrap: wrap;
+  row-gap: var(--space-2);
+}
+
+.task-card__meta span + span::before {
+  content: '•';
+  color: var(--color-text-muted);
+  margin-right: 0.5em;
 }
 
 .task-card__badges {
@@ -1097,7 +1115,7 @@ h1 {
   }
 
   .tasks-grid {
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   }
 
   .reference-grid {
