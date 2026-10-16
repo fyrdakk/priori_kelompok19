@@ -136,3 +136,33 @@ Seluruh pengujian otomatis dan build telah diverifikasi dan **LULUS 100%**:
    * Jika tugas meminta pengumpulan fisik PDF dokumen PRD, buka file `docs/PRD.md` lalu gunakan fitur *Print to PDF* atau *Export to PDF*.
 4. **Merge ke `main`:**
    * Setelah rekan tim meninjau dan menyetujui, gabungkan branch `feat/fase-7-audit-and-submission` ke branch `main`.
+
+---
+
+## 6. Serah Terima untuk Komsiata Amelia Sari (Dokumentasi Pengumpulan)
+
+Bagian kode aplikasi sudah selesai seluruhnya: Firda (PRD, awal repo), Deni (Fase 0-3), Luthfi (Fase 4-7), dan Dewangga (penyelarasan antarmuka Figma, PR #4). Pekerjaan yang tersisa adalah melengkapi slot `[ISI]` di dokumentasi — inilah tugas Komsiata, satu komit per tugas dengan pesan format `tipe: deskripsi`.
+
+### A. Daftar Tugas (urutan disarankan: 1, 2, 3, lalu 4)
+
+| No | Tugas | Berkas yang disentuh | Rincian |
+| :---: | :--- | :--- | :--- |
+| 1 | Ekspor PRD ke PDF | `docs/PRD_Priori_Kelompok19_Modul7.pdf` (baru) | Buka `docs/PRD.md`, gunakan *Print to PDF*/*Export to PDF*, simpan dengan nama yang sama seperti tautan di README baris 21 supaya tautan mati itu otomatis berfungsi. Komit: `docs: tambah PDF PRD`. |
+| 2 | Isi tabel Kontribusi Anggota | `README.md` (bagian Kontribusi) | Kumpulkan dari riwayat komit/PR: Firda = PRD dan awal repo (PR #1, #2); Deni = Fase 0-3; Luthfi = Fase 4-7; Dewangga = antarmuka Figma dan audit (PR #4); Komsiata = dokumentasi pengumpulan (tugas ini). Komit: `docs: isi tabel kontribusi anggota`. |
+| 3 | Isi Akun Demo dan Log Perbaikan Manual | `README.md` (baris ~125 dan ~236) | Daftar lewat halaman Registrasi aplikasi, catat email dan kata sandi demo di README. Untuk Log Perbaikan Manual, salin daftar perbaikan nyata yang tercatat di komit `8426240`, `58e37da`, `01d985d`, `fdeb2a0` (sejajarkan navbar, perbaiki luapan kartu, format tanggal, jarak form, sempitkan laci). Komit: `docs: isi akun demo dan log perbaikan manual`. |
+| 4 | Tangkapan layar tambahan untuk butir pengujian 2, 4, 5, 7 | `docs/screenshots/` (menambah berkas baru saja) | Empat gambar: (a) form Tambah Tugas dengan pesan galat validasi, (b) hasil pencarian tanpa ketemu yang menampilkan keadaan kosong, (c) modal konfirmasi hapus terbuka, (d) laci navigasi ponsel terbuka. Jangan ubah delapan berkas gambar yang sudah ada. Setelah itu ubah baris "Tangkapan layar" di README menjadi peta butir pengujian ke nama berkas. Komit: `docs: tambah tangkapan layar validasi, keadaan kosong, dan modal`. |
+
+### B. Tata cara kerja (aturan yang sama seperti anggota lain)
+
+1. Minta Firda mengundang akun GitHub Komsiata sebagai kolaborator repo `fyrdakk/priori_kelompok19` — tanpa itu belum bisa mengunggah.
+2. Tarik `main` terbaru: `git checkout main && git pull origin main`, lalu buat cabang: `git checkout -b feat/komsiata-dokumentasi`.
+3. Satu tugas satu komit, format pesan `tipe: deskripsi` (sesuai kesepakatan tim).
+4. Jangan mengubah kode di `src/` sama sekali; pekerjaan ini murni dokumentasi dan tangkapan layar.
+5. Setelah selesai: `git push -u origin feat/komsiata-dokumentasi`, buka pull request ke `main`, minta Firda atau Luthfi meninjau dan menggabungkan.
+6. Sesuai `AGENTS.md`: jangan mencentang apa pun sebagai selesai sebelum benar-benar selesai dan diuji.
+
+### C. Bukti yang dihasilkan Komsiata nanti
+
+Gerbang rubrik yang tertutup oleh pekerjaan ini: tabel Kontribusi Anggota terisi semua anggota (syarat kontribusi nyata), akun demo siap dipakai penilai, Log Perbaikan Manual terisi (pasangan Log Pengembangan AI), PRD PDF tersedia (syarat Fase 7), dan empat butir pengujian 2, 4, 5, 7 punya bukti gambar.
+
+Target komit tim (minimal 15 komit dari semua anggota) otomatis terpenuhi setelah Komsiata menyelesaikan tugas di atas di cabangnya.
