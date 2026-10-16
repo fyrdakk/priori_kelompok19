@@ -57,7 +57,10 @@ export default function TaskDetailPage() {
   }
 
   return (
-    <section className="page-section" aria-labelledby="task-detail-title">
+    <section
+      className="page-section page-section--narrow"
+      aria-labelledby="task-detail-title"
+    >
       <div className="preview-card__header">
         <div>
           <span className="card__eyebrow">{task.course}</span>
