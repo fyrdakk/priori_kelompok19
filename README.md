@@ -267,7 +267,7 @@ Ceklis uji per acceptance criteria ada di PRD bagian 10. Ringkasnya:
 - [x] Tampilan tidak rusak di 360, 768, dan 1280 px
 - [x] Konsol browser bersih dari error
 
-Tangkapan layar: `[ISI: tautkan ke docs/screenshots/]`
+Tangkapan layar: lihat folder [`docs/screenshots/`](docs/screenshots) — `desktop-01-dashboard.png`, `desktop-02-tasks.png`, `desktop-03-add-task.png`, `desktop-04-login.png`, `tablet-768-dashboard.png`, `mobile-360-dashboard.png`, `mobile-360-tasks.png`, `mobile-360-notifications.png`.
 
 ---
 
