@@ -162,7 +162,7 @@ Centang saat selesai. Detail lengkap ada di PRD bagian 8.
 - [x] **Fase 3, Halaman publik:** Indeks, Login, Registrasi dengan validasi (autentikasi simulasi)
 - [x] **Fase 4, Inti pengelolaan tugas:** store + localStorage, Tambah, Semua Tugas (cari/filter), Detail, Edit, ubah status, hapus dengan modal
 - [x] **Fase 5, Halaman pendukung:** Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan
-- [ ] **Fase 6, Responsif dan poles:** uji 360 / 768 / 1280 px, perbaiki layout, aksesibilitas dasar
+- [x] **Fase 6, Responsif dan poles:** uji 360 / 768 / 1280 px, perbaiki layout, aksesibilitas dasar
 - [ ] **Fase 7, Audit dan pengumpulan:** uji semua AC, lengkapi dokumentasi, ekspor PRD ke PDF
 
 ### Definisi MVP Selesai
@@ -217,7 +217,7 @@ Catat setiap prompt yang berarti, berdasarkan pekerjaan nyata tim, bukan prompt 
 | --- | ------ | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | 1   | Fase 4 | Antigravity IDE (Gemini 3.8 Flash) | Implementasi core task management (store localStorage, prioritas, validasi, Semua Tugas, Tambah, Detail, Edit, modal hapus) | Selesai & terverifikasi E2E di browser (360, 768, 1280px), vitest 20 passed, build OK    | Penambahan mock localStorage untuk unit test Node env dan format prettier |
 | 2   | Fase 5 | Antigravity IDE (Gemini 3.8 Flash) | Implementasi halaman pendukung (Dashboard, Notifikasi pengingat, Sukses, Kosong/Error, Profil, Pengaturan + reset data)      | Selesai & terverifikasi E2E di browser (360, 768, 1280px), vitest 23 passed, build OK    | Pemisahan logika kalkulasi pengingat ke pure utils dengan unit test        |
-| 3   | `[ISI]`| `[ISI]`                            | `[ISI]`                                                                                                                       | `[ISI]`                                                                                   | `[ISI]`                                                                    |
+| 3   | Fase 6 | Antigravity IDE (Gemini 3.8 Flash) | Audit responsif (360/768/1280px), touch target min 44px, focus trap & keyboard Escape di Modal/Drawer | Lulus verifikasi peramban & responsive check tanpa horizontal overflow    | Penyesuaian tinggi sentuh filter chip dan logout button di drawer mobile   |
 
 ### Contoh Bentuk Prompt (ganti dengan prompt asli tim)
 

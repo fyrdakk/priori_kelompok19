@@ -59,9 +59,34 @@ export function Navbar({ onMenuOpen }) {
 }
 
 export function NavigationMenu({ onNavigate }) {
+  const navigate = useNavigate()
+
+  function handleLogout() {
+    onNavigate?.()
+    clearSession()
+    navigate('/login', { replace: true })
+  }
+
   return (
-    <nav className="drawer__links" aria-label="Navigasi aplikasi">
-      <NavigationLinks onNavigate={onNavigate} />
-    </nav>
+    <div className="drawer__content">
+      <nav className="drawer__links" aria-label="Navigasi aplikasi">
+        <NavigationLinks onNavigate={onNavigate} />
+      </nav>
+      <div
+        style={{
+          marginTop: 'var(--space-6)',
+          borderTop: '1px solid var(--color-border)',
+          paddingTop: 'var(--space-4)',
+        }}
+      >
+        <Button
+          variant="danger"
+          style={{ width: '100%' }}
+          onClick={handleLogout}
+        >
+          Keluar (Logout)
+        </Button>
+      </div>
+    </div>
   )
 }
