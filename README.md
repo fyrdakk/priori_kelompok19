@@ -40,10 +40,10 @@ Pekerjaan Modul 7 mengubah hasil riset dan desain Figma tim sebelumnya menjadi p
 | Tambah, lihat, edit, hapus tugas; ubah status terpisah                             | Nyata berjalan; store localStorage, form validasi, dan modal konfirmasi         |
 | Pencarian dan filter tugas                                                         | Nyata berjalan; pencarian teks interaktif dan filter chip status                |
 | Validasi form, umpan balik sukses/kosong/error                                     | Nyata berjalan                                                                                  |
-| Dashboard ringkasan status                                                         | Placeholder rute; implementasi fitur pada Fase 5                                                |
+| Dashboard ringkasan status                                                         | Nyata berjalan; total, selesai, progres, pending & tugas perhatian              |
 | Pengingat H-3 / H-1 / Terlambat                                                    | Terbatas: dihitung saat halaman Notifikasi dibuka, **bukan** notifikasi otomatis terjadwal      |
 | Login dan Registrasi                                                               | **Simulasi nyata** (akun demo dan sesi di localStorage, tanpa backend, tanpa keamanan produksi) |
-| Profil dan Pengaturan                                                              | Placeholder rute pada Fase 2                                                                    |
+| Profil dan Pengaturan                                                              | Nyata berjalan; info akun, statistik tugas, modal reset seed data               |
 | Database server, sinkron lintas perangkat, notifikasi push, integrasi pihak ketiga | Di luar cakupan                                                                                 |
 
 > Perbarui tabel ini setiap ada fitur yang berubah status.
@@ -161,7 +161,7 @@ Centang saat selesai. Detail lengkap ada di PRD bagian 8.
 - [x] **Fase 2, Fondasi UI:** routing, layout, komponen dasar (Button, Input, Card, Badge, Modal, Navbar/Drawer)
 - [x] **Fase 3, Halaman publik:** Indeks, Login, Registrasi dengan validasi (autentikasi simulasi)
 - [x] **Fase 4, Inti pengelolaan tugas:** store + localStorage, Tambah, Semua Tugas (cari/filter), Detail, Edit, ubah status, hapus dengan modal
-- [ ] **Fase 5, Halaman pendukung:** Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan
+- [x] **Fase 5, Halaman pendukung:** Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan
 - [ ] **Fase 6, Responsif dan poles:** uji 360 / 768 / 1280 px, perbaiki layout, aksesibilitas dasar
 - [ ] **Fase 7, Audit dan pengumpulan:** uji semua AC, lengkapi dokumentasi, ekspor PRD ke PDF
 
@@ -216,7 +216,7 @@ Catat setiap prompt yang berarti, berdasarkan pekerjaan nyata tim, bukan prompt 
 | No  | Fase   | Tool AI                            | Ringkasan prompt                                                                                                              | Hasil                                                                                     | Perbaikan manual setelahnya                                                |
 | --- | ------ | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | 1   | Fase 4 | Antigravity IDE (Gemini 3.8 Flash) | Implementasi core task management (store localStorage, prioritas, validasi, Semua Tugas, Tambah, Detail, Edit, modal hapus) | Selesai & terverifikasi E2E di browser (360, 768, 1280px), vitest 20 passed, build OK    | Penambahan mock localStorage untuk unit test Node env dan format prettier |
-| 2   | `[ISI]`| `[ISI]`                            | `[ISI]`                                                                                                                       | `[ISI]`                                                                                   | `[ISI]`                                                                    |
+| 2   | Fase 5 | Antigravity IDE (Gemini 3.8 Flash) | Implementasi halaman pendukung (Dashboard, Notifikasi pengingat, Sukses, Kosong/Error, Profil, Pengaturan + reset data)      | Selesai & terverifikasi E2E di browser (360, 768, 1280px), vitest 23 passed, build OK    | Pemisahan logika kalkulasi pengingat ke pure utils dengan unit test        |
 | 3   | `[ISI]`| `[ISI]`                            | `[ISI]`                                                                                                                       | `[ISI]`                                                                                   | `[ISI]`                                                                    |
 
 ### Contoh Bentuk Prompt (ganti dengan prompt asli tim)
