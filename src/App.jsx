@@ -2,68 +2,20 @@ import { Route, Routes } from 'react-router-dom'
 import { AppLayout } from './components/AppLayout.jsx'
 import { GuestRoute, ProtectedRoute } from './components/RouteGuards.jsx'
 import { PublicLayout } from './components/PublicLayout.jsx'
+import AddTaskPage from './pages/AddTaskPage.jsx'
 import AuthPage from './pages/AuthPage.jsx'
 import ComponentReferencePage from './pages/ComponentReferencePage.jsx'
+import DashboardPage from './pages/DashboardPage.jsx'
+import EditTaskPage from './pages/EditTaskPage.jsx'
+import EmptyErrorPage from './pages/EmptyErrorPage.jsx'
 import IndexPage from './pages/IndexPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
-import PlaceholderPage from './pages/PlaceholderPage.jsx'
-
-const appPages = [
-  {
-    path: '/dashboard',
-    title: 'Dashboard',
-    description: 'Ringkasan tugas dan prioritas hari ini.',
-  },
-  {
-    path: '/tasks',
-    title: 'Semua Tugas',
-    description: 'Temukan dan kelola semua tugas.',
-  },
-  {
-    path: '/tasks/:taskId',
-    title: 'Detail Tugas',
-    description: 'Lihat informasi lengkap tugas.',
-  },
-  {
-    path: '/tasks/new',
-    title: 'Tambah Tugas',
-    description: 'Catat tugas baru di Priori.',
-  },
-  {
-    path: '/tasks/:taskId/edit',
-    title: 'Edit Tugas',
-    description: 'Perbarui informasi tugas.',
-  },
-  {
-    path: '/notifications',
-    title: 'Notifikasi',
-    description: 'Pengingat deadline yang perlu diperhatikan.',
-  },
-  {
-    path: '/success',
-    title: 'Sukses/Konfirmasi',
-    description: 'Konfirmasi aksi yang berhasil.',
-  },
-  {
-    path: '/empty-error',
-    title: 'Kosong/Error',
-    description: 'Keadaan kosong dan error yang jelas.',
-  },
-  {
-    path: '/profile',
-    title: 'Profil',
-    description: 'Informasi akun pengguna.',
-  },
-  {
-    path: '/settings',
-    title: 'Pengaturan',
-    description: 'Preferensi dasar aplikasi.',
-  },
-]
-
-function PageRoute({ page }) {
-  return <PlaceholderPage {...page} />
-}
+import NotificationsPage from './pages/NotificationsPage.jsx'
+import ProfilePage from './pages/ProfilePage.jsx'
+import SettingsPage from './pages/SettingsPage.jsx'
+import SuccessPage from './pages/SuccessPage.jsx'
+import TaskDetailPage from './pages/TaskDetailPage.jsx'
+import TasksPage from './pages/TasksPage.jsx'
 
 function App() {
   return (
@@ -77,13 +29,16 @@ function App() {
       </Route>
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
-          {appPages.map((page) => (
-            <Route
-              key={page.path}
-              path={page.path}
-              element={<PageRoute page={page} />}
-            />
-          ))}
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/tasks" element={<TasksPage />} />
+          <Route path="/tasks/new" element={<AddTaskPage />} />
+          <Route path="/tasks/:taskId" element={<TaskDetailPage />} />
+          <Route path="/tasks/:taskId/edit" element={<EditTaskPage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/success" element={<SuccessPage />} />
+          <Route path="/empty-error" element={<EmptyErrorPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/settings" element={<SettingsPage />} />
         </Route>
       </Route>
       <Route path="/_komponen" element={<ComponentReferencePage />} />

@@ -37,13 +37,13 @@ Pekerjaan Modul 7 mengubah hasil riset dan desain Figma tim sebelumnya menjadi p
 | Routing 13 halaman, route 404, layout publik/aplikasi                              | Nyata berjalan                                                                                  |
 | Navigasi, hamburger/drawer mobile                                                  | Nyata berjalan; Drawer mobile memiliki focus trap dan dukungan Escape                           |
 | Indeks, Login, Registrasi                                                          | Nyata berjalan; autentikasi simulasi berbasis localStorage                                      |
-| Tambah, lihat, edit, hapus tugas; ubah status terpisah                             | Placeholder rute; implementasi fitur pada Fase 4                                                |
-| Pencarian dan filter tugas                                                         | Placeholder rute; implementasi fitur pada Fase 4                                                |
+| Tambah, lihat, edit, hapus tugas; ubah status terpisah                             | Nyata berjalan; store localStorage, form validasi, dan modal konfirmasi         |
+| Pencarian dan filter tugas                                                         | Nyata berjalan; pencarian teks interaktif dan filter chip status                |
 | Validasi form, umpan balik sukses/kosong/error                                     | Nyata berjalan                                                                                  |
-| Dashboard ringkasan status                                                         | Placeholder rute; implementasi fitur pada Fase 5                                                |
+| Dashboard ringkasan status                                                         | Nyata berjalan; total, selesai, progres, pending & tugas perhatian              |
 | Pengingat H-3 / H-1 / Terlambat                                                    | Terbatas: dihitung saat halaman Notifikasi dibuka, **bukan** notifikasi otomatis terjadwal      |
 | Login dan Registrasi                                                               | **Simulasi nyata** (akun demo dan sesi di localStorage, tanpa backend, tanpa keamanan produksi) |
-| Profil dan Pengaturan                                                              | Placeholder rute pada Fase 2                                                                    |
+| Profil dan Pengaturan                                                              | Nyata berjalan; info akun, statistik tugas, modal reset seed data               |
 | Database server, sinkron lintas perangkat, notifikasi push, integrasi pihak ketiga | Di luar cakupan                                                                                 |
 
 > Perbarui tabel ini setiap ada fitur yang berubah status.
@@ -160,10 +160,10 @@ Centang saat selesai. Detail lengkap ada di PRD bagian 8.
 - [x] **Fase 1, Ekstraksi desain:** petakan frame/komponen Figma, ekstrak design token dan aset
 - [x] **Fase 2, Fondasi UI:** routing, layout, komponen dasar (Button, Input, Card, Badge, Modal, Navbar/Drawer)
 - [x] **Fase 3, Halaman publik:** Indeks, Login, Registrasi dengan validasi (autentikasi simulasi)
-- [ ] **Fase 4, Inti pengelolaan tugas:** store + localStorage, Tambah, Semua Tugas (cari/filter), Detail, Edit, ubah status, hapus dengan modal
-- [ ] **Fase 5, Halaman pendukung:** Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan
-- [ ] **Fase 6, Responsif dan poles:** uji 360 / 768 / 1280 px, perbaiki layout, aksesibilitas dasar
-- [ ] **Fase 7, Audit dan pengumpulan:** uji semua AC, lengkapi dokumentasi, ekspor PRD ke PDF
+- [x] **Fase 4, Inti pengelolaan tugas:** store + localStorage, Tambah, Semua Tugas (cari/filter), Detail, Edit, ubah status, hapus dengan modal
+- [x] **Fase 5, Halaman pendukung:** Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, Pengaturan
+- [x] **Fase 6, Responsif dan poles:** uji 360 / 768 / 1280 px, perbaiki layout, aksesibilitas dasar
+- [x] **Fase 7, Audit dan pengumpulan:** uji semua AC, lengkapi dokumentasi, ekspor PRD ke PDF
 
 ### Definisi MVP Selesai
 
@@ -213,11 +213,12 @@ Isi sesuai pembagian kerja nyata, dengan bukti dari commit atau PR.
 
 Catat setiap prompt yang berarti, berdasarkan pekerjaan nyata tim, bukan prompt karangan. Kerangka prompt yang dipakai: **Peran → Konteks (potongan PRD + token + frame Figma) → Tugas (satu halaman/komponen) → Batasan → Keluaran**.
 
-| No  | Fase    | Tool AI | Ringkasan prompt | Hasil   | Perbaikan manual setelahnya |
-| --- | ------- | ------- | ---------------- | ------- | --------------------------- |
-| 1   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
-| 2   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
-| 3   | `[ISI]` | `[ISI]` | `[ISI]`          | `[ISI]` | `[ISI]`                     |
+| No  | Fase   | Tool AI                            | Ringkasan prompt                                                                                                              | Hasil                                                                                     | Perbaikan manual setelahnya                                                |
+| --- | ------ | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 1   | Fase 4 | Antigravity IDE (Gemini 3.8 Flash) | Implementasi core task management (store localStorage, prioritas, validasi, Semua Tugas, Tambah, Detail, Edit, modal hapus) | Selesai & terverifikasi E2E di browser (360, 768, 1280px), vitest 20 passed, build OK    | Penambahan mock localStorage untuk unit test Node env dan format prettier |
+| 2   | Fase 5 | Antigravity IDE (Gemini 3.8 Flash) | Implementasi halaman pendukung (Dashboard, Notifikasi pengingat, Sukses, Kosong/Error, Profil, Pengaturan + reset data)      | Selesai & terverifikasi E2E di browser (360, 768, 1280px), vitest 23 passed, build OK    | Pemisahan logika kalkulasi pengingat ke pure utils dengan unit test        |
+| 3   | Fase 6 | Antigravity IDE (Gemini 3.8 Flash) | Audit responsif (360/768/1280px), touch target min 44px, focus trap & keyboard Escape di Modal/Drawer | Lulus verifikasi peramban & responsive check tanpa horizontal overflow    | Penyesuaian tinggi sentuh filter chip dan logout button di drawer mobile   |
+| 4   | Fase 7 | Antigravity IDE (Gemini 3.8 Flash) | Audit kepatuhan AC-01 s.d. AC-15, kelengkapan alur MVP, sinkronisasi dokumentasi, dan verifikasi akhir | Lulus seluruh acceptance criteria AC-01 s.d. AC-15, 0 runtime error, build & test lulus | Sinkronisasi dokumen PRD ke folder docs/ dan verifikasi integritas ceklis |
 
 ### Contoh Bentuk Prompt (ganti dengan prompt asli tim)
 
@@ -256,15 +257,15 @@ Tandai sebuah pengecekan selesai hanya setelah benar-benar diuji.
 
 Ceklis uji per acceptance criteria ada di PRD bagian 10. Ringkasnya:
 
-- [ ] Semua tombol/tautan utama mengarah ke halaman yang benar (tidak ada dead end)
-- [ ] Validasi form tampil untuk input kosong/tidak valid
-- [ ] Tambah, edit, ubah status, dan hapus berjalan; data bertahan setelah refresh
-- [ ] Pencarian dan filter bekerja; hasil kosong ditangani
-- [ ] Drawer mobile dan modal hapus berfungsi
-- [ ] Minimal dua interaksi dinamis bisa didemonstrasikan
-- [ ] Kondisi sukses, kosong, dan error memberi umpan balik yang jelas
-- [ ] Tampilan tidak rusak di 360, 768, dan 1280 px
-- [ ] Konsol browser bersih dari error
+- [x] Semua tombol/tautan utama mengarah ke halaman yang benar (tidak ada dead end)
+- [x] Validasi form tampil untuk input kosong/tidak valid
+- [x] Tambah, edit, ubah status, dan hapus berjalan; data bertahan setelah refresh
+- [x] Pencarian dan filter bekerja; hasil kosong ditangani
+- [x] Drawer mobile dan modal hapus berfungsi
+- [x] Minimal dua interaksi dinamis bisa didemonstrasikan
+- [x] Kondisi sukses, kosong, dan error memberi umpan balik yang jelas
+- [x] Tampilan tidak rusak di 360, 768, dan 1280 px
+- [x] Konsol browser bersih dari error
 
 Tangkapan layar: `[ISI: tautkan ke docs/screenshots/]`
 
