@@ -48,7 +48,10 @@ export default function AddTaskPage() {
   }
 
   return (
-    <section className="page-section" aria-labelledby="add-task-title">
+    <section
+      className="page-section page-section--narrow"
+      aria-labelledby="add-task-title"
+    >
       <div className="preview-card__header">
         <div>
           <h1 id="add-task-title">Tambah Tugas</h1>

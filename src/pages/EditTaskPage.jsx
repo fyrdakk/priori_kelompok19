@@ -67,7 +67,10 @@ export default function EditTaskPage() {
   }
 
   return (
-    <section className="page-section" aria-labelledby="edit-task-title">
+    <section
+      className="page-section page-section--narrow"
+      aria-labelledby="edit-task-title"
+    >
       <div className="preview-card__header">
         <div>
           <h1 id="edit-task-title">Edit Tugas</h1>

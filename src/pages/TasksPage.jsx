@@ -4,6 +4,7 @@ import { EmptyState } from '../components/EmptyState.jsx'
 import { PriorityBadge } from '../components/PriorityBadge.jsx'
 import { StatusBadge } from '../components/StatusBadge.jsx'
 import { getTasks } from '../store/tasks.js'
+import { formatDate } from '../utils/formatDate.js'
 
 const STATUS_FILTERS = [
   'Semua',
@@ -117,10 +118,10 @@ export default function TasksPage() {
               <h2 className="task-card__title">{task.title}</h2>
 
               <div className="task-card__meta">
-                <span>📅 Deadline: {task.deadline}</span>
-                <span>⚡ Kesulitan: {task.difficulty}</span>
+                <span>Deadline: {formatDate(task.deadline)}</span>
+                <span>Kesulitan: {task.difficulty}</span>
                 {task.estimatedTime ? (
-                  <span>⏱️ Estimasi: {task.estimatedTime}</span>
+                  <span>Estimasi: {task.estimatedTime}</span>
                 ) : null}
               </div>
 

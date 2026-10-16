@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Drawer } from './Drawer.jsx'
-import { NavigationMenu, Navbar } from './Navbar.jsx'
+import { BottomNav, NavigationMenu, Navbar } from './Navbar.jsx'
 
 export function AppLayout() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -11,6 +11,7 @@ export function AppLayout() {
       <main className="app-main">
         <Outlet />
       </main>
+      <BottomNav />
       <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
         <NavigationMenu onNavigate={() => setIsDrawerOpen(false)} />
       </Drawer>

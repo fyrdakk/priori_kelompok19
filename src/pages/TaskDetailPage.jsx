@@ -9,6 +9,7 @@ import { Select } from '../components/Select.jsx'
 import { StatusBadge } from '../components/StatusBadge.jsx'
 import { deleteTask, getTaskById, updateTaskStatus } from '../store/tasks.js'
 import { TASK_STATUSES } from '../utils/priority.js'
+import { formatDate } from '../utils/formatDate.js'
 
 export default function TaskDetailPage() {
   const { taskId } = useParams()
@@ -56,7 +57,10 @@ export default function TaskDetailPage() {
   }
 
   return (
-    <section className="page-section" aria-labelledby="task-detail-title">
+    <section
+      className="page-section page-section--narrow"
+      aria-labelledby="task-detail-title"
+    >
       <div className="preview-card__header">
         <div>
           <span className="card__eyebrow">{task.course}</span>
@@ -95,7 +99,7 @@ export default function TaskDetailPage() {
               Informasi Tenggat & Waktu
             </h2>
             <p>
-              <strong>Deadline:</strong> {task.deadline}
+              <strong>Deadline:</strong> {formatDate(task.deadline)}
             </p>
             <p>
               <strong>Tingkat Kesulitan:</strong> {task.difficulty}
