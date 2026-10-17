@@ -58,7 +58,7 @@ export default function AddTaskPage() {
           <p>Catat tugas kuliah baru beserta deadline dan tingkat kesulitan.</p>
         </div>
         <Link to="/tasks" className="button button--secondary">
-          Kembali
+          ← Kembali
         </Link>
       </div>
 

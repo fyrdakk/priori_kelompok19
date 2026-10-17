@@ -26,7 +26,7 @@ export default function ProfilePage() {
       <div className="preview-card__header">
         <div>
           <h1 id="profile-title">Profil Pengguna</h1>
-          <p>Informasi akun dan ringkasan aktivitas akademik Anda di Priori.</p>
+          <p className="page-intro">Informasi akun dan ringkasan aktivitas akademik Anda di Priori.</p>
         </div>
         <Link to="/dashboard" className="button button--secondary">
           Dashboard

@@ -13,7 +13,7 @@ export default function NotificationsPage() {
       <div className="preview-card__header">
         <div>
           <h1 id="notif-page-title">Notifikasi Pengingat</h1>
-          <p>
+          <p className="page-intro">
             Pengingat tenggat waktu tugas (Terlambat, H-1, H-3) yang dihitung
             saat halaman ini dibuka.
           </p>
