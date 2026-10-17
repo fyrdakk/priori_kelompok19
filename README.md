@@ -20,15 +20,18 @@ Proyek ini dikembangkan berdasarkan masalah penumpukan deadline, informasi tugas
 
 ## 2. Anggota dan Kontribusi
 
+Pembagian tanggung jawab anggota pada README ini diselaraskan dengan pembagian tugas dalam PRD pada Modul 7.
+
 | Anggota | Tanggung jawab utama |
 |---|---|
-| **Firda Nabilah** | Penyusunan PRD, inisialisasi repository, pengembangan Dashboard, integrasi antarkomponen, perbaikan halaman Indeks/Navbar/Footer, serta koordinasi GitHub dan proses merge. |
-| **Deni Anugrah Hasibuan** | Implementasi halaman Indeks, Daftar, Login, Semua Tugas, dan Detail Tugas, termasuk alur untuk melihat serta menemukan tugas melalui pencarian dan filter. |
-| **Dewangga Arka Putra** | Implementasi halaman Tambah Tugas dan Edit Tugas, termasuk pemeriksaan penyesuaian validasi formulir, serta penyelarasan antarmuka web dengan figma. |
-| **Luthfi Eka Saputra** | Implementasi halaman Indeks, Login, Registrasi, dan Profil beserta alur navigasi yang terkait (fase 4 - fase 7). |
-| **Komsiata Amelia Sari** | Implementasi halaman Notifikasi, Pengaturan, Sukses/Konfirmasi, dan Kosong/Error, serta dukungan dokumentasi dan pengujian pengumpulan. |
+| **Firda Nabilah** | Menyusun PRD dan melakukan inisialisasi repository; memperbaiki desain halaman Indeks, Navbar, dan Footer; serta mengoordinasikan tim dan pengelolaan GitHub/merge. |
+| **Deni Anugrah Hasibuan** | Mengimplementasikan halaman Indeks, Login, dan Registrasi, termasuk alur serta validasi formulir yang terkait. |
+| **Dewangga Arka Putra** | Menyelaraskan antarmuka website dengan desain Figma dan melakukan perbaikan visual berdasarkan hasil peninjauan. |
+| **Luthfi Eka Saputra** | Mengimplementasikan fitur inti pengelolaan tugas dan halaman pendukung, termasuk pekerjaan yang tercatat pada Fase 4–7. |
+| **Komsiata Amelia Sari** | Mendukung dokumentasi pengumpulan dan pengujian aplikasi, termasuk mencatat hasil pengujian serta bukti yang benar-benar diperoleh. |
 
-Ringkasan ini menjelaskan pembagian kerja tim. Riwayat commit dan pull request dapat diperiksa melalui tautan GitHub pada bagian Tautan Proyek.
+Pembagian tanggung jawab di atas disamakan dengan PRD. Riwayat commit dan pull request tetap dapat digunakan sebagai bukti pekerjaan yang benar-benar dilakukan oleh setiap anggota.
+
 
 ## 3. Fitur Utama
 
