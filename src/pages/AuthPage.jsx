@@ -1,4 +1,8 @@
 import { useState } from 'react'
+<<<<<<< HEAD
+=======
+import '../styles/auth-split.css'
+>>>>>>> update
 import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../components/Button.jsx'
 import { Card } from '../components/Card.jsx'
@@ -69,6 +73,7 @@ function AuthPage({ mode }) {
   }
 
   return (
+<<<<<<< HEAD
     <section className="auth-page">
       <p className="eyebrow">Priori</p>
       <h1>{isRegistration ? 'Mari Kita Rapikan Tugasmu' : 'Selamat Datang'}</h1>
@@ -150,5 +155,78 @@ function AuthPage({ mode }) {
     </section>
   )
 }
+=======
+    <section className={`auth-page auth-page--simple${isRegistration ? ' auth-page--register' : ' auth-page--login'}`}>
+      <div className="auth-page__inner">
+        <p className="eyebrow">PRIORI</p>
+        <h1>{isRegistration ? 'Mari Kita Rapikan Tugasmu' : 'Selamat Datang'}</h1>
+        <p className="page-intro">
+          {isRegistration
+            ? 'Buat akun demo untuk mulai mengatur tugas kuliahmu dengan lebih teratur.'
+            : 'Masuk untuk melihat ruang tugasmu dan melanjutkan progres belajar.'}
+        </p>
+        <Card className="auth-card">
+          <form onSubmit={handleSubmit} noValidate>
+            {isRegistration ? (
+              <Input
+                id="name"
+                name="name"
+                label="Nama"
+                value={values.name}
+                onChange={handleChange}
+                error={errors.name}
+                autoComplete="name"
+              />
+            ) : null}
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              label="Email"
+              value={values.email}
+              onChange={handleChange}
+              error={errors.email}
+              autoComplete="email"
+            />
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              label="Kata Sandi"
+              value={values.password}
+              onChange={handleChange}
+              error={errors.password}
+              autoComplete={isRegistration ? 'new-password' : 'current-password'}
+            />
+            {isRegistration ? (
+              <Input
+                id="confirmation"
+                name="confirmation"
+                type="password"
+                label="Konfirmasi Kata Sandi"
+                value={values.confirmation}
+                onChange={handleChange}
+                error={errors.confirmation}
+                autoComplete="new-password"
+              />
+            ) : null}
+            {formError ? <p className="form-error" role="alert">{formError}</p> : null}
+            {successMessage ? <p className="form-success" role="status">{successMessage}</p> : null}
+            <Button type="submit">{isRegistration ? 'Registrasi' : 'Login'}</Button>
+          </form>
+        </Card>
+        <p className="auth-switch">
+          {isRegistration ? 'Sudah punya akun?' : 'Belum punya akun?'}{' '}
+          <Link to={isRegistration ? '/login' : '/register'}>
+            {isRegistration ? 'Login di sini' : 'Registrasi di sini'}
+          </Link>
+        </p>
+        <p className="simulation-note">
+          Mode simulasi: akun dan kata sandi disimpan secara lokal di browser, bukan untuk penggunaan produksi.
+        </p>
+      </div>
+    </section>
+  )}
+>>>>>>> update
 
 export default AuthPage

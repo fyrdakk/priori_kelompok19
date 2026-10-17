@@ -39,7 +39,11 @@ export default function TasksPage() {
       <div className="preview-card__header">
         <div>
           <h1 id="tasks-page-title">Semua Tugas</h1>
+<<<<<<< HEAD
           <p>Pantau tenggat waktu dan kenali prioritas tugas akademik Anda.</p>
+=======
+          <p className="page-intro">Pantau tenggat waktu dan kenali prioritas tugas akademik Anda.</p>
+>>>>>>> update
         </div>
         <Link to="/tasks/new" className="button button--primary">
           + Tambah Tugas
@@ -62,9 +66,12 @@ export default function TasksPage() {
 
       <div className="tasks-toolbar">
         <div className="tasks-toolbar__search">
+<<<<<<< HEAD
           <label htmlFor="search-task" className="sr-only">
             Cari Tugas atau Mata Kuliah
           </label>
+=======
+>>>>>>> update
           <input
             id="search-task"
             type="search"

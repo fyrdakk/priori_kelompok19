@@ -389,10 +389,17 @@ h1 {
 .field input,
 .field select,
 .field textarea {
+<<<<<<< HEAD
   background: var(--color-surface-field);
   border: 1px solid transparent;
   border-radius: var(--radius-md);
   color: var(--color-text-strong);
+=======
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-md);
+  color: #1c1b1f;
+>>>>>>> update
   line-height: 1.35;
   min-height: var(--control-min-height);
   padding: var(--space-2) var(--space-3);
@@ -404,6 +411,18 @@ h1 {
   resize: vertical;
 }
 
+<<<<<<< HEAD
+=======
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  background: #ffffff;
+  border-color: var(--color-brand-700);
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(49 94 232 / 12%);
+}
+
+>>>>>>> update
 .field input:hover,
 .field select:hover,
 .field textarea:hover {
@@ -776,9 +795,15 @@ h1 {
 }
 
 .task-card__course {
+<<<<<<< HEAD
   color: var(--color-brand-700);
   font-family: var(--font-family-body);
   font-size: var(--font-size-xs);
+=======
+  color: var(--color-brand-900);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-md);
+>>>>>>> update
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 }
@@ -805,7 +830,11 @@ h1 {
   row-gap: var(--space-2);
 }
 
+<<<<<<< HEAD
 .task-card__meta span + span::before {
+=======
+.task-card__meta span+span::before {
+>>>>>>> update
   content: '•';
   color: var(--color-text-muted);
   margin-right: 0.5em;
@@ -1083,6 +1112,10 @@ h1 {
 }
 
 @media (max-width: 47.99rem) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> update
   .app-navbar__links,
   .logout-button {
     display: none;
@@ -1103,6 +1136,10 @@ h1 {
 }
 
 @media (min-width: 48rem) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> update
   .public-header,
   .app-navbar {
     padding-left: var(--space-8);
@@ -1157,3 +1194,667 @@ h1 {
     padding: var(--space-8);
   }
 }
+<<<<<<< HEAD
+=======
+
+/* Landing page uses its own full-width responsive layout. */
+.public-layout--landing {
+  background: #fff;
+  background-attachment: initial;
+}
+
+.public-main--landing {
+  max-width: none;
+}
+
+
+/* Shared Priori navigation and footer across public and authenticated pages */
+.shared-navbar {
+  align-items: center;
+  background: rgb(255 255 255 / 96%);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #edf0f6;
+  box-shadow: 0 1px 0 rgb(20 38 83 / 4%);
+  display: flex;
+  justify-content: space-between;
+  min-height: 82px;
+  padding: 14px max(5%, calc((100% - 1220px) / 2));
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.shared-brand {
+  align-items: center;
+  color: #142653;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 25px;
+  font-weight: 800;
+  gap: 10px;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.shared-brand img {
+  display: block;
+  height: 42px;
+  object-fit: contain;
+  width: 42px;
+}
+
+.shared-brand__dot,
+.app-navbar__wordmark>span {
+  color: #315ee8;
+}
+
+.shared-navbar nav {
+  align-items: center;
+  display: flex;
+  gap: 28px;
+}
+
+.shared-navbar nav a {
+  color: #53617a;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.shared-navbar nav a:hover,
+.shared-navbar nav .shared-nav__active {
+  color: #315ee8;
+}
+
+.shared-navbar nav .shared-nav__register {
+  background: #315ee8;
+  border-radius: 10px;
+  color: #fff;
+  padding: 13px 21px;
+}
+
+.shared-navbar nav .shared-nav__register:hover,
+.shared-navbar nav .shared-nav__register--active {
+  background: #244bd0;
+  color: #fff;
+}
+
+.shared-footer {
+  align-items: center;
+  background: #fff;
+  border-top: 1px solid #edf0f6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 23px max(5%, calc((100% - 1220px) / 2));
+}
+
+.shared-footer .shared-brand {
+  font-size: 20px;
+}
+
+.shared-footer .shared-brand img {
+  height: 34px;
+  width: 34px;
+}
+
+.shared-footer p {
+  color: #75819a;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin: 0;
+}
+
+.app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(255 255 255 / 96%);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgb(20 38 83 / 7%);
+}
+
+.app-navbar .brand {
+  gap: 9px;
+  text-decoration: none;
+}
+
+.app-navbar .brand img {
+  height: 40px;
+  width: 40px;
+}
+
+.app-navbar__wordmark {
+  color: #142653;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.app-navbar__links .navigation-link {
+  font-weight: 700;
+}
+
+.app-footer {
+  max-width: none;
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  .shared-navbar {
+    min-height: 70px;
+    padding: 12px 5%;
+  }
+
+  .shared-brand {
+    font-size: 21px;
+    gap: 7px;
+  }
+
+  .shared-brand img {
+    height: 36px;
+    width: 36px;
+  }
+
+  .shared-navbar nav {
+    gap: 12px;
+  }
+
+  .shared-navbar nav a {
+    font-size: 12px;
+  }
+
+  .shared-navbar nav a:first-child {
+    display: inline-flex;
+  }
+
+  .shared-navbar nav .shared-nav__register {
+    border-radius: 8px;
+    padding: 11px 12px;
+  }
+
+  .shared-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px 5%;
+  }
+
+  .app-navbar__wordmark {
+    font-size: 21px;
+  }
+
+  .app-navbar .brand img {
+    height: 36px;
+    width: 36px;
+  }
+
+  .app-footer {
+    margin-top: 25px;
+  }
+}
+
+/* ===== Perbaikan drawer navigasi mobile Priori ===== */
+/* Navbar tetap berada di atas drawer */
+.app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 72px;
+  background: rgb(255 255 255 / 97%);
+  backdrop-filter: blur(14px);
+}
+
+/* Overlay dimulai setelah navbar agar tidak menutup logo/tombol toggle */
+.overlay:has(.drawer) {
+  inset: 72px 0 0;
+  align-items: stretch;
+  justify-content: flex-end;
+  padding: 0;
+  z-index: 900;
+}
+
+/* Drawer menempel di sisi kanan dan memenuhi area di bawah navbar */
+.overlay .drawer {
+  align-self: stretch;
+  margin: 0;
+  width: min(330px, 86vw);
+  max-width: 330px;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: 0;
+  padding: 24px;
+  background: #fff;
+  box-shadow: -10px 0 30px rgb(20 38 83 / 12%);
+}
+
+/* Isi drawer */
+.overlay .drawer__content {
+  display: block;
+  margin-top: 0;
+}
+
+.overlay .drawer__links {
+  display: grid;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.overlay .drawer__links .navigation-link {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.overlay .drawer__links .navigation-link:hover {
+  background: #f1f5ff;
+}
+
+.overlay .drawer__links .navigation-link--active {
+  color: #294b9b;
+  background: #e5edff;
+  font-weight: 700;
+}
+
+.overlay .drawer__content>div {
+  margin-top: 24px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Tombol toggle lebih rapi */
+.menu-button {
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #dce5f3;
+  border-radius: 12px;
+  background: #fff;
+  color: #294b9b;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.menu-button:hover {
+  background: #edf3ff;
+  border-color: #b8cafa;
+}
+
+.menu-button:focus-visible {
+  outline: 3px solid #93b4ff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 47.99rem) {
+  .app-navbar {
+    min-height: 72px;
+  }
+
+  .menu-button {
+    display: inline-flex;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .overlay .drawer {
+    width: 88vw;
+    padding: 20px 16px;
+  }
+}
+
+
+/* =========================================================
+   PERBAIKAN TERBATAS: pencarian, filter tugas, dan tombol dashboard
+   Bagian lain dari tampilan Priori tidak diubah.
+   ========================================================= */
+
+/* Toolbar halaman Semua Tugas */
+.tasks-toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto;
+  align-items: center;
+  gap: 16px 24px;
+  margin: 28px 0 24px;
+  min-width: 0;
+}
+
+.tasks-toolbar__search {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+.tasks-toolbar__search input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 52px;
+  min-height: 52px;
+  padding: 12px 44px 12px 16px;
+  border: 1px solid #34499b;
+  border-radius: 12px;
+  background-color: #fff;
+  color: #1c1b1f;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.tasks-toolbar__search input::placeholder {
+  color: #788196;
+  opacity: 1;
+}
+
+.tasks-toolbar__search input:focus {
+  outline: none;
+  border-color: #315ee8;
+  box-shadow: 0 0 0 3px rgb(49 94 232 / 12%);
+}
+
+.tasks-toolbar__filters {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 2px;
+  width: max-content;
+  max-width: 100%;
+  min-width: 0;
+  padding: 3px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  background: #f4f5f8;
+  border: 1px solid #dedfe5;
+  border-radius: 12px;
+}
+
+.filter-chip {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 9px;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #526078;
+  background: transparent;
+}
+
+.filter-chip:hover {
+  background: #e9edf8;
+  color: #263e89;
+}
+
+.filter-chip--active {
+  background: #fff;
+  color: #263e89;
+  box-shadow: 0 1px 3px rgb(25 40 80 / 12%);
+}
+
+/* Tombol Tambah Tugas dan Lihat Semua Tugas dibuat konsisten */
+.dashboard-section .preview-card__header .button,
+.dashboard-section .preview-card__header a.button,
+.dashboard-section .preview-card__header .button--primary,
+.dashboard-section .preview-card__header .button--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.page-section>.preview-card__header>.button--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 180px;
+  min-height: 48px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* Desktop/tablet: search di kiri, filter di kanan */
+@media (min-width: 701px) {
+  .tasks-toolbar {
+    grid-template-columns: minmax(240px, 1fr) auto;
+  }
+
+  .tasks-toolbar__filters {
+    justify-self: end;
+  }
+}
+
+/* HP: search penuh di atas, filter tetap satu baris dan dapat digeser */
+@media (max-width: 700px) {
+  .tasks-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin: 22px 0;
+  }
+
+  .tasks-toolbar__search {
+    width: 100%;
+    max-width: none;
+  }
+
+  .tasks-toolbar__search input {
+    height: 50px;
+    min-height: 50px;
+    font-size: 15px;
+  }
+
+  .tasks-toolbar__filters {
+    justify-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    gap: 2px;
+    padding: 3px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-chip {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .dashboard-section .preview-card__header {
+    align-items: stretch;
+  }
+
+  .dashboard-section .preview-card__header .button,
+  .dashboard-section .preview-card__header a.button,
+  .dashboard-section .preview-card__header .button--primary,
+  .dashboard-section .preview-card__header .button--secondary {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .page-section>.preview-card__header {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .page-section>.preview-card__header>a.button.button--primary {
+    align-self: flex-start;
+    width: auto;
+    min-width: 164px;
+    min-height: 48px;
+    padding: 12px 20px;
+    margin-top: 40px;
+    white-space: nowrap;
+  }
+
+  .page-section--narrow>.preview-card__header>a.button {
+    margin-top: 40px;
+  }
+
+  .page-section>.preview-card__header>a.button {
+    margin-top: 40px;
+  }
+
+}
+
+@media (max-width: 380px) {
+  .filter-chip {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 11px;
+  }
+}
+
+/* ===== Perbaikan tombol Keluar navbar desktop dan drawer ===== */
+.app-navbar>.logout-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-width: 0;
+  min-height: 40px;
+  padding: 9px 14px;
+  flex: 0 0 auto;
+  background: #dc2626;
+  color: #ffffff;
+  border: 1px solid #dc2626;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.app-navbar>.logout-button:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.overlay .drawer__logout .button--danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 16px;
+  background: #dc2626;
+  color: #ffffff;
+  border: 1px solid #dc2626;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.overlay .drawer__logout .button--danger:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* Final responsive override: hide the desktop logout button on mobile.
+   Mobile users access the same red logout action from the toggle drawer. */
+@media (max-width: 767px) {
+  .app-navbar>button.button.logout-button {
+    display: none !important;
+  }
+
+  .app-navbar__links {
+    display: none !important;
+  }
+}
+
+/* Keep desktop logout compact and visually consistent with the drawer button. */
+@media (min-width: 768px) {
+  .app-navbar>button.button.logout-button {
+    display: inline-flex;
+    width: auto;
+    flex: 0 0 auto;
+  }
+}
+
+
+/* Final fix: keep Button variant classes and responsive logout behavior consistent. */
+.app-navbar>button.logout-button {
+  display: inline-flex;
+  width: auto;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 14px;
+  background: #dc2626;
+  color: #ffffff;
+  border: 1px solid #dc2626;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.app-navbar>button.logout-button:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.overlay .drawer__logout button.button--danger {
+  width: 100%;
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+.overlay .drawer__logout button.button--danger:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+@media (max-width: 767px) {
+  .app-navbar>button.logout-button {
+    display: none !important;
+  }
+
+  .app-navbar__links {
+    display: none !important;
+  }
+
+  .app-navbar>.menu-button {
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-navbar>button.logout-button {
+    display: inline-flex !important;
+  }
+}
+>>>>>>> update

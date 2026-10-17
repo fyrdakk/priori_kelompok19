@@ -20,7 +20,11 @@ export default function SettingsPage() {
       <div className="preview-card__header">
         <div>
           <h1 id="settings-title">Pengaturan Aplikasi</h1>
+<<<<<<< HEAD
           <p>Kelola preferensi dan data prototipe Priori di perangkat Anda.</p>
+=======
+          <p className="page-intro">Kelola preferensi dan data prototipe Priori di perangkat Anda.</p>
+>>>>>>> update
         </div>
         <Link to="/dashboard" className="button button--secondary">
           Dashboard
