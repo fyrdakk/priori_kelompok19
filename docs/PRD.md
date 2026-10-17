@@ -1,247 +1,278 @@
-# Product Requirements Document (PRD)
+# Product Requirement Document (PRD)
+
 ## Priori — Smart Priority Task
-*English Version | Module 7*
+
+**Versi Bahasa Indonesia | Modul 7 | Kelompok 19**
 
 ---
 
-## Document Information
+## Struktur Empat Konteks PRD
 
-| Field | Details |
-| :--- | :--- |
-| **Product Name** | Priori — Smart Priority Task |
-| **Product Type** | Student task management website |
-| **Team** | Group 19 |
-| **Division** | Web & UI/UX Developer |
-| **Members** | Firda Nabilah, Deni Anugrah Hasibuan, Dewangga Arka Putra, Luthfi Eka Saputra, Komsiata Amelia Sari |
-| **Stage** | Module 7 interactive web prototype development |
-| **Requirements Source** | User research and persona, User Flow/Wireframe, Figma prototype, and HTML5 implementation from previous modules |
-| **Prototype Link** | [Figma Prototype (Kelompok 19)](https://www.figma.com/design/JFSkyYMAdzRiTfJcK7KjiL/Prototipe-Kelompok-19?node-id=0-1&t=a5sTTIdJfLxgTS2p-1) |
+Dokumen ini disusun berdasarkan empat konteks yang diminta dalam tugas: **(1) Peran/Role Persona, (2) Konteks Desain, (3) Batasan/User Story & Scope, dan (4) Luaran/Kriteria Sukses**. Bagian setelah empat konteks utama berisi rincian pendukung, seperti pembagian tanggung jawab, fase pengembangan, dan referensi dokumentasi.
 
----
+## Informasi Dokumen
 
-## 1. Role (Role Persona)
+| Bagian | Keterangan |
+|---|---|
+| Nama Produk | Priori — Smart Priority Task |
+| Jenis Produk | Website pengelolaan tugas mahasiswa |
+| Kelompok | Kelompok 19 |
+| Divisi | Web & UI/UX Developer |
+| Anggota | Firda Nabilah, Deni Anugrah Hasibuan, Dewangga Arka Putra, Luthfi Eka Saputra, Komsiata Amelia Sari |
+| Tahap | Pengembangan prototipe web interaktif Modul 7 |
+| Sumber Kebutuhan | Riset pengguna dan persona, User Flow/Wireframe, prototipe Figma, serta implementasi HTML5 dari modul sebelumnya |
+| Tautan Figma | [Prototipe Figma Kelompok 19](https://www.figma.com/design/JFSkyYMAdzRiTfJcK7KjiL/Prototipe-Kelompok-19?node-id=0-1&t=a5sTTIdJfLxgTS2p-1) |
+| Repository GitHub | [Priori Kelompok 19](https://github.com/fyrdakk/priori_kelompok19) |
 
-### AI Role
-Act as a Technical Lead Project Manager (PM) who prepares a PRD for the Priori website. The document must be user-oriented, consistent with the research findings and designs from previous modules, and usable by the UI/UX and development teams as a reference for implementation and testing.
+## 1. PERAN — ROLE PERSONA
 
-### Product
-**Priori — Smart Priority Task**, a website that helps students manage academic assignments and determine which tasks should be prioritized.
+**Peran dalam penyusunan PRD:** bertindak sebagai *Lead Product Manager* teknis yang menerjemahkan masalah pengguna, hasil riset, dan rancangan Figma menjadi kebutuhan produk yang terukur serta dapat diuji. Peran ini merupakan kerangka penyusunan dokumen, bukan klaim bahwa Priori memiliki fitur AI.
 
-### Target Users
-Active university students, especially those in semesters 3–7, who have multiple assignments from different courses with closely spaced deadlines.
 
-### Representative Persona
+### 1.1 Gambaran Produk
 
-- **Age**: Approximately 19–20 years old
-- **Status**: Active university student
-- **Semester**: 3–7
+**Priori — Smart Priority Task** adalah website yang membantu mahasiswa mencatat, mengelola, dan memantau tugas akademik serta memahami tugas mana yang perlu diprioritaskan.
 
-#### Characteristics
-- Active, independent, practical, and focused on completing tasks.
-- Accustomed to recording assignments through WhatsApp, Notes, Google Keep, or a calendar.
-- May feel overwhelmed when assignments pile up and deadlines are close together.
-- Needs centralized task information that is easy to understand.
+### 1.2 Target Pengguna
 
-#### Persona Goals
-- Identify which tasks need to be completed first.
-- Complete assignments before or by their deadlines.
-- Manage time between classes, assignments, and other activities.
-- Reduce the risk of forgetting assignments or deadlines.
+Pengguna sasaran adalah mahasiswa aktif, terutama semester 3–7, yang menerima banyak tugas dari mata kuliah berbeda dengan tenggat waktu yang berdekatan.
 
-#### Persona's Main Problems
-- Assignment information is scattered across several platforms.
-- Reminders can get buried or go unnoticed.
-- It is difficult to estimate task completion time and determine priorities.
-- A large number of assignments can cause stress, confusion, procrastination, and disruption to other activities.
+### 1.3 Persona Representatif
 
----
+- **Usia:** sekitar 19–20 tahun.
+- **Status:** mahasiswa aktif.
+- **Semester:** 3–7.
 
-## 2. Context (Design Context)
+**Karakteristik**
+- Aktif, mandiri, praktis, dan berorientasi menyelesaikan tugas.
+- Terbiasa mencatat tugas melalui WhatsApp, Notes, Google Keep, atau kalender.
+- Dapat merasa kewalahan ketika tugas menumpuk dan tenggat waktunya berdekatan.
+- Membutuhkan informasi tugas yang terpusat dan mudah dipahami.
 
-### 2.1 Background
-Priori was developed in response to the problem of accumulating deadlines and students' difficulty in determining task priorities. Previous user research shows that students have different habits: some complete the easiest assignments first, some prioritize the nearest deadlines, and others consider the difficulty level and estimated completion time.
+**Tujuan persona**
+- Mengetahui tugas yang perlu dikerjakan terlebih dahulu.
+- Menyelesaikan tugas sebelum atau sesuai tenggat waktu.
+- Mengatur waktu antara kuliah, tugas, dan kegiatan lain.
+- Mengurangi risiko lupa terhadap tugas atau deadline.
 
-Students also use different platforms to record assignments, such as WhatsApp, Notes, Google Keep, and calendars. Scattered information increases the risk of forgetting assignments, while buried or missing notifications can make deadline tracking difficult. When assignments pile up, students may feel stressed, confused, uneasy, or be forced to complete tasks in a rush.
+**Masalah utama persona**
+- Informasi tugas tersebar di beberapa platform.
+- Pengingat dapat tertumpuk atau terlewat.
+- Sulit memperkirakan waktu pengerjaan dan menentukan prioritas.
+- Tugas yang menumpuk dapat menimbulkan stres, kebingungan, penundaan, dan gangguan terhadap kegiatan lain.
 
-Therefore, Priori is designed as a centralized system for recording assignments, monitoring completion status, viewing deadlines, and helping users identify which tasks should be prioritized.
+## 2. KONTEKS — KONTEKS DESAIN
 
-### 2.2 Product Objectives
-- Provide one place to record and manage coursework.
-- Display deadlines, difficulty levels, estimated time, descriptions, and task statuses in a structured way.
-- Help users determine task order based on task information.
-- Make it easier for users to add, view, edit, and delete tasks.
-- Present progress summaries through the Dashboard.
-- Provide a clear, consistent, and testable interface flow.
+### 2.1 Latar Belakang
 
-### 2.3 Usage Context
-Users access Priori when receiving new assignments, planning their work, checking deadlines, updating task statuses, or reviewing unfinished assignments. The website is intended for use on smartphones as well as laptops/desktops, while prioritizing information readability and ease of navigation.
+Priori dikembangkan untuk menjawab masalah penumpukan deadline dan kesulitan mahasiswa menentukan prioritas tugas. Riset pengguna sebelumnya menunjukkan kebiasaan yang beragam: sebagian mahasiswa mengerjakan tugas termudah lebih dahulu, sebagian memilih deadline terdekat, sedangkan yang lain mempertimbangkan tingkat kesulitan dan estimasi waktu pengerjaan.
 
-### 2.4 Page Structure and Functions
+Mahasiswa juga menggunakan beragam media untuk mencatat tugas, seperti WhatsApp, Notes, Google Keep, dan kalender. Informasi yang tersebar meningkatkan risiko lupa, sementara notifikasi yang tertumpuk dapat menyulitkan pemantauan deadline. Ketika tugas menumpuk, mahasiswa dapat merasa stres, bingung, cemas, atau terpaksa menyelesaikan tugas secara terburu-buru.
 
-1. **Index**: Introduces Priori and provides access to Login and Registration.
-2. **Login**: Provides an email and password form with validation.
-3. **Registration**: Provides an account creation form with validation.
-4. **Dashboard**: Displays a summary of the number of tasks (total, completed, in progress, and not started) as well as a list of tasks that need attention.
-5. **All Tasks**: Displays the task list, search, filters, and access to Task Details, Add Task, and Edit Task.
-6. **Task Details**: Displays the title, course, deadline, difficulty level, priority, description, and status. Users can change the status or delete the task.
-7. **Add Task**: Provides a form for the course, task title, deadline, difficulty level, status, estimated time if implemented, and description/notes.
-8. **Edit Task**: Displays existing data so users can update all task information.
-9. **Notifications**: Displays deadline reminder information according to the implementation capabilities.
-10. **Success/Confirmation**: Provides feedback after an action is completed successfully.
-11. **Empty/Error**: Explains an empty-data or failure condition and provides relevant next actions.
-12. **Profile**: Displays the user's profile information.
-13. **Settings**: Displays the basic settings planned for the prototype.
+Karena itu, Priori dirancang sebagai tempat terpusat untuk mencatat tugas, memantau status pengerjaan, melihat deadline, dan membantu pengguna mengenali tugas yang perlu diprioritaskan.
 
-### 2.5 Main Flow
+### 2.2 Tujuan Produk
 
-```mermaid
-flowchart TD
-    A[Index Page] -->|Choose| B[Login / Registration]
-    B -->|Authentication Completed| C[Dashboard]
-    C -->|View / Manage| D[All Tasks]
-    D -->|Create| E[Add Task]
-    E -->|Validation| F{Is Input Valid?}
-    F -->|No| G[Show Error Message & Correct Input]
-    G --> E
-    F -->|Yes| H[Save Task & Show Success Feedback]
-    H --> D
-    D -->|Select Task| I[Task Details]
-    I -->|Action| J[Change Status Separately]
-    I -->|Action| K[Edit All Task Info via Edit Task]
-    I -->|Action| L[Delete Task]
-    J --> M[Feedback & Return to Dashboard / All Tasks]
-    K --> M
-    L --> M
-```
+- Menyediakan satu tempat untuk mencatat dan mengelola tugas kuliah.
+- Menampilkan deadline, tingkat kesulitan, estimasi waktu, deskripsi, dan status tugas secara terstruktur.
+- Membantu pengguna menentukan urutan pengerjaan berdasarkan informasi tugas.
+- Memudahkan pengguna menambah, melihat, mengedit, dan menghapus tugas.
+- Menampilkan ringkasan progres melalui Dashboard.
+- Menyediakan alur antarmuka yang jelas, konsisten, dan dapat diuji.
 
-- The user opens the Index page, then chooses Login or Registration.
-- After completing the authentication flow, the user enters the Dashboard.
-- The user opens All Tasks to view and manage the task list.
-- The user can add a task through Add Task.
-- The system validates the input. If the input is invalid, an error message is displayed so the user can correct it.
-- If the input is valid, the task is saved according to the implementation capabilities, and the user receives success feedback.
-- The user can open Task Details, change the status separately, edit all task information through Edit Task, or delete the task.
-- After an action, the system provides appropriate feedback and a path back to the Dashboard or All Tasks.
+### 2.3 Konteks Penggunaan
 
-### 2.6 Design Principles
-- Follow the structure and flow of the Figma prototype created in the previous module.
-- Use simple and consistent interface language.
-- Emphasize deadlines, statuses, and important task information.
-- Provide clear validation and error messages.
-- Ensure that no primary buttons or links are non-functional.
-- Provide a responsive layout that remains easy to use on small screens.
-- Use content relevant to student task management.
+Pengguna membuka Priori ketika menerima tugas baru, merencanakan pengerjaan, memeriksa deadline, memperbarui status, atau meninjau tugas yang belum selesai. Website ditujukan untuk digunakan melalui ponsel maupun laptop/desktop, dengan mengutamakan keterbacaan informasi dan kemudahan navigasi.
 
----
+### 2.4 Struktur Halaman dan Fungsi
 
-## 3. User Story & Scope Limitations
+| No. | Halaman | Fungsi |
+|---:|---|---|
+| 1 | **Indeks** | Memperkenalkan Priori dan menyediakan akses ke Login serta Registrasi. |
+| 2 | **Login** | Menyediakan formulir email dan kata sandi beserta validasi. |
+| 3 | **Registrasi** | Menyediakan formulir pembuatan akun beserta validasi. |
+| 4 | **Dashboard** | Menampilkan ringkasan jumlah tugas (total, selesai, sedang dikerjakan, dan belum dikerjakan) serta tugas yang perlu diperhatikan. |
+| 5 | **Semua Tugas** | Menampilkan daftar tugas, pencarian, filter, serta akses ke Detail, Tambah, dan Edit Tugas. |
+| 6 | **Detail Tugas** | Menampilkan judul, mata kuliah, deadline, tingkat kesulitan, prioritas, deskripsi, dan status. Pengguna dapat mengubah status atau menghapus tugas. |
+| 7 | **Tambah Tugas** | Menyediakan formulir mata kuliah, judul tugas, deadline, tingkat kesulitan, status, estimasi waktu jika tersedia, serta deskripsi/catatan. |
+| 8 | **Edit Tugas** | Menampilkan data tugas yang sudah ada agar pengguna dapat memperbarui informasinya. |
+| 9 | **Notifikasi** | Menampilkan informasi pengingat deadline sesuai kemampuan implementasi. |
+| 10 | **Sukses/Konfirmasi** | Memberikan umpan balik setelah tindakan berhasil. |
+| 11 | **Kosong/Error** | Menjelaskan kondisi data kosong atau kegagalan dan menyediakan tindakan lanjutan yang relevan. |
+| 12 | **Profil** | Menampilkan informasi profil pengguna. |
+| 13 | **Pengaturan** | Menampilkan pengaturan dasar yang tersedia pada prototipe. |
 
-### 3.1 User Stories (US)
+**Catatan pemetaan desain:** sumber desain yang diperiksa menampilkan 12 frame/state, termasuk Login Gagal dan Registrasi Sukses sebagai state dari halaman Login dan Registrasi. Indeks, Profil, dan Pengaturan diperlakukan sebagai frame turunan apabila belum terverifikasi sebagai frame langsung pada Figma. Rincian pemetaan visual dijelaskan dalam `docs/design-map.md`.
+
+### 2.5 Alur Utama
+
+1. Pengguna membuka halaman Indeks lalu memilih Login atau Registrasi.
+2. Setelah alur autentikasi simulasi selesai, pengguna masuk ke Dashboard.
+3. Pengguna membuka Semua Tugas untuk melihat dan mengelola daftar tugas.
+4. Pengguna dapat menambahkan tugas melalui halaman Tambah Tugas.
+5. Sistem memvalidasi input. Jika input tidak valid, sistem menampilkan pesan kesalahan agar pengguna dapat memperbaikinya.
+6. Jika input valid, tugas disimpan sesuai kemampuan implementasi dan pengguna menerima umpan balik keberhasilan.
+7. Pengguna dapat membuka Detail Tugas, mengubah status secara terpisah, mengedit seluruh informasi melalui Edit Tugas, atau menghapus tugas.
+8. Setelah tindakan dilakukan, sistem memberikan umpan balik dan menyediakan jalur kembali ke Dashboard atau Semua Tugas.
+
+### 2.6 Prinsip Desain
+
+- Mengikuti struktur dan alur prototipe Figma dari modul sebelumnya.
+- Menggunakan bahasa antarmuka yang sederhana dan konsisten.
+- Menonjolkan deadline, status, dan informasi tugas yang penting.
+- Menyediakan pesan validasi dan kesalahan yang jelas.
+- Memastikan tombol dan tautan utama memiliki fungsi yang sesuai.
+- Menyediakan tata letak responsif yang tetap mudah digunakan di layar kecil.
+- Menggunakan konten yang relevan dengan pengelolaan tugas mahasiswa.
+
+## 3. BATASAN — USER STORY & SCOPE
+
+### 3.1 User Story
 
 | ID | User Story |
-| :--- | :--- |
-| **US-01** | As a student, I want to log in to Priori so that I can access the task management page. |
-| **US-02** | As a new student, I want to register so that I can start using Priori. |
-| **US-03** | As a student, I want to see a task summary on the Dashboard so that I can quickly understand my task progress. |
-| **US-04** | As a student, I want to view all tasks so that I can monitor the assignments that need to be completed. |
-| **US-05** | As a student, I want to add tasks along with the course, title, deadline, difficulty level, status, and description so that the task information is recorded. |
-| **US-06** | As a student, I want to view task details so that I can understand the information about a selected task. |
-| **US-07** | As a student, I want to change all task information through Edit Task so that the data remains up to date. |
-| **US-08** | As a student, I want to update a task's status separately from editing its information so that completion progress can be monitored easily. |
-| **US-09** | As a student, I want to delete tasks that are no longer needed so that the task list remains relevant. |
-| **US-10** | As a student, I want to search or filter tasks so that I can find specific tasks more easily. |
-| **US-11** | As a student, I want to view deadline reminder information so that I can pay attention to tasks approaching their deadlines. |
+|---|---|
+| US-01 | Sebagai mahasiswa, saya ingin login ke Priori agar dapat mengakses halaman pengelolaan tugas. |
+| US-02 | Sebagai mahasiswa baru, saya ingin mendaftar agar dapat mulai menggunakan Priori. |
+| US-03 | Sebagai mahasiswa, saya ingin melihat ringkasan tugas di Dashboard agar dapat memahami progres tugas dengan cepat. |
+| US-04 | Sebagai mahasiswa, saya ingin melihat semua tugas agar dapat memantau tugas yang perlu diselesaikan. |
+| US-05 | Sebagai mahasiswa, saya ingin menambahkan tugas beserta mata kuliah, judul, deadline, tingkat kesulitan, status, dan deskripsi agar informasi tugas tercatat. |
+| US-06 | Sebagai mahasiswa, saya ingin melihat detail tugas agar dapat memahami informasi tugas yang dipilih. |
+| US-07 | Sebagai mahasiswa, saya ingin mengubah seluruh informasi melalui Edit Tugas agar data tetap terbaru. |
+| US-08 | Sebagai mahasiswa, saya ingin memperbarui status tugas tanpa mengedit seluruh informasinya agar progres mudah dipantau. |
+| US-09 | Sebagai mahasiswa, saya ingin menghapus tugas yang tidak lagi diperlukan agar daftar tugas tetap relevan. |
+| US-10 | Sebagai mahasiswa, saya ingin mencari atau memfilter tugas agar dapat menemukan tugas tertentu dengan lebih mudah. |
+| US-11 | Sebagai mahasiswa, saya ingin melihat informasi pengingat deadline agar dapat memperhatikan tugas yang mendekati tenggat. |
 
-### 3.2 MVP Scope (In-Scope)
+### 3.2 Ruang Lingkup MVP
 
-#### Main Features Included:
-- Index, Login, and Registration pages as part of the prototype flow.
-- Dashboard and task summaries by status.
-- All Tasks list.
-- Add Task with input validation.
-- Task Details.
-- Editing all task information.
-- Changing task status separately.
-- Deleting tasks with appropriate feedback.
-- Task search and filtering if supported by the implementation.
-- Empty, error, validation, and success states.
-- Navigation to Notifications, Profile, and Settings according to the available pages.
-- At least two dynamic interactions that can be demonstrated and tested.
-- Interface consistency with the Figma design and readability across different screen sizes.
+**Fitur yang termasuk dalam ruang lingkup:**
+- Halaman Indeks, Login, dan Registrasi sebagai bagian dari alur prototipe.
+- Dashboard dan ringkasan tugas berdasarkan status.
+- Daftar Semua Tugas.
+- Tambah Tugas dengan validasi input.
+- Detail Tugas.
+- Pengeditan seluruh informasi tugas.
+- Perubahan status tugas secara terpisah.
+- Penghapusan tugas dengan umpan balik yang sesuai.
+- Pencarian dan filter tugas sesuai dukungan implementasi.
+- State kosong, error, validasi, dan sukses.
+- Navigasi menuju Notifikasi, Profil, dan Pengaturan sesuai halaman yang tersedia.
+- Minimal dua interaksi dinamis yang dapat didemonstrasikan dan diuji.
+- Konsistensi antarmuka dengan desain Figma serta keterbacaan pada berbagai ukuran layar.
 
-#### Planned Task Data:
-- Course
-- Task title
-- Deadline
-- Difficulty level
-- Task status
-- Description/notes
-- Estimated completion time and priority information, if implemented
+**Data tugas yang direncanakan:**
+- Mata kuliah.
+- Judul tugas.
+- Deadline.
+- Tingkat kesulitan.
+- Status tugas.
+- Deskripsi/catatan.
+- Estimasi waktu pengerjaan dan informasi prioritas jika telah diimplementasikan.
 
-#### Task Statuses:
-- `Not Started`
-- `In Progress`
-- `Completed`
+**Status tugas:**
+- `Belum Dikerjakan`
+- `Sedang Dikerjakan`
+- `Selesai Dikerjakan`
 
-### 3.3 Out of Scope
+### 3.3 Di Luar Ruang Lingkup
 
-The following features are not considered mandatory requirements unless explicitly agreed upon by the team:
-- Production authentication connected to a real backend service.
-- Database and cross-device data synchronization if the Module 7 implementation does not include a backend.
-- Automated scheduled notifications on the device.
-- Integration with Google Calendar, email, WhatsApp, or third-party services.
-- Automatic difficulty assessment using AI.
-- Task collaboration and task distribution among users.
-- Advanced analytics or recommendations based on machine learning models.
-- Payment features or subscription services.
+Fitur berikut bukan persyaratan wajib kecuali disepakati secara eksplisit oleh tim:
+- Autentikasi produksi yang terhubung ke layanan backend nyata.
+- Database dan sinkronisasi data lintas perangkat apabila implementasi Modul 7 tidak menggunakan backend.
+- Notifikasi otomatis terjadwal pada perangkat.
+- Integrasi dengan Google Calendar, email, WhatsApp, atau layanan pihak ketiga.
+- Penilaian tingkat kesulitan otomatis menggunakan AI.
+- Kolaborasi tugas dan pembagian tugas antar pengguna.
+- Analitik lanjutan atau rekomendasi berbasis model machine learning.
+- Fitur pembayaran atau langganan.
 
-> [!NOTE]
-> Module 6 produced static semantic HTML5 pages that do not yet implement authentication or database-based data processing. Therefore, functionality that actually works in Module 7 must be distinguished from interfaces that are still simulations/prototypes. H-3/H-1 deadline reminders are a need identified through user research, but automated notifications are mandatory criteria only if they are included in the implementation agreed upon by the team.
+> **Catatan implementasi:** halaman HTML5 semantik pada Modul 6 belum mengimplementasikan autentikasi atau pemrosesan data berbasis database. Oleh karena itu, fungsi yang benar-benar berjalan pada Modul 7 harus dibedakan dari antarmuka yang masih berupa simulasi/prototipe. Pengingat deadline H-3/H-1 merupakan kebutuhan yang ditemukan dari riset pengguna, tetapi notifikasi otomatis bukan persyaratan wajib jika tidak termasuk dalam implementasi yang disepakati.
+
+## 4. LUARAN — KRITERIA SUKSES
+
+### 4.1 Luaran Produk
+
+- Prototipe website Priori yang dapat didemonstrasikan.
+- Halaman sesuai ruang lingkup yang memiliki alur navigasi saling terhubung.
+- Formulir tugas dengan kolom data dan validasi yang relevan.
+- Interaksi untuk melihat detail, menambah, mengedit, mengubah status, dan menghapus tugas sesuai kemampuan implementasi.
+- Umpan balik untuk tindakan berhasil, input tidak valid, serta kondisi data kosong atau error.
+- Antarmuka yang konsisten dengan desain Figma dan kebutuhan persona.
+- Dokumentasi pengembangan sesuai persyaratan tugas Modul 7.
+
+### 4.2 Kriteria Penerimaan (Acceptance Criteria)
+
+| ID | Kriteria penerimaan |
+|---|---|
+| **AC-01** | Pengguna dapat membuka halaman Indeks dan menemukan akses ke Login serta Registrasi. |
+| **AC-02** | Navigasi utama mengarahkan pengguna ke halaman yang benar. |
+| **AC-03** | Dashboard menampilkan ringkasan total tugas, tugas selesai, sedang dikerjakan, dan belum dikerjakan berdasarkan data yang tersedia. |
+| **AC-04** | Form Tambah Tugas memuat informasi tugas sesuai ruang lingkup. |
+| **AC-05** | Sistem menampilkan pesan validasi ketika input wajib kosong atau tidak valid. |
+| **AC-06** | Setelah penyimpanan berhasil, pengguna menerima umpan balik keberhasilan dan dapat kembali ke daftar tugas atau Dashboard. |
+| **AC-07** | Pengguna dapat membuka Detail Tugas dan melihat informasi tugas yang dipilih. |
+| **AC-08** | Pengguna dapat mengubah seluruh informasi tugas melalui halaman Edit Tugas. |
+| **AC-09** | Pengguna dapat mengubah status tugas tanpa harus mengedit seluruh informasi tugas. |
+| **AC-10** | Pengguna dapat menghapus tugas dan menerima umpan balik yang sesuai. |
+| **AC-11** | Pencarian atau filter yang tersedia membantu pengguna menemukan tugas berdasarkan kata kunci atau kategori yang didukung. |
+| **AC-12** | Halaman Kosong/Error menampilkan informasi yang mudah dipahami dan menyediakan tindakan lanjutan yang relevan. |
+| **AC-13** | Minimal dua interaksi dinamis berfungsi dan dapat didemonstrasikan. |
+| **AC-14** | Tidak ada tombol atau tautan utama yang mengarah ke jalan buntu (*dead end*). |
+| **AC-15** | Konten dan antarmuka sesuai konteks Priori serta terbaca pada ukuran layar yang didukung. |
+
+**Status AC:** tabel di atas mendefinisikan kriteria yang harus diuji, bukan pernyataan bahwa seluruh kriteria sudah lulus. Status lulus/gagal harus dicatat berdasarkan pengujian aktual dan bukti yang tersedia.
+
+### 4.3 Indikator Keberhasilan
+
+- Fitur yang ditetapkan sebagai MVP tersedia dan dapat diuji.
+- Alur utama pengelolaan tugas dapat diselesaikan tanpa hambatan navigasi.
+- Pengguna dapat memahami deadline dan status tugas dari informasi yang ditampilkan.
+- Pesan validasi dan umpan balik membantu pengguna memahami kesalahan serta hasil tindakan.
+- Interaksi utama dapat didemonstrasikan oleh tim.
+- Dokumentasi tidak mengklaim adanya backend, database, atau notifikasi otomatis yang belum dibangun.
+- Website selaras dengan riset pengguna, persona, User Journey, User Flow, wireframe, dan prototipe Figma dari modul sebelumnya.
+
+## 5. Pembagian Tanggung Jawab Anggota
+
+Pembagian berikut digunakan sebagai acuan dokumentasi proyek. Tanggung jawab implementasi dibedakan dari pekerjaan perbaikan, integrasi, dan dokumentasi agar kontribusi antaranggota tidak tampak tumpang tindih.
+
+| Anggota | Tanggung jawab |
+|---|---|
+| **Firda Nabilah** | Penyusunan PRD dan inisialisasi repository; perbaikan desain halaman Indeks, Navbar, dan Footer; koordinasi tim serta pengelolaan GitHub/merge. |
+| **Deni Anugrah Hasibuan** | Implementasi halaman Indeks, Login, dan Registrasi, termasuk alur dan validasi formulir yang terkait. |
+| **Dewangga Arka Putra** | Penyelarasan antarmuka website dengan desain Figma dan perbaikan visual sesuai hasil peninjauan. |
+| **Luthfi Eka Saputra** | Implementasi inti pengelolaan tugas dan halaman pendukung, termasuk pekerjaan yang tercatat pada Fase 4–7. |
+| **Komsiata Amelia Sari** | Dokumentasi pengumpulan dan pengujian aplikasi; mencatat hasil pengujian serta bukti yang benar-benar diperoleh. |
+
+**Catatan kontribusi:** tabel ini adalah ringkasan pembagian tanggung jawab, bukan pengganti bukti kontribusi. Riwayat commit, pull request, dan hasil pekerjaan aktual tetap menjadi rujukan ketika mengisi laporan akhir.
+
+## 6. Tahapan Pengembangan Proyek (Fase 0–7)
+
+| Fase | Nama fase | Ruang lingkup pekerjaan |
+|---|---|---|
+| **Fase 0** | Persiapan Proyek | Inisialisasi repository, konfigurasi awal, penyusunan PRD, dan README awal. |
+| **Fase 1** | Ekstraksi Desain | Pemetaan frame Figma, komponen, design token, dan aset visual. |
+| **Fase 2** | Fondasi UI | Persiapan routing, layout, dan komponen antarmuka yang dapat digunakan ulang. |
+| **Fase 3** | Halaman Publik | Implementasi Indeks, Login, Registrasi, dan validasi alur autentikasi simulasi. |
+| **Fase 4** | Pengelolaan Tugas Inti | Implementasi daftar, tambah, detail, edit, ubah status, hapus, pencarian, dan filter tugas. |
+| **Fase 5** | Halaman Pendukung | Implementasi Dashboard, Notifikasi, Sukses/Konfirmasi, Kosong/Error, Profil, dan Pengaturan. |
+| **Fase 6** | Responsivitas dan Aksesibilitas | Penyempurnaan tampilan pada berbagai ukuran layar serta pemeriksaan aksesibilitas dasar. |
+| **Fase 7** | Audit dan Pengumpulan | Pemeriksaan AC-01–AC-15, pengujian akhir, penyelarasan dokumentasi, dan persiapan berkas pengumpulan. |
+
+Tahapan tersebut menjelaskan urutan kerja proyek. Status penyelesaian setiap fase harus mengikuti kondisi implementasi dan bukti yang tersedia, bukan dicentang otomatis.
+
+## 7. Dokumentasi dan Referensi Proyek
+
+Dokumentasi proyek yang perlu dijaga konsistensinya:
+- `README.md`: gambaran proyek, panduan menjalankan aplikasi, tautan Figma dan repository, kontribusi anggota, log prompt AI, serta catatan perbaikan manual.
+- `docs/PRD.md`: kebutuhan produk, halaman, ruang lingkup, pembagian tanggung jawab, dan kriteria penerimaan.
+- `docs/HANDOVER.md`: rincian teknis berkas, alur kerja, perintah Git, dan serah terima.
+- `docs/design-map.md`: pemetaan frame desain, halaman, komponen, token, dan aset berdasarkan sumber desain yang tersedia.
+
+Untuk pengumpulan Modul 7, luaran utama yang disebut dalam brief adalah repository GitHub publik, README.md lengkap, dan PRD dalam format PDF. Jika arahan mentor meminta semua dokumentasi digabung dalam PDF, pastikan isi README dan informasi repository disertakan serta tautan GitHub tetap dapat diakses.
 
 ---
 
-## 4. Deliverables / Success Criteria
+## Penutup
 
-### 4.1 Product Deliverables
-- A demonstrable Priori website prototype.
-- Pages according to the agreed scope, with interconnected navigation flows.
-- Task forms with relevant data fields and validation.
-- Interactions for viewing details, adding, editing, changing status, and deleting tasks according to the implementation capabilities.
-- Feedback for successful actions, invalid input, and empty-data or error conditions.
-- An interface consistent with the Figma design and persona needs.
-- Development documentation in accordance with the Module 7 assignment requirements.
-
-### 4.2 Acceptance Criteria
-
-| ID | Acceptance Criteria |
-| :--- | :--- |
-| **AC-01** | Users can open the Index page and find access to Login and Registration. |
-| **AC-02** | The main navigation directs users to the correct pages. |
-| **AC-03** | The Dashboard displays summaries of total tasks, completed tasks, tasks in progress, and tasks not started, based on the available data. |
-| **AC-04** | The Add Task form contains the task information specified in the scope. |
-| **AC-05** | The system displays a validation message when required input is missing or invalid. |
-| **AC-06** | After a successful save, users receive success feedback and can return to the task list or Dashboard. |
-| **AC-07** | Users can open Task Details and view the information for the selected task. |
-| **AC-08** | Users can edit all task information through the Edit Task page. |
-| **AC-09** | Users can change a task's status without having to edit all task information. |
-| **AC-10** | Users can perform a delete action and receive appropriate feedback. |
-| **AC-11** | Available search or filters help users find tasks by keyword or supported category. |
-| **AC-12** | Empty/error pages display understandable information and provide relevant next actions. |
-| **AC-13** | At least two dynamic interactions work and can be demonstrated. |
-| **AC-14** | No primary button or link leads to a dead end. |
-| **AC-15** | The content and interface are consistent with the Priori context and readable at supported screen sizes. |
-
-### 4.3 Success Indicators
-- The features defined as MVP are available and testable.
-- The main task management flow can be completed without navigation obstacles.
-- Users can understand task deadlines and statuses from the information displayed.
-- Validation and feedback messages help users understand errors and the results of their actions.
-- The main interactions can be demonstrated by the team.
-- The implementation does not claim backend, database, or automated notification features that have not actually been built.
-- The website is consistent with the user research, user persona, User Journey, User Flow, wireframe, and Figma prototype from previous modules.
-
----
-
-## Closing
-
-This PRD serves as a reference for Group 19 in developing Priori for Module 7. Feature decisions and testing criteria must continue to refer to the user problems identified in previous research: accumulating deadlines, scattered task information, difficulty determining priorities, and the need for structured task recording and status tracking. Features that are outside the scope or have not actually been implemented must not be described as functioning features.
+PRD ini menjadi acuan Kelompok 19 dalam mengembangkan Priori pada Modul 7. Keputusan fitur dan kriteria pengujian harus tetap merujuk pada masalah pengguna yang ditemukan dalam riset sebelumnya: deadline yang menumpuk, informasi tugas yang tersebar, kesulitan menentukan prioritas, serta kebutuhan pencatatan dan pemantauan status tugas secara terstruktur. Fitur yang berada di luar ruang lingkup atau belum benar-benar diimplementasikan tidak boleh dinyatakan sebagai fitur yang sudah berfungsi.

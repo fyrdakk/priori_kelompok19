@@ -1,168 +1,236 @@
-# Dokumen Serah Terima & Rincian Perubahan Proyek (Handover Document)
-## Priori — Smart Priority Task (Modul 7, Kelompok 19)
+# Dokumen Serah Terima dan Rincian Perubahan Proyek (Handover)
 
-Dokumen ini ditujukan kepada seluruh anggota Kelompok 19 untuk melihat secara mendalam seluruh file yang telah dibuat, diubah, arsitektur data, serta cara menjalankan dan melanjutkan pengerjaan proyek Priori.
+## Priori — Smart Priority Task
+**Modul 7 · Kelompok 19**
 
----
+Dokumen ini menjelaskan tahapan pengembangan, struktur berkas penting, arsitektur data, cara menjalankan proyek, kriteria penerimaan, serta pembagian tanggung jawab anggota kelompok. Status pada dokumen perlu diperbarui berdasarkan implementasi dan bukti yang benar-benar tersedia di repository.
 
-## 1. Informasi Branch Git & Alur Sinkronisasi
+## 1. Informasi Git dan Sinkronisasi
 
-* **Branch Aktif:** `feat/fase-7-audit-and-submission`
-  * Branch ini memuat seluruh perubahan lengkap dari **Fase 4** (Inti Pengelolaan Tugas), **Fase 5** (Halaman Pendukung), **Fase 6** (Responsif & Poles Aksesibilitas), hingga **Fase 7** (Audit & Ceklis Kepatuhan AC-01 s.d. AC-15).
-* **Perintah untuk Mengunggah ke Remote (Push):**
-  ```bash
-  git push -u origin feat/fase-7-audit-and-submission
-  ```
-* **Cara Anggota Tim Menarik Branch Ini di Komputer Masing-Masing:**
-  ```bash
-  git fetch origin
-  git checkout feat/fase-7-audit-and-submission
-  npm install
-  npm run test
-  npm run dev
-  ```
-* **Cara Menggabungkan (*Merge*) ke Branch `main` (Setelah Direview):**
-  ```bash
-  git checkout main
-  git merge feat/fase-7-audit-and-submission
-  git push origin main
-  ```
+### Branch pengembangan
 
----
+Branch yang disebut dalam catatan serah terima adalah `feat/fase-7-audit-and-submission`. Pastikan nama branch dan status remote diperiksa kembali melalui Git sebelum mengikuti perintah di bawah.
 
-## 2. Rincian Detil Seluruh File yang Dibuat dan Diubah
+Untuk mengirim branch ke remote:
 
-### A. State Management & Utilitas Logika Murni (`src/store/` dan `src/utils/`)
-
-| File Path | Status | Deskripsi & Tanggung Jawab |
-| :--- | :---: | :--- |
-| `src/store/tasks.js` | **Baru** | Store data tugas berbasis `localStorage` (`priori.demo.tasks`). Dilengkapi *safe fallback* (`try/catch`), inisialisasi 3 *seed tasks* bawaan secara otomatis jika storage kosong, serta fungsi CRUD lengkap (`getTasks`, `getTaskById`, `createTask`, `updateTask`, `updateTaskStatus`, `deleteTask`, `resetTasks`). |
-| `src/store/tasks.test.js` | **Baru** | Unit test Vitest untuk menguji operasi CRUD dan safe fallback store tugas (6 skenario pengujian lulus). |
-| `src/utils/priority.js` | **Baru** | Logika murni penentu prioritas otomatis (**Tinggi**, **Sedang**, **Rendah**) berbasis *rule-based* tanpa AI eksternal: memadukan sisa hari menuju deadline (H-1/H-2/H-3) dan tingkat kesulitan (Sulit/Sedang/Mudah), serta otomatis Rendah jika tugas sudah selesai. |
-| `src/utils/priority.test.js` | **Baru** | Unit test Vitest untuk formula kalkulasi prioritas (5 skenario pengujian lulus). |
-| `src/utils/taskValidation.js` | **Baru** | Logika murni validasi form tugas (Mata Kuliah wajib, Judul Tugas wajib, format tanggal deadline valid, pilihan tingkat kesulitan Mudah/Sedang/Sulit). |
-| `src/utils/taskValidation.test.js` | **Baru** | Unit test Vitest untuk validasi input form tugas (3 skenario pengujian lulus). |
-| `src/utils/notifications.js` | **Baru** | Logika murni penghitung pengingat tenggat waktu (*Terlambat*, *Hari Ini*, *H-1*, dan *H-3*) yang dihitung secara *on-demand* saat halaman dibuka (sesuai batasan PRD AC-11, transparan tanpa klaim notifikasi background otomatis). |
-| `src/utils/notifications.test.js` | **Baru** | Unit test Vitest untuk kalkulasi pengingat deadline (3 skenario pengujian lulus). |
-
----
-
-### B. Halaman Pengelolaan Tugas Inti (`src/pages/`) — *Fase 4*
-
-| File Path | Rute | Deskripsi & Fitur |
-| :--- | :--- | :--- |
-| `src/pages/TasksPage.jsx` | `/tasks` | Halaman **Semua Tugas**: Menampilkan kartu-kartu tugas dengan badge status & prioritas, pencarian teks instan (judul atau mata kuliah), filter chip status (*Semua*, *Belum Dikerjakan*, *Sedang Dikerjakan*, *Selesai Dikerjakan*), tombol Tambah Tugas, banner alert notifikasi sukses/hapus, serta *Empty State* ketika hasil pencarian nihil. |
-| `src/pages/AddTaskPage.jsx` | `/tasks/new` | Halaman **Tambah Tugas**: Form lengkap (Mata Kuliah, Judul, Deadline, Kesulitan, Status, Estimasi Waktu, Catatan/Deskripsi) dengan validasi interaktif dan pesan error terhubung via `aria-describedby`. |
-| `src/pages/TaskDetailPage.jsx` | `/tasks/:taskId` | Halaman **Detail Tugas**: Menampilkan rincian lengkap tugas, fitur **Ubah Status Terpisah** (update cepat status tugas tanpa membuka form edit), tombol menuju Edit Tugas, dan tombol Hapus Tugas yang memicu modal konfirmasi dialog. |
-| `src/pages/EditTaskPage.jsx` | `/tasks/:taskId/edit` | Halaman **Edit Tugas**: Form pembaruan seluruh informasi tugas dengan data awal yang otomatis terisi (*pre-filled*), validasi input, dan penyimpanan perubahan ke `localStorage`. |
-
----
-
-### C. Halaman Pendukung (`src/pages/`) — *Fase 5*
-
-| File Path | Rute | Deskripsi & Fitur |
-| :--- | :--- | :--- |
-| `src/pages/DashboardPage.jsx` | `/dashboard` | Halaman **Dashboard** (AC-03): Sapaan nama mahasiswa yang sedang login, 4 kartu statistik ringkasan (*Total Tugas*, *Selesai*, *Sedang Dikerjakan*, *Belum Dikerjakan*), daftar *"Tugas Perlu Perhatian"* (tugas berprioritas Tinggi/deadline terdekat yang belum selesai), dan pintasan cepat. |
-| `src/pages/NotificationsPage.jsx` | `/notifications` | Halaman **Notifikasi** (AC-11): Daftar pengingat deadline aktif (*Terlambat*, *H-1*, *H-3*) dilengkapi tombol *"Lihat Tugas →"*, dan *Empty State* jika tidak ada deadline mendesak. |
-| `src/pages/SuccessPage.jsx` | `/success` | Halaman **Sukses/Konfirmasi** (AC-06): Visualisasi grafis checklist sukses sesuai frame Figma (`Figma Protoype/Sukses Konfirmasi/`) dan tombol kembali ke Dashboard/Tugas tanpa jalan buntu (*no dead end*). |
-| `src/pages/EmptyErrorPage.jsx` | `/empty-error` | Halaman **Kosong/Error** (AC-12): Contoh antarmuka interaktif kondisi data kosong (*Empty State*) dan galat (*Error State*) beserta tombol aksi pemulihan (*recovery actions*). |
-| `src/pages/ProfilePage.jsx` | `/profile` | Halaman **Profil**: Menampilkan informasi akun pengguna (Nama, Email, Mahasiswa Aktif, Status Akun Demo), statistik progres tugas, dan tombol Logout dengan modal konfirmasi. |
-| `src/pages/SettingsPage.jsx` | `/settings` | Halaman **Pengaturan**: Informasi batasan prototipe dan tombol utilitas **Reset Data Tugas ke Awal** untuk mempermudah penilai mengembalikan data ke *seed data* awal. |
-
----
-
-### D. Komponen Antarmuka & Routing (`src/components/` & `src/App.jsx`)
-
-| File Path | Status | Deskripsi & Perubahan |
-| :--- | :---: | :--- |
-| `src/components/PriorityBadge.jsx` | **Baru** | Komponen visual badge prioritas (*Tinggi*, *Sedang*, *Rendah*) berbasis warna design token (`tokens.css`). |
-| `src/components/Navbar.jsx` | **Diubah** | Menyembunyikan tombol logout di header mobile agar navbar ponsel tetap bersih (hanya logo + tombol hamburger `☰`), serta menambahkan tombol *"Keluar (Logout)"* di dalam menu Drawer samping mobile. |
-| `src/App.jsx` | **Diubah** | Mengganti seluruh rute *placeholder* dengan komponen halaman nyata di atas. Seluruh 13 halaman aplikasi kini terhubung dan fungsional. |
-
----
-
-### E. Styling & Aksesibilitas (`src/styles/`) — *Fase 6*
-
-| File Path | Status | Deskripsi & Perubahan |
-| :--- | :---: | :--- |
-| `src/styles/global.css` | **Diubah** | • Target sentuh minimum 44px pada `.filter-chip` (`min-height: var(--control-min-height)`).<br>• Indikator fokus keyboard yang jelas untuk `button:focus-visible`.<br>• Styling kartu statistik dashboard, kartu notifikasi H-1/H-3/terlambat, checklist sukses, dan tata letak responsif 360 px, 768 px, dan 1280 px tanpa *horizontal scroll*. |
-
----
-
-### F. Dokumentasi Proyek (`README.md` & `docs/`) — *Fase 7*
-
-| File Path | Status | Deskripsi & Perubahan |
-| :--- | :---: | :--- |
-| `README.md` | **Diubah** | • Memperbarui tabel *Status Fitur* (Semua Tugas, Dashboard, Profil & Pengaturan menjadi "Nyata berjalan").<br>• Mencentang seluruh tahapan pengerjaan (Fase 0 s.d. Fase 7 selesai).<br>• Mencentang seluruh ceklis *Pengujian* (9 kriteria pengujian lulus).<br>• Mencatat 4 entri pengerjaan pada tabel *Log Pengembangan dengan AI*. |
-| `docs/PRD.md` | **Baru** | Salinan spesifikasi PRD resmi di folder `docs/` yang siap digunakan untuk ekspor dokumen PDF. |
-| `docs/HANDOVER.md` | **Baru** | Dokumen serah terima ini. |
-
----
-
-## 3. Arsitektur Data & Alur Kerja Aplikasi
-
-1. **Penyimpanan Lokal (LocalStorage):**
-   * Sesi Autentikasi: `'priori.demo.session'` (Nama & Email pengguna yang login).
-   * Akun Terdaftar: `'priori.demo.account'`.
-   * Data Tugas: `'priori.demo.tasks'`.
-2. **Penanganan Initial Data (Seed Data):**
-   * Saat pertama kali dibuka atau jika storage dibersihkan, sistem otomatis memuat 3 tugas contoh (*Membuat Wireframe - UI/UX Design*, *Laporan Praktikum - Basis Data*, dan *Rangkuman Materi - Cloud Computing*) sehingga penilai langsung dapat mencoba interaksi pencarian, filter, dan detail.
-3. **Reset Data Kapan Saja:**
-   * Di menu `/settings`, penilai atau pengembang dapat menekan tombol *"Reset Data Tugas ke Awal"* untuk mengembalikan data ke kondisi bersih.
-
----
-
-## 4. Hasil Verifikasi Kualitas Kode
-
-Seluruh pengujian otomatis dan build telah diverifikasi dan **LULUS 100%**:
-
-```text
-✓ Vitest: 6 test suites, 23 unit tests PASSED (0 failures)
-✓ ESLint: 0 errors, 0 warnings
-✓ Prettier: All matched files use Prettier code style
-✓ Vite Build: 77 modules transformed, production bundle dist/ berhasil dibuat
-✓ Audit Browser: Diuji pada 360x640 (Mobile), 768x1024 (Tablet), 1280x800 (Desktop)
+```bash
+git push -u origin feat/fase-7-audit-and-submission
 ```
 
----
+Untuk mengambil branch dari remote:
 
-## 5. Tugas Lanjutan yang Bisa Dikerjakan Rekan Tim (Opsional)
+```bash
+git fetch origin
+git checkout feat/fase-7-audit-and-submission
+npm install
+npm run test
+npm run dev
+```
 
-1. **Mengisi Nama Anggota di README.md:**
-   * Buka bagian *Kontribusi Anggota* di `README.md` (baris 198) dan lengkapi nama masing-masing anggota kelompok serta bukti PR/commit mereka.
-2. **Tangkapan Layar (*Screenshots*):**
-   * Tangkap beberapa screenshot tampilan di layar ponsel (360px) dan desktop (1280px) lalu simpan ke folder `docs/screenshots/` jika dosen meminta bukti visual tambahan.
-3. **Ekspor PRD ke PDF:**
-   * Jika tugas meminta pengumpulan fisik PDF dokumen PRD, buka file `docs/PRD.md` lalu gunakan fitur *Print to PDF* atau *Export to PDF*.
-4. **Merge ke `main`:**
-   * Setelah rekan tim meninjau dan menyetujui, gabungkan branch `feat/fase-7-audit-and-submission` ke branch `main`.
+Untuk menggabungkan perubahan ke `main`, lakukan setelah pull request ditinjau dan disetujui. Sesuaikan langkah dengan alur kerja tim dan pastikan `main` sudah mutakhir.
 
----
+```bash
+git checkout main
+git pull origin main
+git merge feat/fase-7-audit-and-submission
+git push origin main
+```
 
-## 6. Serah Terima untuk Komsiata Amelia Sari (Dokumentasi Pengumpulan)
+Jangan melakukan merge langsung apabila tim menggunakan pull request sebagai prosedur wajib.
 
-Bagian kode aplikasi sudah selesai seluruhnya: Firda (PRD, awal repo), Deni (Fase 0-3), Luthfi (Fase 4-7), dan Dewangga (penyelarasan antarmuka Figma, PR #4). Pekerjaan yang tersisa adalah melengkapi slot `[ISI]` di dokumentasi — inilah tugas Komsiata, satu komit per tugas dengan pesan format `tipe: deskripsi`.
+## 2. Tahapan Pengembangan Fase 0–7
 
-### A. Daftar Tugas (urutan disarankan: 1, 2, 3, lalu 4)
+Fase adalah tahapan proses pengembangan, bukan daftar halaman website.
 
-| No | Tugas | Berkas yang disentuh | Rincian |
-| :---: | :--- | :--- | :--- |
-| 1 | Ekspor PRD ke PDF | `docs/PRD_Priori_Kelompok19_Modul7.pdf` (baru) | Buka `docs/PRD.md`, gunakan *Print to PDF*/*Export to PDF*, simpan dengan nama yang sama seperti tautan di README baris 21 supaya tautan mati itu otomatis berfungsi. Komit: `docs: tambah PDF PRD`. |
-| 2 | Isi tabel Kontribusi Anggota | `README.md` (bagian Kontribusi) | Kumpulkan dari riwayat komit/PR: Firda = PRD dan awal repo (PR #1, #2); Deni = Fase 0-3; Luthfi = Fase 4-7; Dewangga = antarmuka Figma dan audit (PR #4); Komsiata = dokumentasi pengumpulan (tugas ini). Komit: `docs: isi tabel kontribusi anggota`. |
-| 3 | Isi Akun Demo dan Log Perbaikan Manual | `README.md` (baris ~125 dan ~236) | Daftar lewat halaman Registrasi aplikasi, catat email dan kata sandi demo di README. Untuk Log Perbaikan Manual, salin daftar perbaikan nyata yang tercatat di komit `8426240`, `58e37da`, `01d985d`, `fdeb2a0` (sejajarkan navbar, perbaiki luapan kartu, format tanggal, jarak form, sempitkan laci). Komit: `docs: isi akun demo dan log perbaikan manual`. |
-| 4 | Tangkapan layar tambahan untuk butir pengujian 2, 4, 5, 7 | `docs/screenshots/` (menambah berkas baru saja) | Empat gambar: (a) form Tambah Tugas dengan pesan galat validasi, (b) hasil pencarian tanpa ketemu yang menampilkan keadaan kosong, (c) modal konfirmasi hapus terbuka, (d) laci navigasi ponsel terbuka. Jangan ubah delapan berkas gambar yang sudah ada. Setelah itu ubah baris "Tangkapan layar" di README menjadi peta butir pengujian ke nama berkas. Komit: `docs: tambah tangkapan layar validasi, keadaan kosong, dan modal`. |
+| Fase | Nama | Cakupan pekerjaan |
+|---|---|---|
+| **Fase 0** | Setup proyek dan repository | Inisialisasi proyek, repository GitHub, struktur awal, PRD, dan README awal. |
+| **Fase 1** | Ekstraksi desain | Memetakan desain Figma, frame, komponen, aset, dan design token yang dapat diidentifikasi. |
+| **Fase 2** | Fondasi antarmuka | Menyiapkan routing, layout, serta komponen dasar seperti Button, Input, Card, Badge, Modal, Navbar, dan Drawer. |
+| **Fase 3** | Halaman publik | Mengembangkan halaman Indeks, Login, dan Registrasi beserta validasi yang sesuai dengan prototipe. |
+| **Fase 4** | Pengelolaan tugas inti | Mengembangkan daftar tugas, tambah tugas, detail tugas, edit tugas, perubahan status, hapus, pencarian, dan filter. |
+| **Fase 5** | Halaman pendukung | Mengembangkan Dashboard, Notifikasi, Sukses/Konfirmasi, Kosong/Error, Profil, dan Pengaturan. |
+| **Fase 6** | Responsivitas dan aksesibilitas | Memeriksa tampilan mobile, tablet, dan desktop; fokus keyboard; ukuran target sentuh; serta perbaikan tata letak. |
+| **Fase 7** | Audit dan persiapan pengumpulan | Memeriksa kriteria penerimaan, menguji alur utama, menyelaraskan dokumentasi, dan menyiapkan berkas pengumpulan. |
 
-### B. Tata cara kerja (aturan yang sama seperti anggota lain)
+## 3. Pembagian Tanggung Jawab Anggota
 
-1. Minta Firda mengundang akun GitHub Komsiata sebagai kolaborator repo `fyrdakk/priori_kelompok19` — tanpa itu belum bisa mengunggah.
-2. Tarik `main` terbaru: `git checkout main && git pull origin main`, lalu buat cabang: `git checkout -b feat/komsiata-dokumentasi`.
-3. Satu tugas satu komit, format pesan `tipe: deskripsi` (sesuai kesepakatan tim).
-4. Jangan mengubah kode di `src/` sama sekali; pekerjaan ini murni dokumentasi dan tangkapan layar.
-5. Setelah selesai: `git push -u origin feat/komsiata-dokumentasi`, buka pull request ke `main`, minta Firda atau Luthfi meninjau dan menggabungkan.
-6. Sesuai `AGENTS.md`: jangan mencentang apa pun sebagai selesai sebelum benar-benar selesai dan diuji.
+Pembagian berikut merangkum tanggung jawab yang telah disepakati. Pembagian ini bukan pengganti bukti kontribusi; perubahan kode dan pekerjaan aktual tetap perlu dicocokkan dengan commit, pull request, dan berkas yang dikerjakan.
 
-### C. Bukti yang dihasilkan Komsiata nanti
+| Anggota | Tanggung jawab |
+|---|---|
+| **Firda Nabilah** | Menyusun PRD dan menyiapkan repository pada tahap awal; memperbaiki dan menyempurnakan desain halaman Indeks, Navbar, dan Footer; membantu koordinasi, integrasi, serta pengelolaan GitHub dan merge. |
+| **Deni Anugrah Hasibuan** | Mengimplementasikan halaman Indeks, Login, dan Registrasi. Perbaikan desain lanjutan pada Indeks/Navbar/Footer yang dilakukan Firda dicatat sebagai kontribusi terpisah dari implementasi awal. |
+| **Dewangga Arka Putra** | Menyelaraskan antarmuka dengan rancangan Figma dan membantu penyesuaian visual yang menjadi tanggung jawabnya. |
+| **Luthfi Eka Saputra** | Mengembangkan fitur pengelolaan tugas inti dan halaman pendukung, termasuk pekerjaan yang dicatat pada Fase 4–7. Rincian file tetap mengikuti perubahan yang benar-benar dibuat. |
+| **Komsiata Amelia Sari** | Bertanggung jawab pada dokumentasi pengumpulan dan pengujian: memeriksa konsistensi README/PRD/HANDOVER, merapikan bukti pengujian, dan mendokumentasikan hasil yang benar-benar telah diuji. Jangan menandai tugas ini selesai sebelum hasilnya tersedia. |
 
-Gerbang rubrik yang tertutup oleh pekerjaan ini: tabel Kontribusi Anggota terisi semua anggota (syarat kontribusi nyata), akun demo siap dipakai penilai, Log Perbaikan Manual terisi (pasangan Log Pengembangan AI), PRD PDF tersedia (syarat Fase 7), dan empat butir pengujian 2, 4, 5, 7 punya bukti gambar.
+**Catatan:** Jika kontribusi perlu dilaporkan secara formal, gunakan riwayat commit dan pull request sebagai bukti. Jangan menyatakan bahwa seorang anggota telah menyelesaikan tugas atau pengujian sebelum ada bukti yang sesuai.
 
-Target komit tim (minimal 15 komit dari semua anggota) otomatis terpenuhi setelah Komsiata menyelesaikan tugas di atas di cabangnya.
+## 4. Rincian Berkas dan Fungsinya
+
+### A. Penyimpanan data dan utilitas (`src/store/` dan `src/utils/`)
+
+| Berkas | Fungsi |
+|---|---|
+| `src/store/tasks.js` | Mengelola data tugas di `localStorage` dengan kunci `priori.demo.tasks`. Catatan handover menyebut fungsi CRUD, penanganan kegagalan penyimpanan, dan data awal apabila penyimpanan kosong. |
+| `src/store/tasks.test.js` | Pengujian unit untuk operasi penyimpanan tugas. |
+| `src/utils/priority.js` | Menghitung kategori prioritas Tinggi, Sedang, atau Rendah berdasarkan aturan yang ditetapkan aplikasi. Bukan layanan AI eksternal. |
+| `src/utils/priority.test.js` | Pengujian unit logika prioritas. |
+| `src/utils/taskValidation.js` | Validasi data formulir tugas, termasuk mata kuliah, judul, deadline, dan tingkat kesulitan. |
+| `src/utils/taskValidation.test.js` | Pengujian unit validasi formulir tugas. |
+| `src/utils/notifications.js` | Menghitung pengingat tenggat, misalnya terlambat, hari ini, H-1, atau H-3 saat data diperiksa. Ini tidak berarti ada notifikasi otomatis di latar belakang. |
+| `src/utils/notifications.test.js` | Pengujian unit perhitungan pengingat tenggat. |
+
+Jumlah skenario pengujian dan status lulus harus mengikuti hasil terbaru dari perintah `npm run test`, bukan hanya catatan lama.
+
+### B. Halaman pengelolaan tugas inti — Fase 4
+
+| Berkas | Rute | Fungsi |
+|---|---|---|
+| `src/pages/TasksPage.jsx` | `/tasks` | Menampilkan daftar tugas, status dan prioritas, pencarian, filter status, tombol tambah tugas, umpan balik tindakan, serta kondisi kosong jika tidak ada hasil. |
+| `src/pages/AddTaskPage.jsx` | `/tasks/new` | Form tambah tugas yang memuat informasi tugas dan validasi input. |
+| `src/pages/TaskDetailPage.jsx` | `/tasks/:taskId` | Menampilkan detail tugas, menyediakan perubahan status, akses ke edit, dan tindakan hapus dengan konfirmasi. |
+| `src/pages/EditTaskPage.jsx` | `/tasks/:taskId/edit` | Form edit dengan data awal terisi, validasi, dan penyimpanan perubahan. |
+
+### C. Halaman pendukung — Fase 5
+
+| Berkas | Rute | Fungsi |
+|---|---|---|
+| `src/pages/DashboardPage.jsx` | `/dashboard` | Ringkasan jumlah tugas berdasarkan status, tugas yang perlu diperhatikan, dan pintasan ke fitur utama. |
+| `src/pages/NotificationsPage.jsx` | `/notifications` | Menampilkan pengingat deadline dan akses menuju tugas terkait. |
+| `src/pages/SuccessPage.jsx` | `/success` | Memberikan konfirmasi keberhasilan dan jalur kembali ke Dashboard atau daftar tugas. |
+| `src/pages/EmptyErrorPage.jsx` | `/empty-error` | Menampilkan contoh kondisi data kosong atau kesalahan beserta tindakan lanjutan. |
+| `src/pages/ProfilePage.jsx` | `/profile` | Menampilkan informasi akun demo dan tindakan yang tersedia pada halaman profil. |
+| `src/pages/SettingsPage.jsx` | `/settings` | Menampilkan informasi pengaturan prototipe dan utilitas reset data apabila fitur tersebut tersedia. |
+
+### D. Komponen antarmuka dan routing
+
+| Berkas | Fungsi |
+|---|---|
+| `src/components/PriorityBadge.jsx` | Komponen visual untuk label prioritas tugas. |
+| `src/components/Navbar.jsx` | Navigasi aplikasi, termasuk perilaku menu pada layar kecil. Catat perubahan tampilan dan perilaku berdasarkan implementasi terbaru. |
+| `src/App.jsx` | Mengatur routing dan menghubungkan rute dengan komponen halaman. |
+| `src/styles/tokens.css` | Menyimpan variabel desain yang digunakan oleh stylesheet. |
+| `src/styles/global.css` | Mengatur gaya global, responsivitas, fokus keyboard, dan komponen antarmuka. |
+
+### E. Dokumentasi
+
+| Berkas | Fungsi |
+|---|---|
+| `README.md` | Gambaran proyek, cara menjalankan, tautan Figma dan repository, pembagian kontribusi, serta catatan penggunaan AI dan perbaikan manual. |
+| `docs/PRD.md` | Spesifikasi kebutuhan produk dan kriteria penerimaan. |
+| `docs/HANDOVER.md` | Dokumen serah terima yang menjelaskan fase, struktur berkas, arsitektur, cara menjalankan, pembagian tanggung jawab, dan status pemeriksaan. |
+| `docs/design-map.md` | Pemetaan frame desain, halaman PRD, komponen, status akses desain, token, dan aset. |
+
+## 5. Kriteria Penerimaan (AC-01–AC-15)
+
+**AC** adalah singkatan dari *Acceptance Criteria* atau kriteria penerimaan. Kode AC dipakai untuk memeriksa apakah kebutuhan produk sudah dipenuhi. Kode dan arti kriterianya harus sama dengan PRD.
+
+| Kode | Kriteria yang diperiksa |
+|---|---|
+| **AC-01** | Halaman Indeks dapat dibuka dan menyediakan akses ke Login serta Registrasi. |
+| **AC-02** | Navigasi utama mengarahkan pengguna ke halaman yang benar. |
+| **AC-03** | Dashboard menampilkan ringkasan total tugas, selesai, sedang dikerjakan, dan belum dikerjakan berdasarkan data. |
+| **AC-04** | Form Tambah Tugas memiliki kolom sesuai ruang lingkup produk. |
+| **AC-05** | Sistem menampilkan validasi ketika input wajib kosong atau tidak valid. |
+| **AC-06** | Setelah penyimpanan berhasil, pengguna memperoleh umpan balik dan dapat kembali ke daftar tugas atau Dashboard. |
+| **AC-07** | Detail Tugas menampilkan informasi tugas yang dipilih. |
+| **AC-08** | Pengguna dapat mengubah informasi tugas melalui halaman Edit Tugas. |
+| **AC-09** | Status tugas dapat diubah tanpa mengedit seluruh informasi tugas. |
+| **AC-10** | Pengguna dapat menghapus tugas dan menerima umpan balik yang sesuai. |
+| **AC-11** | Pencarian atau filter membantu pengguna menemukan tugas berdasarkan kata kunci atau kategori yang didukung. |
+| **AC-12** | Halaman Kosong/Error menyajikan informasi yang jelas dan tindakan lanjutan yang relevan. |
+| **AC-13** | Minimal dua interaksi dinamis berfungsi dan dapat didemonstrasikan. |
+| **AC-14** | Tidak ada tombol atau tautan utama yang berakhir tanpa tujuan. |
+| **AC-15** | Konten dan antarmuka sesuai konteks Priori serta terbaca pada ukuran layar yang didukung. |
+
+**Status AC:** jangan menyatakan semua AC lulus hanya karena tabel ini tersedia. Catat status setiap kriteria berdasarkan pengujian yang benar-benar dilakukan dan bukti yang tersedia.
+
+## 6. Arsitektur Data dan Alur Aplikasi
+
+### Penyimpanan lokal
+
+Catatan proyek menggunakan `localStorage` untuk prototipe:
+
+- `priori.demo.session`: sesi pengguna yang sedang masuk, seperti nama dan email.
+- `priori.demo.account`: data akun demo yang terdaftar.
+- `priori.demo.tasks`: data tugas.
+
+Karena data disimpan di browser, implementasi ini tidak boleh dijelaskan sebagai sistem dengan backend atau database server apabila layanan tersebut memang belum dibuat.
+
+### Data awal dan reset
+
+Catatan handover menyebut tiga data tugas awal untuk membantu penilai mencoba fitur, yaitu:
+
+- Membuat Wireframe — UI/UX Design
+- Laporan Praktikum — Basis Data
+- Rangkuman Materi — Cloud Computing
+
+Jika fitur reset tersedia pada halaman `/settings`, gunakan untuk mengembalikan data tugas ke kondisi awal. Periksa implementasi aktual sebelum menyatakan perilaku ini sebagai fitur yang sudah terverifikasi.
+
+## 7. Menjalankan dan Memeriksa Proyek
+
+Pastikan Node.js dan npm tersedia. Dari direktori proyek, jalankan:
+
+```bash
+npm install
+npm run dev
+```
+
+Untuk menjalankan pengujian dan build, gunakan perintah yang tersedia di `package.json`:
+
+```bash
+npm run test
+npm run build
+```
+
+Jalankan `npm run lint` atau `npm run format:check` hanya jika skrip tersebut memang tersedia di `package.json`.
+
+Setelah aplikasi berjalan, periksa setidaknya:
+
+1. Navigasi Indeks, Login, dan Registrasi.
+2. Alur menambah, melihat, mengedit, mengubah status, dan menghapus tugas.
+3. Pencarian dan filter.
+4. Validasi formulir dan umpan balik keberhasilan.
+5. Halaman Notifikasi, Profil, Pengaturan, Sukses/Konfirmasi, dan Kosong/Error.
+6. Tampilan pada ukuran mobile, tablet, dan desktop.
+7. Tidak adanya tombol utama yang berakhir tanpa tujuan.
+
+### Catatan hasil pengujian
+
+Catatan handover sebelumnya menyebut hasil berikut:
+
+```text
+Vitest: 6 test suites, 23 unit tests
+ESLint: 0 errors, 0 warnings
+Prettier: seluruh berkas yang diperiksa sesuai format
+Vite Build: 77 modul diproses
+Audit tampilan: 360x640, 768x1024, dan 1280x800
+```
+
+Angka di atas adalah **catatan hasil yang dilaporkan sebelumnya**, bukan bukti bahwa pengujian baru saja dijalankan. Jalankan kembali perintah terkait dan perbarui catatan ini sesuai hasil aktual sebelum pengumpulan.
+
+## 8. Dokumentasi dan Pengumpulan
+
+Tanggung jawab dokumentasi dan pengujian berada pada Komsiata sesuai pembagian tugas kelompok. Lingkupnya meliputi:
+
+1. Memeriksa konsistensi `README.md`, `docs/PRD.md`, `docs/HANDOVER.md`, dan `docs/design-map.md`.
+2. Memastikan daftar halaman, pembagian tugas anggota, fase 0–7, dan AC-01–AC-15 tidak bertentangan antarberkas.
+3. Memeriksa instruksi menjalankan aplikasi dan tautan repository/Figma.
+4. Mengumpulkan bukti pengujian yang benar-benar diambil, seperti validasi form, kondisi kosong, modal konfirmasi, dan navigasi mobile jika relevan.
+5. Mencatat hasil pengujian aktual; jangan mencentang kriteria yang belum diperiksa.
+6. Membantu menyiapkan dokumen sesuai format pengumpulan yang ditentukan mentor.
+
+Contoh format pesan commit untuk perubahan dokumentasi:
+
+```bash
+git add README.md docs/
+git commit -m "docs: selaraskan dokumentasi proyek"
+```
+
+Perintah tersebut hanya contoh. Tambahkan berkas yang memang diubah, lalu periksa `git status` sebelum commit. Jika tim menggunakan branch dan pull request, dorong branch dan ajukan pull request sesuai prosedur kelompok.
+
+## 9. Catatan Akhir
+
+Dokumen ini menjadi panduan bersama untuk memahami struktur dan status proyek Priori. Seluruh deskripsi fitur, kontribusi anggota, hasil pengujian, dan status fase harus dapat ditelusuri ke implementasi atau bukti yang tersedia. Apabila ada informasi yang belum diverifikasi, tandai sebagai perlu diperiksa—jangan menyatakannya sudah selesai.

@@ -1,80 +1,67 @@
-# Priori Design Map
+# Peta Desain Priori
 
-Status audit: 16 October 2026.
+Status audit: 16 Oktober 2026.
 
-## Source and access limits
+## Sumber dan batasan akses
 
-The available design sources are `Prototipe Kelompok 19.pdf`, a 32-page PDF
-export, a supplied screenshot of the Figma canvas, and the supplied logo files
-in `public/assets/`. The screenshot exposes twelve frame/state names, but does
-not expose Figma layer IDs or variables. The three remaining PRD pages are
-documented as derived frames based on the shared navigation and card patterns.
+Sumber desain yang tersedia adalah `Prototipe Kelompok 19.pdf`, yaitu hasil ekspor PDF sebanyak 32 halaman, tangkapan layar kanvas Figma yang diberikan, serta berkas logo yang tersedia di `public/assets/`. Tangkapan layar tersebut menampilkan dua belas nama frame/state, tetapi tidak menampilkan ID layer atau variabel Figma. Halaman Indeks, Profil, dan Pengaturan didokumentasikan sebagai frame turunan berdasarkan pola navigasi dan card yang digunakan bersama; detail visualnya tidak diklaim sebagai frame Figma yang diamati secara langsung.
 
-The exact Figma file was not available through the local workspace API. Any
-row marked as absent or unresolved needs confirmation against the Figma file
-before implementation.
+Berkas Figma asli tidak tersedia melalui API ruang kerja lokal. Baris yang ditandai tidak tersedia atau belum dapat dipastikan perlu dikonfirmasi melalui berkas Figma sebelum implementasi.
 
-## Page-to-frame map
+## Page-to-Frame Map
 
-| Frame/state terlihat | Halaman PRD  | Komponen yang dipakai                                                                                | Status akses                                                          |
-| -------------------- | ------------ | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| Login                | Login        | Logo, input email, input password, primary button, link registrasi                                   | Terlihat jelas pada screenshot                                        |
-| Login Gagal          | Login        | Semua komponen Login, error message, error icon/state                                                | Terlihat jelas; state validasi                                        |
-| Registrasi           | Registrasi   | Logo, input nama/email/password, primary button, link login                                          | Terlihat jelas pada screenshot                                        |
-| Registrasi Sukses    | Registrasi   | Semua komponen Registrasi, success message/state                                                     | Terlihat jelas; state sukses                                          |
-| Dashboard            | Dashboard    | Header/navbar, avatar, notification icon, summary cards, task cards, status badge, bottom navigation | Terlihat jelas pada screenshot                                        |
-| Semua Tugas          | Semua Tugas  | Search, filter, status tabs, Add Task button, task cards, bottom navigation                          | Terlihat jelas pada screenshot                                        |
-| Detail Tugas         | Detail       | Back action, task detail card, deadline, difficulty, priority, status select, delete/save actions    | Terlihat jelas pada screenshot                                        |
-| Tambah Tugas         | Tambah       | Form input, date input, select, description input, save button, bottom navigation                    | Terlihat jelas pada screenshot                                        |
-| Edit Tugas           | Edit         | Form input, date input, select, description input, save edit button, bottom navigation               | Terlihat jelas pada screenshot                                        |
-| Notifikasi           | Notifikasi   | Alert banner, reminder task cards, bottom navigation                                                 | Terlihat jelas pada screenshot                                        |
-| Sukses/Konfirmasi    | Sukses       | Success icon, confirmation message, task summary card, return button                                 | Terlihat jelas pada screenshot                                        |
-| Kosong/Error         | Kosong/Error | Search, filter, empty/error illustration, message, retry button, bottom navigation                   | Terlihat jelas pada screenshot                                        |
-| Indeks (turunan)     | Indeks       | Logo, introductory copy, Login and Registrasi actions                                                | Diturunkan dari pola auth frame; perlu dibandingkan dengan Figma asli |
-| Profil (turunan)     | Profil       | Header dengan logo/avatar, information rows, edit action, bottom navigation                          | Diturunkan dari pola Dashboard dan bottom navigation                  |
-| Pengaturan (turunan) | Pengaturan   | Header, settings rows, toggle/select controls, bottom navigation                                     | Diturunkan dari pola form dan bottom navigation                       |
+| Frame/state yang terlihat | Halaman PRD | Komponen yang digunakan | Status akses |
+| ------------------------- | ------------ | ----------------------- | ------------ |
+| Login | Login | Logo, input email, input kata sandi, tombol utama, tautan registrasi | Terlihat jelas pada tangkapan layar |
+| Login Gagal | Login | Seluruh komponen Login, pesan kesalahan, icon/status kesalahan | Terlihat jelas; merupakan kondisi validasi |
+| Registrasi | Registrasi | Logo, input nama/email/kata sandi, tombol utama, tautan Login | Terlihat jelas pada tangkapan layar |
+| Registrasi Sukses | Registrasi | Seluruh komponen Registrasi, pesan/status keberhasilan | Terlihat jelas; merupakan kondisi sukses |
+| Dashboard | Dashboard | Header/navbar, avatar, icon notifikasi, kartu ringkasan, kartu tugas, lencana status, navigasi bawah | Terlihat jelas pada tangkapan layar |
+| Semua Tugas | Semua Tugas | Pencarian, filter, tab status, tombol Tambah Tugas, kartu tugas, navigasi bawah | Terlihat jelas pada tangkapan layar |
+| Detail Tugas | Detail | Aksi kembali, kartu detail tugas, tenggat, tingkat kesulitan, prioritas, pilihan status, aksi hapus/simpan | Terlihat jelas pada tangkapan layar |
+| Tambah Tugas | Tambah | Input formulir, input tanggal, pilihan, input deskripsi, tombol simpan, navigasi bawah | Terlihat jelas pada tangkapan layar |
+| Edit Tugas | Edit | Input formulir, input tanggal, pilihan, input deskripsi, tombol simpan perubahan, navigasi bawah | Terlihat jelas pada tangkapan layar |
+| Notifikasi | Notifikasi | Banner peringatan, kartu pengingat tugas, navigasi bawah | Terlihat jelas pada tangkapan layar |
+| Sukses/Konfirmasi | Sukses | icon keberhasilan, pesan konfirmasi, kartu ringkasan tugas, tombol kembali | Terlihat jelas pada tangkapan layar |
+| Kosong/Error | Kosong/Error | Pencarian, filter, ilustrasi kondisi kosong/kesalahan, pesan, tombol coba lagi, navigasi bawah | Terlihat jelas pada tangkapan layar |
+| Indeks (turunan) | Indeks | Navbar halaman utama, logo, teks pengantar, tombol Login/Registrasi, pratinjau Dashboard, ringkasan fitur, footer | Implementasi saat ini mencakup bagian utama, pratinjau Dashboard, bagian fitur, dan footer; detail Figma asli tetap perlu dikonfirmasi |
+| Profil (turunan) | Profil | Header dengan logo/avatar, baris informasi, aksi edit, navigasi bawah | Diturunkan dari pola Dashboard dan navigasi bawah |
+| Pengaturan (turunan) | Pengaturan | Header, baris pengaturan, kontrol sakelar/pilihan, navigasi bawah | Diturunkan dari pola formulir dan navigasi bawah |
 
-The screenshot contains twelve visible frames/states. `Login Gagal` and
-`Registrasi Sukses` are states of the Login and Registrasi pages, not extra PRD
-pages. `Indeks`, `Profil`, and `Pengaturan` are included as derived frames from
-the shared visual system, not as claims of directly observed Figma frames.
+Tangkapan layar menampilkan dua belas frame/state. `Login Gagal` dan `Registrasi Sukses` merupakan kondisi pada halaman Login dan Registrasi, bukan halaman PRD tambahan. `Indeks`, `Profil`, dan `Pengaturan` disertakan sebagai frame turunan dari sistem visual yang digunakan bersama, bukan sebagai klaim bahwa frame tersebut terlihat langsung pada Figma.
 
-## Reusable component inventory
+Pada implementasi saat ini, halaman Indeks memiliki navbar halaman utama dan footer sendiri di `src/pages/IndexPage.jsx`. Halaman Login dan Registrasi menggunakan navbar/footer publik bersama dari `src/components/PublicLayout.jsx`. Area aplikasi menggunakan navigasi dan footer yang ditentukan di `src/components/AppLayout.jsx`. Detail implementasi ini perlu dibedakan dari klaim mengenai elemen yang terlihat langsung pada Figma.
 
-| Component          | Variants                                                  | States                                             |
-| ------------------ | --------------------------------------------------------- | -------------------------------------------------- |
-| Button             | primary filled, secondary filled, text/link, icon + label | default, hover, focus, disabled, error/destructive |
-| Input              | text, password, date, search                              | default, hover, focus, disabled, error             |
-| Select             | difficulty, status, filter                                | default, hover, focus, disabled, error, open       |
-| Task card          | standard, urgent, completed, compact/mobile               | default, hover, focus, empty                       |
-| Status badge       | Belum Dikerjakan, Sedang Dikerjakan, Selesai Dikerjakan   | default, selected, disabled                        |
-| Priority indicator | high, medium, low                                         | default, urgent/error, muted                       |
-| Modal              | delete confirmation, success/confirmation                 | closed, open, focus-trapped, destructive           |
-| Navbar             | desktop top navigation, mobile bottom navigation          | default, active, focus                             |
-| Drawer             | mobile navigation, filter drawer                          | closed, open, focus-trapped                        |
-| Empty state        | no tasks, no search result                                | default, action-focused, error                     |
-| Alert/banner       | H-3, H-1, overdue                                         | default, warning, danger, dismissed                |
+## Daftar komponen yang dapat digunakan ulang
 
-## Token extraction notes
+| Komponen | Variasi | Status/kondisi |
+| -------- | ------- | -------------- |
+| Tombol | Utama terisi, sekunder terisi, teks/tautan, icon + label | Normal, saat diarahkan, fokus, nonaktif, kesalahan/aksi destruktif |
+| Input | Teks, kata sandi, tanggal, pencarian | Normal, saat diarahkan, fokus, nonaktif, kesalahan |
+| Pilihan (Select) | Tingkat kesulitan, status, filter | Normal, saat diarahkan, fokus, nonaktif, kesalahan, terbuka |
+| Kartu tugas | Standar, mendesak, selesai, ringkas/mobile | Normal, saat diarahkan, fokus, kosong |
+| Lencana status | Belum Dikerjakan, Sedang Dikerjakan, Selesai Dikerjakan | Normal, dipilih, nonaktif |
+| Indikator prioritas | Tinggi, sedang, rendah | Normal, mendesak/kesalahan, redup |
+| Modal | Konfirmasi penghapusan, sukses/konfirmasi | Tertutup, terbuka, fokus terkunci di modal, aksi destruktif |
+| Navbar | Navigasi halaman utama publik, navigasi publik bersama, navigasi aplikasi desktop/mobile | Normal, aktif, fokus |
+| Drawer/menu samping | Navigasi mobile, panel filter | Tertutup, terbuka, fokus terkunci di panel |
+| Kondisi kosong | Tidak ada tugas, hasil pencarian tidak ditemukan | Normal, fokus pada aksi, kesalahan |
+| Peringatan/banner | H-3, H-1, terlambat | Normal, peringatan, bahaya, ditutup |
+| Footer | Footer halaman utama, footer publik bersama, footer aplikasi | Normal, responsif |
 
-`src/styles/tokens.css` centralizes the values used by the current global
-placeholder and provides names for the values visible in the PDF and supplied
-Figma screenshot: navy brand, blue action, pale blue task cards, white
-surfaces, red alert, typography, spacing, radius, shadow, and breakpoints.
-Because neither source exposes inspectable Figma variables or measurement
-metadata, these are observation tokens, not a claim of exact Figma values.
-They must be compared with the original Figma file before Fase 2.
+## Catatan ekstraksi token desain
 
-No raw color or layout value is used by the current global CSS outside the
-token file, except the browser-required mobile baseline declaration, which is represented
-by `--viewport-min` in the token file.
+`src/styles/tokens.css` memusatkan nilai desain yang digunakan antarmuka saat ini dan memberi nama pada nilai yang diamati dalam PDF serta tangkapan layar Figma yang diberikan: warna utama navy, aksi biru, kartu tugas biru pucat, permukaan putih, peringatan merah, tipografi, jarak, radius, bayangan, dan titik henti responsif (*breakpoint*).
 
-## Asset audit
+Karena kedua sumber tersebut tidak menyediakan variabel Figma atau metadata pengukuran yang dapat diperiksa, token ini merupakan hasil pengamatan, bukan klaim bahwa nilainya sama persis dengan Figma. Nilai-nilai tersebut perlu dibandingkan dengan berkas Figma asli sebelum kesesuaian visual dinyatakan akurat sepenuhnya.
 
-The supplied standalone logo assets are available:
+CSS global saat ini tidak menggunakan nilai warna atau tata letak mentah di luar berkas token, kecuali deklarasi dasar mobile yang diperlukan browser dan direpresentasikan oleh `--viewport-min` di dalam berkas token.
 
-- `public/assets/priori_logo.svg`: vector logo for production use.
-- `public/assets/priori_logo_preview.png`: raster preview/reference.
+## Audit aset
 
-The remaining icons visible in the screenshot are not supplied as standalone
-files and are therefore not claimed as exported assets.
+Aset logo mandiri yang diberikan tersedia:
+
+- `public/assets/priori_logo.svg`: logo vektor untuk penggunaan pada aplikasi.
+- `public/assets/priori_logo_preview.png`: pratinjau/referensi logo dalam format raster.
+
+icon lain yang terlihat pada tangkapan layar tidak disediakan sebagai berkas terpisah. Karena itu, dokumen ini tidak menyatakan bahwa icon-icon tersebut telah diekspor sebagai aset tersendiri.
