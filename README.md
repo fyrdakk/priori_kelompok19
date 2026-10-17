@@ -3,183 +3,209 @@
 **Modul 7 | VINIX Batch 5 | Kelompok 19**  
 **Divisi:** Web & UI/UX Developer
 
-## 1. Tentang Proyek
+Priori adalah prototipe website pengelolaan tugas mahasiswa yang membantu pengguna mencatat tugas kuliah, memantau status pengerjaan, melihat tenggat waktu (*deadline*), dan menentukan tugas yang perlu diperhatikan lebih dahulu.
 
-Priori adalah prototipe website pengelolaan tugas mahasiswa. Aplikasi ini membantu pengguna mencatat tugas kuliah, memantau status pengerjaan, melihat tenggat waktu (*deadline*), dan mengenali tugas yang perlu diprioritaskan.
+Proyek ini dikembangkan berdasarkan masalah penumpukan deadline, informasi tugas yang tersebar, dan kesulitan menentukan prioritas. Modul 7 melanjutkan riset pengguna dan desain Figma dari modul sebelumnya menjadi prototipe web interaktif.
 
-Priori dikembangkan untuk merespons masalah penumpukan deadline, informasi tugas yang tersebar, serta kesulitan menentukan tugas yang harus dikerjakan lebih dahulu. Proyek Modul 7 melanjutkan hasil riset pengguna dan desain Figma dari modul sebelumnya menjadi prototipe web interaktif.
+## 1. Tautan Proyek
 
-## 2. Tautan Proyek
-
-- **Repositori GitHub:** https://github.com/fyrdakk/priori_kelompok19
+- **Repository GitHub:** https://github.com/fyrdakk/priori_kelompok19
 - **Desain Figma Modul 5:** [Buka Prototipe Priori](https://www.figma.com/design/JFSkyYMAdzRiTfJcK7KjiL/Prototipe-Kelompok-19?node-id=0-1&t=a5sTTIdJfLxgTS2p-1)
-- **PRD:** [`docs/PRD.md`](docs/PRD.md)
-- **Peta desain:** [`docs/design-map.md`](docs/design-map.md)
-- **Dokumen handover:** [`docs/HANDOVER.md`](docs/HANDOVER.md)
-- **Demo online:** Belum dicantumkan.
+- **Riwayat commit:** https://github.com/fyrdakk/priori_kelompok19/commits/main
+- **Pull requests:** https://github.com/fyrdakk/priori_kelompok19/pulls
+- **Dokumen PRD:** `docs/PRD.md`
+- **Peta desain:** `docs/design-map.md`
+- **Dokumen handover:** `docs/HANDOVER.md`
+- **Demo online:** Belum dicantumkan; jalankan aplikasi secara lokal mengikuti petunjuk di bawah.
 
-## 3. Anggota dan Kontribusi
+## 2. Anggota dan Kontribusi
 
 | Anggota | Tanggung jawab utama |
 |---|---|
-| Firda Nabilah | Penyusunan PRD dan inisialisasi repository; perbaikan desain halaman Indeks, Navbar, dan Footer; koordinasi tim serta pengelolaan GitHub/merge. |
-| Deni Anugrah Hasibuan | Implementasi halaman Indeks, Login, dan Registrasi, termasuk alur serta validasi formulir terkait. |
-| Dewangga Arka Putra | Penyelarasan antarmuka website dengan desain Figma dan perbaikan visual berdasarkan hasil peninjauan. |
-| Luthfi Eka Saputra | Implementasi inti pengelolaan tugas dan halaman pendukung, termasuk pekerjaan yang tercatat pada Fase 4–7. |
-| Komsiata Amelia Sari | Dokumentasi pengumpulan dan pengujian aplikasi; pencatatan hasil pengujian serta bukti yang benar-benar diperoleh. |
+| **Firda Nabilah** | Penyusunan PRD, inisialisasi repository, pengembangan Dashboard, integrasi antarkomponen, perbaikan halaman Indeks/Navbar/Footer, serta koordinasi GitHub dan proses merge. |
+| **Deni Anugrah Hasibuan** | Implementasi halaman Indeks, Daftar, Login, Semua Tugas, dan Detail Tugas, termasuk alur untuk melihat serta menemukan tugas melalui pencarian dan filter. |
+| **Dewangga Arka Putra** | Implementasi halaman Tambah Tugas dan Edit Tugas, termasuk pemeriksaan penyesuaian validasi formulir, serta penyelarasan antarmuka web dengan figma. |
+| **Luthfi Eka Saputra** | Implementasi halaman Indeks, Login, Registrasi, dan Profil beserta alur navigasi yang terkait (fase 4 - fase 7). |
+| **Komsiata Amelia Sari** | Implementasi halaman Notifikasi, Pengaturan, Sukses/Konfirmasi, dan Kosong/Error, serta dukungan dokumentasi dan pengujian pengumpulan. |
 
-Pembagian di atas merupakan ringkasan tanggung jawab. Untuk laporan akhir, tambahkan tautan commit atau pull request yang sesuai dengan pekerjaan nyata setiap anggota. Jangan mengisi bukti commit/PR berdasarkan perkiraan.
+Ringkasan ini menjelaskan pembagian kerja tim. Riwayat commit dan pull request dapat diperiksa melalui tautan GitHub pada bagian Tautan Proyek.
 
-## 4. Fitur Utama
+## 3. Fitur Utama
 
-- 13 halaman: Indeks, Login, Registrasi, Dashboard, Semua Tugas, Detail Tugas, Tambah Tugas, Edit Tugas, Notifikasi, Sukses/Konfirmasi, Kosong/Error, Profil, dan Pengaturan.
-- Dashboard dengan ringkasan jumlah tugas berdasarkan status.
+Priori mendokumentasikan 13 halaman/state utama:
+
+1. Indeks
+2. Login
+3. Registrasi
+4. Dashboard
+5. Semua Tugas
+6. Detail Tugas
+7. Tambah Tugas
+8. Edit Tugas
+9. Notifikasi
+10. Sukses/Konfirmasi
+11. Kosong/Error
+12. Profil
+13. Pengaturan
+
+Fitur yang menjadi ruang lingkup prototipe:
+
+- Ringkasan jumlah tugas berdasarkan status pada Dashboard.
 - Pengelolaan tugas: tambah, lihat detail, edit, ubah status, dan hapus.
 - Pencarian tugas dan filter berdasarkan status.
-- Validasi formulir serta umpan balik sukses, kosong, dan error.
-- Penyimpanan data prototipe menggunakan `localStorage`.
-- Tata letak responsif untuk layar mobile dan desktop.
-- Prioritas menggunakan aturan sederhana berdasarkan deadline dan tingkat kesulitan, bukan model AI.
+- Validasi formulir dan umpan balik untuk kondisi berhasil, kosong, atau error.
+- Penyimpanan data prototipe melalui `localStorage`.
+- Tata letak yang dirancang untuk layar mobile dan desktop.
+- Informasi prioritas berdasarkan aturan sederhana yang berkaitan dengan deadline dan tingkat kesulitan, bukan model AI.
 
 ### Status dan Batasan Fitur
 
 | Fitur | Keterangan |
 |---|---|
-| Navigasi dan routing halaman | Tersedia dalam prototipe. |
-| Login dan registrasi | Simulasi menggunakan `localStorage`; bukan autentikasi produksi dan tidak memakai backend. |
-| Pengelolaan tugas | Data disimpan secara lokal menggunakan `localStorage`. |
-| Pengingat deadline | Informasi H-3/H-1/terlambat dihitung saat halaman Notifikasi dibuka; bukan notifikasi otomatis terjadwal. |
-| Profil dan Pengaturan | Menyediakan informasi akun/statistik dan fungsi prototipe yang tersedia. |
-| Database server, sinkronisasi lintas perangkat, push notification, integrasi pihak ketiga | Di luar cakupan implementasi yang didokumentasikan. |
+| Navigasi dan routing | Digunakan untuk menghubungkan halaman dalam prototipe. |
+| Login dan registrasi | Simulasi lokal; bukan autentikasi produksi dan tidak menggunakan backend. |
+| Pengelolaan tugas | Data prototipe disimpan secara lokal melalui `localStorage`. |
+| Pengingat deadline | Informasi H-3, H-1, atau terlambat dihitung saat halaman Notifikasi dibuka; bukan notifikasi otomatis terjadwal. |
+| Profil dan Pengaturan | Halaman pendukung sesuai fungsi yang tersedia dalam prototipe. |
+| Database server dan sinkronisasi lintas perangkat | Tidak termasuk dalam cakupan prototipe yang didokumentasikan. |
+| Push notification dan integrasi pihak ketiga | Tidak dinyatakan tersedia dalam implementasi ini. |
+| Machine learning | Tidak digunakan untuk menghitung prioritas tugas. |
 
-Fitur yang disebut tersedia tetap perlu diverifikasi pada versi kode yang akan dikumpulkan. Jangan menganggap simulasi sebagai layanan produksi.
+Fungsi aktual tetap perlu diperiksa pada versi kode yang akan dikumpulkan. Simulasi antarmuka tidak boleh dianggap sebagai layanan produksi.
 
-## 5. Teknologi
+## 4. Teknologi
+
+Teknologi yang tercatat dalam dokumentasi proyek:
 
 - Vite 7
 - React 19
 - React Router 7
-- JavaScript dan CSS
+- JavaScript
+- CSS
 - ESLint
 - Prettier
 - Vitest
 - `localStorage` untuk penyimpanan data prototipe
 
-Design token tersedia di `src/styles/tokens.css`.
+Design token dicatat berada di `src/styles/tokens.css`.
 
-## 6. Persyaratan Menjalankan Aplikasi
+## 5. Persyaratan Menjalankan Aplikasi
 
-Pastikan perangkat memiliki:
+Siapkan perangkat dengan:
 
 - Node.js versi LTS
 - Git
 - Browser modern
 - Editor kode, misalnya Visual Studio Code
 
-## 7. Cara Menjalankan Secara Lokal
+## 6. Cara Menjalankan Secara Lokal
 
-Buka terminal, kemudian jalankan perintah berikut.
+### 6.1 Clone repository
 
-### 7.1 Clone repository
+Buka terminal, lalu jalankan:
 
 ```bash
 git clone https://github.com/fyrdakk/priori_kelompok19.git
 cd priori_kelompok19
 ```
 
-### 7.2 Pasang dependensi
+### 6.2 Pasang dependensi
 
 ```bash
 npm install
 ```
 
-### 7.3 Jalankan server pengembangan
+### 6.3 Jalankan server pengembangan
 
 ```bash
 npm run dev
 ```
 
-Buka URL lokal yang ditampilkan di terminal. Vite biasanya menggunakan `http://localhost:5173`.
+Buka alamat lokal yang ditampilkan oleh terminal. Alamat bawaan Vite biasanya `http://localhost:5173`.
 
-### 7.4 Build dan preview
-
-Untuk membuat build produksi:
+### 6.4 Build aplikasi
 
 ```bash
 npm run build
 ```
 
-Untuk menjalankan preview build:
+### 6.5 Preview hasil build
 
 ```bash
 npm run preview
 ```
 
-### 7.5 Pengujian
+### 6.6 Pengujian
 
-Jika skrip pengujian tersedia di `package.json`, jalankan:
-
-```bash
-npm run test
-```
-
-Gunakan hasil perintah yang benar-benar muncul di terminal sebagai bukti pengujian. Jika nama skrip berbeda, periksa bagian `scripts` di `package.json`.
+Proyek mencantumkan Vitest sebagai teknologi pengujian. Periksa bagian `scripts` pada `package.json` untuk memastikan nama perintah pengujian yang tersedia, lalu jalankan skrip yang sesuai. Jangan menyatakan pengujian lulus sebelum perintah benar-benar dijalankan dan hasilnya diperiksa.
 
 ### Akun demo
 
-Pengguna dapat mencoba alur registrasi pada aplikasi. Jangan mencantumkan email atau kata sandi demo kecuali akun tersebut benar-benar disediakan oleh tim. Autentikasi prototipe ini tidak ditujukan untuk menyimpan data sensitif.
+Pengguna dapat mencoba alur registrasi pada aplikasi. README ini tidak mencantumkan email atau kata sandi demo karena kredensial demo khusus tidak tercantum dalam dokumentasi proyek. Autentikasi prototipe tidak ditujukan untuk menyimpan data sensitif.
 
-## 8. Struktur Proyek
+## 7. Struktur Proyek
+
+Struktur ringkas berikut mengikuti susunan yang dicatat dalam dokumentasi. Jika nama berkas pada repository berbeda, struktur aktual di GitHub menjadi rujukan utama.
 
 ```text
 priori_kelompok19/
 ├── docs/
+│   ├── PRD.md
+│   ├── PRD.txt
 │   ├── design-map.md
 │   └── HANDOVER.md
-│   └── PRD.md
-|   └── PRD.txt
 ├── public/
 │   └── assets/
 ├── src/
-│   ├── components/     # Komponen antarmuka yang dapat digunakan ulang
-│   ├── pages/          # Halaman aplikasi
-│   ├── store/          # Pengelolaan state dan localStorage
-│   ├── utils/          # Fungsi dan utilitas
-│   └── styles/         # CSS dan design token
+│   ├── components/
+│   ├── pages/
+│   ├── store/
+│   ├── utils/
+│   └── styles/
+│       └── tokens.css
 ├── eslint.config.js
 ├── vite.config.js
 ├── vitest.config.js
 ├── .prettierrc
 ├── index.html
 ├── package.json
-├── README.md
+└── README.md
 ```
 
-Struktur di atas merupakan ringkasan. Nama file dan folder perlu disesuaikan jika berbeda dari isi repository aktual.
+Keterangan folder:
 
-## 9. Tahapan Pengembangan
+- `components/`: komponen antarmuka yang digunakan kembali.
+- `pages/`: halaman aplikasi.
+- `store/`: pengelolaan state dan data `localStorage`.
+- `utils/`: fungsi utilitas.
+- `styles/`: stylesheet dan design token.
+- `docs/`: dokumentasi produk, pemetaan desain, dan handover.
 
-| Fase | Fokus |
+## 8. Tahapan Pengembangan
+
+| Fase | Fokus pekerjaan |
 |---|---|
 | Fase 0 | Persiapan proyek, repository, PRD, dan README awal. |
 | Fase 1 | Pemetaan desain Figma, komponen, design token, dan aset. |
-| Fase 2 | Fondasi UI: routing, layout, dan komponen reusable. |
+| Fase 2 | Fondasi UI, routing, layout, dan komponen reusable. |
 | Fase 3 | Halaman Indeks, Login, dan Registrasi dengan autentikasi simulasi. |
 | Fase 4 | Pengelolaan tugas inti: tambah, daftar, detail, edit, ubah status, hapus, pencarian, dan filter. |
 | Fase 5 | Halaman pendukung: Dashboard, Notifikasi, Sukses/Konfirmasi, Kosong/Error, Profil, dan Pengaturan. |
 | Fase 6 | Responsivitas dan pemeriksaan aksesibilitas dasar. |
 | Fase 7 | Audit kriteria penerimaan, pengujian, sinkronisasi dokumentasi, dan persiapan pengumpulan. |
 
-Tabel ini menjelaskan tahapan proyek, bukan bukti otomatis bahwa setiap kriteria telah lulus pengujian.
+Daftar fase menunjukkan alur pengembangan proyek, bukan pernyataan bahwa semua kriteria penerimaan telah lulus.
 
-## 10. Alur Kerja Git
+## 9. Alur Kerja Git
 
-1. Buat branch untuk satu fitur atau perbaikan.
-2. Lakukan perubahan dan uji secara lokal.
-3. Periksa perubahan dengan `git status` dan `git diff`.
-4. Commit dengan pesan yang menjelaskan perubahan.
+Alur kerja Git yang digunakan sebagai pedoman tim:
+
+1. Buat branch untuk fitur atau perbaikan.
+2. Lakukan perubahan dan periksa aplikasi secara lokal.
+3. Periksa perubahan menggunakan `git status` dan `git diff`.
+4. Buat commit dengan pesan yang menjelaskan perubahan.
 5. Push branch ke GitHub.
-6. Buat pull request jika alur tim menggunakannya, lalu lakukan review sebelum merge.
+6. Gunakan pull request untuk review dan merge sesuai alur kerja tim.
 
 Contoh perintah:
 
@@ -194,87 +220,102 @@ Contoh tipe commit:
 
 | Tipe | Penggunaan |
 |---|---|
-| `feat` | Fitur baru |
-| `fix` | Perbaikan bug |
-| `style` | Perubahan tampilan atau gaya |
-| `docs` | Perubahan dokumentasi |
-| `chore` | Setup atau konfigurasi |
-| `refactor` | Perapian kode tanpa mengubah perilaku |
+| `feat` | Menambahkan fitur baru. |
+| `fix` | Memperbaiki bug. |
+| `style` | Mengubah tampilan atau gaya. |
+| `docs` | Memperbarui dokumentasi. |
+| `chore` | Mengubah konfigurasi atau pekerjaan pemeliharaan. |
+| `refactor` | Merapikan kode tanpa mengubah perilaku yang dimaksud. |
 
-Riwayat commit dan pull request di repository menjadi bukti kontribusi.
+Riwayat commit dan pull request dapat dilihat pada [halaman commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) dan [halaman pull request](https://github.com/fyrdakk/priori_kelompok19/pulls).
+
+## 10. Status Branch dan Pull Request
+
+Berdasarkan informasi halaman Branches GitHub yang diperiksa pada 17 Oktober 2026, repository menggunakan `main` sebagai default branch. Daftar berikut mencatat branch yang terlihat pada saat pemeriksaan; status dan jumlah commit dapat berubah setelah pembaruan repository berikutnya.
+
+| Branch | Pemilik/pembaruan terakhir yang terlihat | Informasi pada halaman GitHub | Tautan |
+|---|---|---|---|
+| `main` | `fyrdakk` | Default branch; diperbarui sekitar 1 jam sebelumnya saat pemeriksaan. | [Lihat branch `main`](https://github.com/fyrdakk/priori_kelompok19/tree/main) |
+| `update-terbaru` | `fyrdakk` | Diperbarui sekitar 6 jam sebelumnya; halaman menampilkan angka 28 pada kolom Behind/Ahead dan angka 1 pada kolom Pull request. | [Lihat branch](https://github.com/fyrdakk/priori_kelompok19/tree/update-terbaru) |
+| `firda/rename` | `fyrdakk` | Diperbarui sekitar 2 hari sebelumnya; halaman menampilkan angka 25 pada kolom Behind/Ahead. | [Lihat branch](https://github.com/fyrdakk/priori_kelompok19/tree/firda/rename) |
+| `feat/ui-figma-fidelity` | `Dewp246` | Diperbarui sekitar 19 jam sebelumnya; terkait Pull Request #4. | [Branch](https://github.com/fyrdakk/priori_kelompok19/tree/feat/ui-figma-fidelity) · [PR #4](https://github.com/fyrdakk/priori_kelompok19/pull/4) |
+| `feat/fase-7-audit-and-submission` | `luthfiektugas` | Diperbarui sekitar 1 hari sebelumnya; terkait Pull Request #3. | [Branch](https://github.com/fyrdakk/priori_kelompok19/tree/feat/fase-7-audit-and-submission) · [PR #3](https://github.com/fyrdakk/priori_kelompok19/pull/3) |
+| `first-config-bydeni` | `denihsb` | Diperbarui sekitar 2 hari sebelumnya. | [Lihat branch](https://github.com/fyrdakk/priori_kelompok19/tree/first-config-bydeni) |
+
+Pull request yang dapat diidentifikasi dari informasi tersebut:
+
+- [Pull Request #2 — `firda/rename`](https://github.com/fyrdakk/priori_kelompok19/pull/2)
+- [Pull Request #3 — `feat/fase-7-audit-and-submission`](https://github.com/fyrdakk/priori_kelompok19/pull/3)
+- [Pull Request #4 — `feat/ui-figma-fidelity`](https://github.com/fyrdakk/priori_kelompok19/pull/4)
+- [Semua pull request](https://github.com/fyrdakk/priori_kelompok19/pulls)
+
+**Catatan:** angka Behind/Ahead disalin sebagaimana ditampilkan pada tabel Branches yang diberikan dan tidak ditafsirkan sebagai jumlah commit unik tanpa memeriksa perbandingan branch di GitHub. Sebelum pengumpulan, periksa kembali apakah perubahan pada branch kerja sudah digabung ke `main`. Jangan menghapus branch atau melakukan merge hanya berdasarkan tabel dokumentasi ini.
 
 ## 11. Log Prompt AI
 
-Bagian ini memenuhi dokumentasi penggunaan AI. Ringkasan di bawah hanya mencatat aktivitas yang tercantum dalam dokumentasi proyek; tambahkan prompt lengkap apabila catatan asli tersedia.
+AI dicatat sebagai alat bantu dalam proses pengembangan. Tabel berikut berisi **contoh prompt rekonstruksi berdasarkan ruang lingkup pekerjaan proyek**, bukan transkrip persis dari riwayat percakapan AI. Tool yang dicatat dalam dokumentasi proyek adalah Antigravity IDE (Gemini 3.8 Flash).
 
-| No. | Fase | Tool yang tercatat | Ringkasan penggunaan | Perbaikan setelah keluaran AI |
+| No. | Fase | Tool yang tercatat | Contoh prompt untuk pekerjaan terkait | Fokus pemeriksaan setelah keluaran AI |
 |---|---|---|---|---|
-| 1 | Fase 4 | Antigravity IDE (Gemini 3.8 Flash) | Membantu implementasi pengelolaan tugas, store `localStorage`, validasi, pencarian/filter, dan modal hapus. | Penambahan mock `localStorage` untuk pengujian pada lingkungan Node dan pemformatan kode. |
-| 2 | Fase 5 | Antigravity IDE (Gemini 3.8 Flash) | Membantu implementasi Dashboard, Notifikasi, Sukses, Kosong/Error, Profil, dan Pengaturan. | Pemisahan logika kalkulasi pengingat ke fungsi utilitas yang dapat diuji. |
-| 3 | Fase 6 | Antigravity IDE (Gemini 3.8 Flash) | Membantu pemeriksaan responsivitas, target sentuh, focus trap, dan keyboard Escape pada modal/drawer. | Penyesuaian ukuran target sentuh pada komponen mobile. |
-| 4 | Fase 7 | Antigravity IDE (Gemini 3.8 Flash) | Membantu audit kriteria penerimaan dan sinkronisasi dokumentasi. | Penyelarasan dokumen dan pemeriksaan akhir berdasarkan hasil aktual. |
+| 1 | Fase 4 | Antigravity IDE (Gemini 3.8 Flash) | “Bantu implementasikan pengelolaan tugas pada Priori menggunakan React. Cakup tambah, daftar, detail, edit, ubah status, hapus, pencarian, dan filter. Gunakan `localStorage` untuk data prototipe, tambahkan validasi, dan jelaskan cara menguji alurnya.” | Memeriksa alur pengelolaan tugas, validasi input, pencarian/filter, dan penyimpanan data lokal. |
+| 2 | Fase 5 | Antigravity IDE (Gemini 3.8 Flash) | “Bantu menyelaraskan halaman Dashboard, Notifikasi, Sukses/Konfirmasi, Kosong/Error, Profil, dan Pengaturan dengan struktur komponen Priori. Pertahankan pola navigasi yang konsisten dan jangan menambahkan backend.” | Memeriksa konsistensi tampilan, navigasi, dan kesesuaian fitur dengan ruang lingkup prototipe. |
+| 3 | Fase 6 | Antigravity IDE (Gemini 3.8 Flash) | “Tinjau responsivitas antarmuka Priori pada layar mobile dan desktop. Periksa tata letak, navigasi, ukuran tombol, keterbacaan teks, serta interaksi menu dan modal. Sarankan perubahan yang tidak mengubah fungsi utama.” | Memeriksa layout pada beberapa ukuran layar, keterbacaan, dan kemudahan penggunaan. |
+| 4 | Fase 7 | Antigravity IDE (Gemini 3.8 Flash) | “Bantu meninjau implementasi Priori berdasarkan PRD dan kriteria penerimaan AC-01 sampai AC-15. Buat daftar aspek yang perlu diuji, bedakan fitur yang sudah diverifikasi dari yang belum, dan periksa konsistensi README dengan batasan prototipe.” | Memeriksa konsistensi dokumentasi dan menguji kriteria penerimaan berdasarkan hasil aktual. |
 
-### Format prompt yang digunakan
-
-Prompt yang baik mencantumkan empat unsur pekerjaan: **peran, konteks, batasan, dan luaran**. Untuk tugas implementasi, tim juga dapat menjelaskan tugas spesifik di dalam konteks tersebut.
-
-```text
-Peran:
-Bertindak sebagai frontend developer yang mengimplementasikan Priori.
-
-Konteks:
-Gunakan kebutuhan PRD untuk halaman yang dikerjakan dan desain Figma
-sebagai acuan visual.
-
-Batasan:
-Gunakan React dan Vite, tanpa backend produksi, simpan data prototipe
-melalui localStorage, terapkan validasi, dan pastikan alur navigasi jelas.
-
-Luaran:
-Berikan kode komponen yang diperlukan serta jelaskan asumsi dan
-bagian yang perlu diuji.
-```
-
-Contoh di atas adalah **format prompt**, bukan klaim bahwa prompt tersebut dikirim persis seperti ini. Ganti atau lengkapi dengan prompt asli tim bila tersedia.
+Prompt di atas disusun untuk melengkapi dokumentasi sebagai contoh yang relevan dengan proyek. Prompt tersebut tidak diklaim sebagai teks persis yang pernah dikirimkan. Dokumentasi penggunaan AI harus tetap dibedakan dari riwayat prompt asli.
 
 ## 12. Log Perbaikan Manual
 
-Catat masalah yang ditemukan setelah keluaran AI ditinjau, tindakan koreksi yang dilakukan, pelaku, dan bukti commit. Jangan mengisi baris dengan kejadian yang tidak benar-benar terjadi.
+Bagian ini merangkum perbaikan dan penyempurnaan yang tercatat pada riwayat commit repository Kelompok 19 tanggal 16–17 Oktober 2026. Nama akun, pesan commit, dan tanggal mengikuti informasi riwayat yang tersedia. Tautan bukti mengarah ke riwayat commit repository; gunakan halaman tersebut untuk membuka commit individual dan melihat detail perubahan.
 
-| No. | Masalah yang ditemukan | Perbaikan manual | Pelaku | Bukti commit/PR |
-|---|---|---|---|---|
-| 1 | Penanganan `localStorage` pada pengujian Node perlu disesuaikan. | Menambahkan mock yang diperlukan untuk pengujian. | Lengkapi berdasarkan riwayat pekerjaan. | Cantumkan hash/link commit. |
-| 2 | Logika kalkulasi pengingat perlu mudah diuji. | Memisahkan logika ke fungsi utilitas. | Lengkapi berdasarkan riwayat pekerjaan. | Cantumkan hash/link commit. |
-| 3 | Ukuran target sentuh pada antarmuka mobile perlu ditinjau. | Menyesuaikan ukuran komponen terkait. | Lengkapi berdasarkan riwayat pekerjaan. | Cantumkan hash/link commit. |
+| No. | Tanggal | Masalah atau bagian yang ditinjau | Perbaikan yang tercatat | Akun GitHub | Bukti |
+|---|---|---|---|---|---|
+| 1 | 16 Okt 2026 | Fondasi proyek dan struktur halaman perlu disiapkan. | Menyelesaikan konfigurasi Fase 0–1 serta menambahkan komponen, halaman, utilitas, layout aplikasi, route guard, navigasi, validasi formulir, gaya global, dan design token untuk Fase 3. | `denihsb` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `fase 0 and 1 done: konfig`; `fase 3 completed: added components, pages, and utils for the project...` |
+| 2 | 16 Okt 2026 | Fitur inti pengelolaan tugas perlu diimplementasikan. | Menambahkan pengelolaan tugas, store, dan halaman tugas responsif. | `luthfiektugas` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `feat: implement core task management, store, and responsive task pages` |
+| 3 | 16 Okt 2026 | Halaman pendukung dan ringkasan tugas perlu dilengkapi. | Menambahkan halaman pendukung, kalkulasi informasi notifikasi, dan Dashboard responsif. | `luthfiektugas` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `feat: implement supporting pages, notifications calculation, and responsive dashboard` |
+| 4 | 16 Okt 2026 | Tampilan mobile dan aksesibilitas dasar perlu diperiksa. | Menyempurnakan layout responsif, target sentuh minimal 44 px, dan aksesibilitas drawer mobile. | `luthfiektugas` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `style: polish responsive layouts, minimum 44px touch targets, and mobile drawer accessibility` |
+| 5 | 17 Okt 2026 | Tata letak dan navigasi mobile masih perlu disempurnakan. | Mempersempit panel drawer navigasi mobile hingga maksimal 16rem, merapikan posisi teks navbar, membatasi lebar halaman formulir/detail, dan memperbaiki jarak bidang formulir. | `Dewp246` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `style: sempitkan panel laci navigasi ponsel menjadi maksimal 16rem...`; `style: sejajarkan teks navbar dengan tombol...` |
+| 6 | 17 Okt 2026 | Format deadline perlu konsisten dan mudah dibaca. | Menambahkan format tanggal deadline singkat berbahasa Indonesia pada tiga halaman menggunakan fungsi murni dan uji unit. | `Dewp246` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `feat: format tanggal deadline menjadi Indonesia singkat (17 Okt 2026) di tiga halaman dengan fungsi murni dan uji unit` |
+| 7 | 17 Okt 2026 | Tata letak desktop dan kartu aksi perlu diperbaiki. | Memperbaiki luapan baris aksi kartu, tombol keluar, pemisah metadata, dan lebar konten desktop; kemudian menyelaraskan layout desktop agar lebih seimbang. | `Dewp246` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `style: hentikan luapan baris aksi kartu...`; `style: perbaiki tata letak desktop...` |
+| 8 | 17 Okt 2026 | Bukti tampilan lintas ukuran layar perlu diperbarui. | Menambahkan tangkapan layar ukuran 360, 768, dan 1280 px, lalu memperbarui tangkapan layar desktop dan tablet sesuai layout terbaru. | `Dewp246` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `docs: tambah tangkapan layar 360, 768, dan 1280 px dan tautkan di README`; `docs: segarkan tangkapan layar desktop dan tablet...` |
+| 9 | 16–17 Okt 2026 | Dokumentasi produk dan serah terima perlu diselaraskan dengan implementasi. | Melengkapi audit Fase 7, memperbarui PRD, menambahkan dokumen handover/changelog, dan memperbarui README, peta desain, serta handover. | `luthfiektugas`, `Dewp246`, `fyrdakk` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `docs: complete Phase 7 audit...`; `docs: add detailed project handover and changelog document`; `update beberapa file README.md, docs/PRD.md, docs/design-map.md, docs/HANDOVER.md` |
+| 10 | 17 Okt 2026 | Tampilan dan komponen terbaru perlu dirapikan. | Memperbarui komponen dan tampilan, kemudian memperbarui beberapa dokumen proyek. | `fyrdakk` | [Riwayat commit](https://github.com/fyrdakk/priori_kelompok19/commits/main) — `update komponen dan tampilan terbaru (bersih)`; `update beberapa file README.md, docs/PRD.md, docs/design-map.md, docs/HANDOVER.md` |
+
+**Catatan:** Tabel ini merangkum pesan commit yang diberikan dari riwayat GitHub. Karena hash commit individual tidak disertakan dalam daftar yang tersedia, bukti ditautkan ke halaman riwayat commit repository dan dikenali melalui pesan commit. Untuk pemeriksaan yang lebih presisi, buka commit terkait pada GitHub dan salin tautan commit individual. Log ini mendokumentasikan perubahan kode dan dokumentasi yang tercatat; tidak semua commit dengan sendirinya membuktikan bahwa seluruh kriteria penerimaan telah lulus pengujian.
 
 ## 13. Pengujian dan Kriteria Penerimaan
 
-Kriteria penerimaan terperinci terdapat di [`docs/PRD.md`](docs/PRD.md), bagian **Luaran dan Kriteria Keberhasilan**. Pengujian akhir setidaknya perlu mencakup:
+Kriteria penerimaan terperinci dirujuk pada `docs/PRD.md`, bagian **Luaran dan Kriteria Keberhasilan**. Pemeriksaan akhir aplikasi mencakup:
 
-- Navigasi utama dan alur Indeks → Login/Registrasi → Dashboard.
+- Navigasi utama dan alur Indeks menuju Login/Registrasi.
 - Validasi input pada formulir.
 - Tambah, lihat, edit, ubah status, dan hapus tugas.
-- Pencarian, filter, serta kondisi hasil kosong.
+- Pencarian, filter, dan kondisi hasil kosong.
 - Umpan balik sukses dan error.
-- Interaksi drawer/menu dan modal.
+- Interaksi menu/drawer dan modal yang tersedia.
 - Tampilan pada ukuran layar mobile dan desktop.
 - Pemeriksaan error runtime dan hasil build.
 
-Centang atau nyatakan lulus hanya setelah pengujian benar-benar dilakukan. Lampirkan bukti yang tersedia, misalnya hasil terminal, tangkapan layar, atau tautan commit.
+Daftar ini merupakan panduan pengujian. Status lulus hanya boleh dinyatakan setelah pengujian benar-benar dilakukan. Hasil terminal dan tangkapan layar dapat digunakan sebagai bukti apabila tersedia.
 
 ## 14. Batasan Proyek
 
-Priori merupakan prototipe web interaktif untuk kebutuhan akademik Modul 7. Login dan registrasi merupakan simulasi lokal, bukan autentikasi produksi. Data `localStorage` tidak otomatis tersinkronisasi lintas perangkat. Notifikasi deadline dihitung ketika halaman Notifikasi dibuka, bukan dikirim otomatis sesuai jadwal. Database server, push notification, integrasi pihak ketiga, dan rekomendasi berbasis machine learning tidak boleh dinyatakan tersedia jika belum dibuat dan diuji.
+Priori merupakan prototipe web interaktif untuk kebutuhan akademik Modul 7.
+
+- Login dan registrasi adalah simulasi lokal, bukan autentikasi produksi.
+- Data `localStorage` tidak otomatis tersinkronisasi lintas perangkat.
+- Informasi pengingat deadline dihitung ketika halaman Notifikasi dibuka, bukan dikirim otomatis sesuai jadwal.
+- Database server, push notification, dan integrasi pihak ketiga tidak dinyatakan tersedia.
+- Penentuan prioritas tidak menggunakan model machine learning.
+- Fitur yang belum dibuat atau belum diuji tidak boleh dinyatakan sudah berfungsi.
 
 ## 15. Dokumentasi Terkait
 
-- [`docs/PRD.md`](docs/PRD.md) — kebutuhan produk, user story, ruang lingkup, pembagian tanggung jawab, dan kriteria penerimaan.
-- [`docs/design-map.md`](docs/design-map.md) — pemetaan desain dan implementasi.
-- [`docs/HANDOVER.md`](docs/HANDOVER.md) — informasi teknis dan serah terima proyek.
+- `docs/PRD.md` — kebutuhan produk, user story, ruang lingkup, pembagian tanggung jawab, dan kriteria penerimaan.
+- `docs/design-map.md` — pemetaan desain Figma dan implementasi.
+- `docs/HANDOVER.md` — informasi teknis dan serah terima proyek.
 
-## 16. Catatan Pengumpulan
-
-Sesuai ketentuan tugas, README perlu mencakup instruksi menjalankan aplikasi secara lokal, tautan Figma, kontribusi setiap anggota, log prompt AI, dan catatan perbaikan manual. Pastikan file dokumentasi yang disertakan di repository sama dengan versi final yang dikumpulkan.
+Untuk pengumpulan Modul 7, pastikan repository GitHub dapat diakses publik, README tersedia di repository, dan PRD disertakan dalam format PDF sesuai instruksi tugas.
 
 ---
 
