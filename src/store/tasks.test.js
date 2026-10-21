@@ -109,7 +109,19 @@ describe('tasks store', () => {
   it('mengabaikan entri localStorage yang bukan objek tugas', () => {
     localStorage.setItem(
       'priori.demo.tasks',
-      JSON.stringify([null, 'rusak', { id: 'valid', title: 'Valid' }]),
+      JSON.stringify([
+        null,
+        'rusak',
+        { id: 'invalid', title: 'Tidak Lengkap' },
+        {
+          id: 'valid',
+          title: 'Valid',
+          course: 'Basis Data',
+          deadline: '2026-11-01',
+          difficulty: 'Sedang',
+          status: 'Belum Dikerjakan',
+        },
+      ]),
     )
 
     const tasks = getTasks()

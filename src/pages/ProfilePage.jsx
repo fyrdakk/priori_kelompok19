@@ -61,7 +61,7 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          <div style={{ marginTop: 'var(--space-4)' }}>
+          <div className="card-actions">
             <Button variant="danger" onClick={() => setIsLogoutModalOpen(true)}>
               Keluar Akun (Logout)
             </Button>
@@ -86,13 +86,7 @@ export default function ProfilePage() {
               </span>
             </div>
           </div>
-          <p
-            style={{
-              color: 'var(--color-text-muted)',
-              fontSize: 'var(--font-size-xs)',
-              marginTop: 'var(--space-4)',
-            }}
-          >
+          <p className="card-note">
             * Data tersimpan aman di browser Anda. Tidak ada sinkronisasi
             eksternal ke server.
           </p>

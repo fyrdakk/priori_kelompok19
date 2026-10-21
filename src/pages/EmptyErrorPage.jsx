@@ -21,13 +21,11 @@ export default function EmptyErrorPage() {
         </Link>
       </div>
 
-      <div
-        className="tasks-toolbar__filters"
-        style={{ marginBottom: 'var(--space-6)' }}
-      >
+      <div className="tasks-toolbar__filters empty-error-tabs">
         <button
           type="button"
           className={`filter-chip ${activeTab === 'empty' ? 'filter-chip--active' : ''}`}
+          aria-pressed={activeTab === 'empty'}
           onClick={() => setActiveTab('empty')}
         >
           Kondisi Data Kosong (Empty State)
@@ -35,6 +33,7 @@ export default function EmptyErrorPage() {
         <button
           type="button"
           className={`filter-chip ${activeTab === 'error' ? 'filter-chip--active' : ''}`}
+          aria-pressed={activeTab === 'error'}
           onClick={() => setActiveTab('error')}
         >
           Kondisi Galat (Error State)
@@ -52,34 +51,16 @@ export default function EmptyErrorPage() {
         </Card>
       ) : (
         <Card className="form-card">
-          <div
-            className="empty-state"
-            style={{
-              borderColor: 'var(--color-status-danger)',
-              background: 'var(--color-error-surface)',
-            }}
-          >
-            <div
-              className="empty-state__icon"
-              style={{
-                background: 'var(--color-status-danger)',
-                color: 'var(--color-on-danger)',
-              }}
-              aria-hidden="true"
-            >
+          <div className="empty-state empty-state--error">
+            <div className="empty-state__icon empty-state__icon--error" aria-hidden="true">
               !
             </div>
-            <h2 style={{ color: 'var(--color-button-danger)' }}>
-              Terjadi Kendala Memuat Data
-            </h2>
-            <p style={{ color: 'var(--color-button-danger)' }}>
+            <h2>Terjadi Kendala Memuat Data</h2>
+            <p className="empty-state__error-text">
               Data tidak dapat diproses atau format data lokal tidak valid.
               Silakan lakukan refresh atau reset data melalui menu Pengaturan.
             </p>
-            <div
-              className="reference-row"
-              style={{ marginTop: 'var(--space-4)' }}
-            >
+            <div className="reference-row empty-state__actions">
               <Link to="/tasks" className="button button--primary">
                 Kembali ke Tugas
               </Link>

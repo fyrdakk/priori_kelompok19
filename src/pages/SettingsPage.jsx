@@ -53,7 +53,7 @@ export default function SettingsPage() {
             keperluan pengujian atau demonstrasi, Anda dapat menggunakan tombol
             reset di bawah ini.
           </p>
-          <div style={{ marginTop: 'var(--space-4)' }}>
+          <div className="card-actions">
             <Button
               variant="secondary"
               onClick={() => setIsResetModalOpen(true)}

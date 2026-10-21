@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '../components/Button.jsx'
 import { Card } from '../components/Card.jsx'
@@ -17,7 +17,16 @@ export default function TaskDetailPage() {
   const [task, setTask] = useState(() => getTaskById(taskId))
   const [selectedStatus, setSelectedStatus] = useState(() => task?.status || '')
   const [feedback, setFeedback] = useState('')
+  const [feedbackType, setFeedbackType] = useState('success')
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+
+  useEffect(() => {
+    const nextTask = getTaskById(taskId)
+    setTask(nextTask)
+    setSelectedStatus(nextTask?.status || '')
+    setFeedback('')
+    setIsDeleteModalOpen(false)
+  }, [taskId])
 
   if (!task) {
     return (
@@ -43,8 +52,10 @@ export default function TaskDetailPage() {
     const updated = updateTaskStatus(task.id, selectedStatus)
     if (updated) {
       setTask(updated)
+      setFeedbackType('success')
       setFeedback('Status tugas berhasil diperbarui.')
     } else {
+      setFeedbackType('error')
       setFeedback(
         'Status tidak dapat disimpan. Periksa kapasitas penyimpanan browser Anda.',
       )
@@ -81,7 +92,10 @@ export default function TaskDetailPage() {
       </div>
 
       {feedback ? (
-        <div className="alert-banner alert-banner--success" role="status">
+        <div
+          className={`alert-banner alert-banner--${feedbackType}`}
+          role={feedbackType === 'error' ? 'alert' : 'status'}
+        >
           <span>{feedback}</span>
           <button
             type="button"
@@ -127,13 +141,7 @@ export default function TaskDetailPage() {
             </p>
           </div>
 
-          <hr
-            style={{
-              border: 'none',
-              borderTop: '1px solid var(--color-border)',
-              margin: 'var(--space-2) 0',
-            }}
-          />
+          <hr className="task-detail__divider" />
 
           {/* Ubah Status Terpisah */}
           <div className="task-detail__section">
@@ -141,7 +149,7 @@ export default function TaskDetailPage() {
               Ubah Status Tugas Terpisah
             </h2>
             <form onSubmit={handleSaveStatus} className="reference-row">
-              <div style={{ flex: '1', minWidth: '12rem' }}>
+              <div className="task-detail__status-field">
                 <Select
                   id="quick-status"
                   label="Pilih Status Baru"
@@ -159,10 +167,7 @@ export default function TaskDetailPage() {
                 type="submit"
                 variant="secondary"
                 disabled={selectedStatus === task.status}
-                style={{
-                  alignSelf: 'flex-end',
-                  minHeight: 'var(--control-min-height)',
-                }}
+                className="task-detail__status-button"
               >
                 Simpan Status
               </Button>
@@ -189,6 +194,7 @@ export default function TaskDetailPage() {
         isOpen={isDeleteModalOpen}
         title="Hapus Tugas"
         onClose={() => setIsDeleteModalOpen(false)}
+        setFeedbackType('error')}
       >
         <p>
           Apakah Anda yakin ingin menghapus tugas{' '}

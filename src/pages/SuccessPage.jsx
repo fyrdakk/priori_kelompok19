@@ -15,14 +15,11 @@ export default function SuccessPage() {
         </div>
 
         <h1 id="success-page-title">{title}</h1>
-        <p style={{ color: 'var(--color-text-muted)', maxWidth: '24rem' }}>
+        <p className="success-page-card__message">
           {message}
         </p>
 
-        <div
-          className="reference-row"
-          style={{ marginTop: 'var(--space-6)', justifyContent: 'center' }}
-        >
+        <div className="reference-row success-page-card__actions">
           <Link to="/tasks" className="button button--primary">
             Lihat Semua Tugas
           </Link>

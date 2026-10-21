@@ -68,6 +68,7 @@ export function Navbar({ onMenuOpen, menuOpen = false }) {
         className="menu-button"
         aria-label={menuOpen ? 'Tutup navigasi' : 'Buka navigasi'}
         aria-expanded={menuOpen}
+        aria-controls="app-navigation-drawer"
         onClick={onMenuOpen}
       >
         {menuOpen ? <X size={23} /> : <Menu size={23} />}

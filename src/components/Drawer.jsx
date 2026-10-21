@@ -14,6 +14,7 @@ export function Drawer({ isOpen, title = 'Navigasi', children, onClose }) {
     >
       <aside
         className="drawer"
+        id="app-navigation-drawer"
         ref={drawerRef}
         role="dialog"
         aria-modal="true"

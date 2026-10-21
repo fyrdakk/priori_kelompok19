@@ -82,6 +82,7 @@ export default function TasksPage() {
               key={filter}
               type="button"
               className={`filter-chip ${activeFilter === filter ? 'filter-chip--active' : ''}`}
+              aria-pressed={activeFilter === filter}
               onClick={() => setActiveFilter(filter)}
             >
               {filter}

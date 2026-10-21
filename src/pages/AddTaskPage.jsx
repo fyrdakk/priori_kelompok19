@@ -151,10 +151,7 @@ export default function AddTaskPage() {
           />
           {formError ? <p className="form-error" role="alert">{formError}</p> : null}
 
-          <div
-            className="reference-row"
-            style={{ marginTop: 'var(--space-6)' }}
-          >
+          <div className="reference-row form-actions">
             <Button type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Menyimpan...' : 'Simpan Tugas'}
             </Button>

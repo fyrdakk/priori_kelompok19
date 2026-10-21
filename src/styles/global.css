@@ -459,6 +459,20 @@ h1 {
   max-width: 38rem;
 }
 
+.form-actions {
+  margin-top: var(--space-6);
+}
+
+.card-actions {
+  margin-top: var(--space-4);
+}
+
+.card-note {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  margin: var(--space-4) 0 0;
+}
+
 /* Halaman form: tahan lebar agar tombol Kembali/Batal tidak menjauh dari judul */
 .page-section--narrow {
   max-width: 44rem;
@@ -597,6 +611,29 @@ h1 {
 .empty-state p {
   color: var(--color-text-muted);
   font-family: var(--font-family-body);
+}
+
+.empty-state--error {
+  background: var(--color-error-surface);
+  border-color: var(--color-status-danger);
+}
+
+.empty-state__icon--error {
+  background: var(--color-status-danger);
+  color: var(--color-on-danger);
+}
+
+.empty-state--error h2,
+.empty-state__error-text {
+  color: var(--color-button-danger);
+}
+
+.empty-state__actions {
+  margin-top: var(--space-4);
+}
+
+.empty-error-tabs {
+  margin-bottom: var(--space-6);
 }
 
 .overlay {
@@ -869,6 +906,23 @@ h1 {
   margin-top: var(--space-4);
 }
 
+.task-detail__divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-2) 0;
+  width: 100%;
+}
+
+.task-detail__status-field {
+  flex: 1;
+  min-width: 12rem;
+}
+
+.task-detail__status-button {
+  align-self: flex-end;
+  min-height: var(--control-min-height);
+}
+
 .modal__actions {
   display: flex;
   gap: var(--space-3);
@@ -1031,6 +1085,17 @@ h1 {
   height: 3.5rem;
   justify-content: center;
   width: 3.5rem;
+}
+
+.success-page-card__message {
+  color: var(--color-text-muted);
+  max-width: 24rem;
+  margin: 0;
+}
+
+.success-page-card__actions {
+  justify-content: center;
+  margin-top: var(--space-6);
 }
 
 /* Info List for Profile and Settings */
@@ -1674,25 +1739,26 @@ h1 {
 
   .page-section>.preview-card__header {
     align-items: flex-start;
+    flex-direction: column;
     gap: 14px;
   }
 
   .page-section>.preview-card__header>a.button.button--primary {
-    align-self: flex-start;
-    width: auto;
-    min-width: 164px;
+    align-self: stretch;
+    width: 100%;
+    min-width: 0;
     min-height: 48px;
     padding: 12px 20px;
-    margin-top: 40px;
+    margin-top: 0;
     white-space: nowrap;
   }
 
   .page-section--narrow>.preview-card__header>a.button {
-    margin-top: 40px;
+    margin-top: 0;
   }
 
   .page-section>.preview-card__header>a.button {
-    margin-top: 40px;
+    margin-top: 0;
   }
 
 }

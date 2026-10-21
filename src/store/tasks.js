@@ -57,14 +57,25 @@ function readStorage(key) {
     const raw = localStorage.getItem(key)
     if (!raw) return null
     const parsed = JSON.parse(raw)
-    return Array.isArray(parsed)
-      ? parsed.filter(
-          (task) => task && typeof task === 'object' && !Array.isArray(task),
-        )
-      : null
+    if (!Array.isArray(parsed)) return null
+    return parsed.filter(isValidTask)
   } catch {
     return null
   }
+}
+
+function isValidTask(task) {
+  return Boolean(
+    task &&
+      typeof task === 'object' &&
+      !Array.isArray(task) &&
+      typeof task.id === 'string' &&
+      typeof task.title === 'string' &&
+      typeof task.course === 'string' &&
+      typeof task.deadline === 'string' &&
+      typeof task.difficulty === 'string' &&
+      typeof task.status === 'string',
+  )
 }
 
 function writeStorage(key, value) {
