@@ -20,11 +20,16 @@ export default function SettingsPage() {
   }
 
   return (
-    <section className="page-section" aria-labelledby="settings-title">
-      <div className="preview-card__header">
+    <section
+      className="page-section settings-page"
+      aria-labelledby="settings-title"
+    >
+      <div className="preview-card__header settings-page__header">
         <div>
           <h1 id="settings-title">Pengaturan Aplikasi</h1>
-          <p className="page-intro">Kelola preferensi dan data prototipe Priori di perangkat Anda.</p>
+          <p className="page-intro">
+            Kelola preferensi dan data prototipe Priori di perangkat Anda.
+          </p>
         </div>
         <Link to="/dashboard" className="button button--secondary">
           Dashboard
@@ -46,14 +51,17 @@ export default function SettingsPage() {
       ) : null}
 
       <div className="reference-grid">
-        <Card>
-          <h2>Manajemen Data Demo</h2>
+        <Card className="settings-card settings-card--data">
+          <div className="settings-card__heading">
+            <span className="settings-card__kicker">Data aplikasi</span>
+            <h2>Manajemen Data Demo</h2>
+          </div>
           <p>
             Jika Anda ingin mengembalikan daftar tugas ke kondisi semula untuk
             keperluan pengujian atau demonstrasi, Anda dapat menggunakan tombol
             reset di bawah ini.
           </p>
-          <div className="card-actions">
+          <div className="card-actions settings-card__actions">
             <Button
               variant="secondary"
               onClick={() => setIsResetModalOpen(true)}
@@ -63,8 +71,11 @@ export default function SettingsPage() {
           </div>
         </Card>
 
-        <Card>
-          <h2>Informasi Prototipe</h2>
+        <Card className="settings-card">
+          <div className="settings-card__heading">
+            <span className="settings-card__kicker">Tentang Priori</span>
+            <h2>Informasi Prototipe</h2>
+          </div>
           <div className="info-list">
             <div className="info-item">
               <span className="info-item__label">Versi Prototipe</span>
