@@ -194,7 +194,6 @@ export default function TaskDetailPage() {
         isOpen={isDeleteModalOpen}
         title="Hapus Tugas"
         onClose={() => setIsDeleteModalOpen(false)}
-        setFeedbackType('error')}
       >
         <p>
           Apakah Anda yakin ingin menghapus tugas{' '}
