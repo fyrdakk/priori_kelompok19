@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '../components/Button.jsx'
 import { Card } from '../components/Card.jsx'
@@ -7,26 +7,33 @@ import { Modal } from '../components/Modal.jsx'
 import { PriorityBadge } from '../components/PriorityBadge.jsx'
 import { Select } from '../components/Select.jsx'
 import { StatusBadge } from '../components/StatusBadge.jsx'
-import { deleteTask, getTaskById, updateTaskStatus } from '../store/tasks.js'
+import {
+  deleteTask,
+  getTasksSnapshot,
+  subscribeTasks,
+  updateTaskStatus,
+} from '../store/tasks.js'
 import { TASK_STATUSES } from '../utils/priority.js'
 import { formatDate } from '../utils/formatDate.js'
 
 export default function TaskDetailPage() {
   const { taskId } = useParams()
   const navigate = useNavigate()
-  const [task, setTask] = useState(() => getTaskById(taskId))
-  const [selectedStatus, setSelectedStatus] = useState(() => task?.status || '')
+  const tasks = useSyncExternalStore(
+    subscribeTasks,
+    getTasksSnapshot,
+    () => [],
+  )
+  const task = tasks.find((item) => String(item.id) === String(taskId)) || null
+  const [statusDraft, setStatusDraft] = useState({
+    taskId: null,
+    value: '',
+  })
   const [feedback, setFeedback] = useState('')
   const [feedbackType, setFeedbackType] = useState('success')
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-
-  useEffect(() => {
-    const nextTask = getTaskById(taskId)
-    setTask(nextTask)
-    setSelectedStatus(nextTask?.status || '')
-    setFeedback('')
-    setIsDeleteModalOpen(false)
-  }, [taskId])
+  const selectedStatus =
+    statusDraft.taskId === taskId ? statusDraft.value : task?.status || ''
 
   if (!task) {
     return (
@@ -42,7 +49,7 @@ export default function TaskDetailPage() {
   }
 
   const handleStatusChange = (event) => {
-    setSelectedStatus(event.target.value)
+    setStatusDraft({ taskId, value: event.target.value })
   }
 
   const handleSaveStatus = (event) => {
@@ -51,7 +58,7 @@ export default function TaskDetailPage() {
 
     const updated = updateTaskStatus(task.id, selectedStatus)
     if (updated) {
-      setTask(updated)
+      setStatusDraft({ taskId, value: updated.status })
       setFeedbackType('success')
       setFeedback('Status tugas berhasil diperbarui.')
     } else {
@@ -71,6 +78,7 @@ export default function TaskDetailPage() {
       return
     }
     setIsDeleteModalOpen(false)
+    setFeedbackType('error')
     setFeedback(
       'Tugas tidak dapat dihapus. Periksa kapasitas penyimpanan browser Anda.',
     )
