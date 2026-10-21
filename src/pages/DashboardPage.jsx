@@ -1,16 +1,16 @@
-import { useMemo } from 'react'
+import { useMemo, useSyncExternalStore } from 'react'
 import { Link } from 'react-router-dom'
 import { EmptyState } from '../components/EmptyState.jsx'
 import { PriorityBadge } from '../components/PriorityBadge.jsx'
 import { StatusBadge } from '../components/StatusBadge.jsx'
 import { getSession } from '../store/auth.js'
 import { formatDate } from '../utils/formatDate.js'
-import { getTasks } from '../store/tasks.js'
+import { getTasksSnapshot, subscribeTasks } from '../store/tasks.js'
 
 export default function DashboardPage() {
   const session = getSession()
   const userName = session?.name || 'Mahasiswa'
-  const tasks = useMemo(() => getTasks(), [])
+  const tasks = useSyncExternalStore(subscribeTasks, getTasksSnapshot, () => [])
 
   const stats = useMemo(() => {
     const total = tasks.length

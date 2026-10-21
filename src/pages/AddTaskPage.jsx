@@ -22,10 +22,12 @@ export default function AddTaskPage() {
   })
 
   const [errors, setErrors] = useState({})
+  const [formError, setFormError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (field) => (event) => {
     setValues((prev) => ({ ...prev, [field]: event.target.value }))
+    setFormError('')
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: '' }))
     }
@@ -41,9 +43,19 @@ export default function AddTaskPage() {
     }
 
     setIsSubmitting(true)
-    createTask(values)
-    navigate('/tasks', {
-      state: { message: `Tugas "${values.title}" berhasil ditambahkan.` },
+    const createdTask = createTask(values)
+    if (!createdTask) {
+      setIsSubmitting(false)
+      setFormError(
+        'Tugas tidak dapat disimpan. Periksa kapasitas penyimpanan browser Anda.',
+      )
+      return
+    }
+    navigate('/success', {
+      state: {
+        title: 'Tugas Berhasil Ditambahkan!',
+        message: `Tugas "${createdTask.title}" berhasil dicatat.`,
+      },
     })
   }
 
@@ -137,6 +149,7 @@ export default function AddTaskPage() {
             value={values.description}
             onChange={handleChange('description')}
           />
+          {formError ? <p className="form-error" role="alert">{formError}</p> : null}
 
           <div
             className="reference-row"

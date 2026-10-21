@@ -105,4 +105,16 @@ describe('tasks store', () => {
     const reset = resetTasks()
     expect(reset.length).toBe(3)
   })
+
+  it('mengabaikan entri localStorage yang bukan objek tugas', () => {
+    localStorage.setItem(
+      'priori.demo.tasks',
+      JSON.stringify([null, 'rusak', { id: 'valid', title: 'Valid' }]),
+    )
+
+    const tasks = getTasks()
+
+    expect(tasks).toHaveLength(1)
+    expect(tasks[0].id).toBe('valid')
+  })
 })

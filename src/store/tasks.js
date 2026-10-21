@@ -1,6 +1,8 @@
 import { calculatePriority } from '../utils/priority.js'
 
 const TASKS_STORAGE_KEY = 'priori.demo.tasks'
+export const TASKS_CHANGED_EVENT = 'priori:tasks-changed'
+let tasksSnapshot
 
 function getInitialSeedTasks() {
   const now = new Date()
@@ -55,7 +57,11 @@ function readStorage(key) {
     const raw = localStorage.getItem(key)
     if (!raw) return null
     const parsed = JSON.parse(raw)
-    return Array.isArray(parsed) ? parsed : null
+    return Array.isArray(parsed)
+      ? parsed.filter(
+          (task) => task && typeof task === 'object' && !Array.isArray(task),
+        )
+      : null
   } catch {
     return null
   }
@@ -68,6 +74,28 @@ function writeStorage(key, value) {
   } catch {
     return false
   }
+}
+
+function notifyTasksChanged() {
+  tasksSnapshot = undefined
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new Event(TASKS_CHANGED_EVENT))
+  }
+}
+
+export function subscribeTasks(listener) {
+  if (typeof window === 'undefined') return () => {}
+  window.addEventListener(TASKS_CHANGED_EVENT, listener)
+  window.addEventListener('storage', listener)
+  return () => {
+    window.removeEventListener(TASKS_CHANGED_EVENT, listener)
+    window.removeEventListener('storage', listener)
+  }
+}
+
+export function getTasksSnapshot() {
+  if (!tasksSnapshot) tasksSnapshot = getTasks()
+  return tasksSnapshot
 }
 
 /**
@@ -114,7 +142,8 @@ export function createTask(data) {
   }
 
   const updatedTasks = [newTask, ...tasks]
-  writeStorage(TASKS_STORAGE_KEY, updatedTasks)
+  if (!writeStorage(TASKS_STORAGE_KEY, updatedTasks)) return null
+  notifyTasksChanged()
 
   return {
     ...newTask,
@@ -154,7 +183,8 @@ export function updateTask(id, updatedFields) {
   }
 
   tasks[index] = updated
-  writeStorage(TASKS_STORAGE_KEY, tasks)
+  if (!writeStorage(TASKS_STORAGE_KEY, tasks)) return null
+  notifyTasksChanged()
 
   return {
     ...updated,
@@ -177,8 +207,9 @@ export function deleteTask(id) {
   const filtered = tasks.filter((t) => String(t.id) !== String(id))
   if (filtered.length === tasks.length) return false
 
-  writeStorage(TASKS_STORAGE_KEY, filtered)
-  return true
+  const saved = writeStorage(TASKS_STORAGE_KEY, filtered)
+  if (saved) notifyTasksChanged()
+  return saved
 }
 
 /**
@@ -186,6 +217,7 @@ export function deleteTask(id) {
  */
 export function resetTasks() {
   const seed = getInitialSeedTasks()
-  writeStorage(TASKS_STORAGE_KEY, seed)
+  if (!writeStorage(TASKS_STORAGE_KEY, seed)) return null
+  notifyTasksChanged()
   return seed.map((t) => ({ ...t, priority: calculatePriority(t) }))
 }

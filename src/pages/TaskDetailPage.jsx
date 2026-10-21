@@ -44,6 +44,10 @@ export default function TaskDetailPage() {
     if (updated) {
       setTask(updated)
       setFeedback('Status tugas berhasil diperbarui.')
+    } else {
+      setFeedback(
+        'Status tidak dapat disimpan. Periksa kapasitas penyimpanan browser Anda.',
+      )
     }
   }
 
@@ -53,7 +57,12 @@ export default function TaskDetailPage() {
       navigate('/tasks', {
         state: { message: `Tugas "${task.title}" berhasil dihapus.` },
       })
+      return
     }
+    setIsDeleteModalOpen(false)
+    setFeedback(
+      'Tugas tidak dapat dihapus. Periksa kapasitas penyimpanan browser Anda.',
+    )
   }
 
   return (

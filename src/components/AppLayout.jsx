@@ -19,7 +19,10 @@ export function AppLayout() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
     <div className="app-layout">
-      <Navbar onMenuOpen={() => setIsDrawerOpen(true)} />
+      <Navbar
+        menuOpen={isDrawerOpen}
+        onMenuOpen={() => setIsDrawerOpen((current) => !current)}
+      />
       <main className="app-main">
         <Outlet />
       </main>

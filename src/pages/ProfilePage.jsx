@@ -1,15 +1,15 @@
-import { useMemo, useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '../components/Button.jsx'
 import { Card } from '../components/Card.jsx'
 import { Modal } from '../components/Modal.jsx'
 import { clearSession, getSession } from '../store/auth.js'
-import { getTasks } from '../store/tasks.js'
+import { getTasksSnapshot, subscribeTasks } from '../store/tasks.js'
 
 export default function ProfilePage() {
   const navigate = useNavigate()
   const session = getSession()
-  const tasks = useMemo(() => getTasks(), [])
+  const tasks = useSyncExternalStore(subscribeTasks, getTasksSnapshot, () => [])
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
 
   const completedCount = tasks.filter(

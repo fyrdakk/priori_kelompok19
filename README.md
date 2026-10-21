@@ -68,6 +68,7 @@ Fitur yang menjadi ruang lingkup prototipe:
 | Navigasi dan routing | Digunakan untuk menghubungkan halaman dalam prototipe. |
 | Login dan registrasi | Simulasi lokal; bukan autentikasi produksi dan tidak menggunakan backend. |
 | Pengelolaan tugas | Data prototipe disimpan secara lokal melalui `localStorage`. |
+| Sukses/Konfirmasi | Setelah tambah atau edit tugas berhasil, pengguna menerima umpan balik melalui halaman Sukses/Konfirmasi. |
 | Pengingat deadline | Informasi H-3, H-1, atau terlambat dihitung saat halaman Notifikasi dibuka; bukan notifikasi otomatis terjadwal. |
 | Profil dan Pengaturan | Halaman pendukung sesuai fungsi yang tersedia dalam prototipe. |
 | Database server dan sinkronisasi lintas perangkat | Tidak termasuk dalam cakupan prototipe yang didokumentasikan. |
@@ -89,6 +90,7 @@ Teknologi yang tercatat dalam dokumentasi proyek:
 - Prettier
 - Vitest
 - `localStorage` untuk penyimpanan data prototipe
+- Supabase Auth dan PostgreSQL sebagai opsi penyimpanan production saat environment Supabase dikonfigurasi
 
 Design token dicatat berada di `src/styles/tokens.css`.
 
@@ -118,7 +120,20 @@ cd priori_kelompok19
 npm install
 ```
 
-### 6.3 Jalankan server pengembangan
+### 6.3 Konfigurasi Supabase
+
+Salin `.env.example` menjadi `.env.local`, lalu isi:
+
+```text
+VITE_SUPABASE_URL=https://your-project-ref.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+Jalankan isi [supabase/schema.sql](./supabase/schema.sql) pada SQL Editor project
+Supabase. Gunakan hanya URL dan anon key pada frontend; jangan masukkan
+`service_role` key ke `.env`, repository, atau Vercel.
+
+### 6.4 Jalankan server pengembangan
 
 ```bash
 npm run dev
@@ -126,19 +141,19 @@ npm run dev
 
 Buka alamat lokal yang ditampilkan oleh terminal. Alamat bawaan Vite biasanya `http://localhost:5173`.
 
-### 6.4 Build aplikasi
+### 6.5 Build aplikasi
 
 ```bash
 npm run build
 ```
 
-### 6.5 Preview hasil build
+### 6.6 Preview hasil build
 
 ```bash
 npm run preview
 ```
 
-### 6.6 Pengujian
+### 6.7 Pengujian
 
 Proyek mencantumkan Vitest sebagai teknologi pengujian. Periksa bagian `scripts` pada `package.json` untuk memastikan nama perintah pengujian yang tersedia, lalu jalankan skrip yang sesuai. Jangan menyatakan pengujian lulus sebelum perintah benar-benar dijalankan dan hasilnya diperiksa.
 
@@ -159,11 +174,15 @@ priori_kelompok19/
 │   └── HANDOVER.md
 ├── public/
 │   └── assets/
+├── supabase/
+│   └── schema.sql
 ├── src/
 │   ├── components/
 │   ├── pages/
 │   ├── store/
 │   ├── utils/
+│   ├── lib/
+│   │   └── supabase.js
 │   └── styles/
 │       └── tokens.css
 ├── eslint.config.js
@@ -182,7 +201,22 @@ Keterangan folder:
 - `store/`: pengelolaan state dan data `localStorage`.
 - `utils/`: fungsi utilitas.
 - `styles/`: stylesheet dan design token.
+- `lib/`: integrasi layanan eksternal yang aman untuk frontend.
 - `docs/`: dokumentasi produk, pemetaan desain, dan handover.
+
+### Deploy ke Vercel
+
+Import repository ini ke Vercel sebagai project Vite. Tambahkan environment
+variables berikut pada Project Settings → Environment Variables untuk Preview
+dan Production:
+
+```text
+VITE_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY
+```
+
+`vercel.json` sudah menyediakan rewrite SPA agar refresh pada route React Router
+tetap mengarah ke `index.html`.
 
 ## 8. Tahapan Pengembangan
 

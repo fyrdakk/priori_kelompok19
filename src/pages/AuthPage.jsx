@@ -55,7 +55,10 @@ function AuthPage({ mode }) {
       }
       setSuccessMessage('Registrasi berhasil. Mengarahkan ke Dashboard...')
       const account = getDemoAccount()
-      startSession({ email: account.email, name: account.name })
+      if (!account || !startSession({ email: account.email, name: account.name })) {
+        setFormError('Sesi tidak dapat dimulai di browser ini.')
+        return
+      }
       window.setTimeout(() => navigate('/dashboard'), 400)
       return
     }
@@ -65,7 +68,10 @@ function AuthPage({ mode }) {
       return
     }
     const account = getDemoAccount()
-    startSession({ email: account.email, name: account.name })
+    if (!account || !startSession({ email: account.email, name: account.name })) {
+      setFormError('Sesi tidak dapat dimulai di browser ini.')
+      return
+    }
     navigate('/dashboard')
   }
 

@@ -10,9 +10,13 @@ export default function SettingsPage() {
   const [isResetModalOpen, setIsResetModalOpen] = useState(false)
 
   const handleResetData = () => {
-    resetTasks()
+    const reset = resetTasks()
     setIsResetModalOpen(false)
-    setFeedback('Data tugas berhasil direset ke contoh data awal (seed data).')
+    setFeedback(
+      reset
+        ? 'Data tugas berhasil direset ke contoh data awal (seed data).'
+        : 'Data tugas tidak dapat direset. Periksa kapasitas penyimpanan browser Anda.',
+    )
   }
 
   return (

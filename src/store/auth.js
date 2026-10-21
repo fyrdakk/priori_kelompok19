@@ -19,8 +19,29 @@ function writeStorage(key, value) {
   }
 }
 
+function isValidAccount(account) {
+  return Boolean(
+    account &&
+      typeof account === 'object' &&
+      typeof account.email === 'string' &&
+      typeof account.password === 'string' &&
+      typeof account.name === 'string',
+  )
+}
+
+function isValidSession(session) {
+  return Boolean(
+    session &&
+      typeof session === 'object' &&
+      typeof session.email === 'string' &&
+      session.email.trim() &&
+      typeof session.name === 'string',
+  )
+}
+
 export function getDemoAccount() {
-  return readStorage(ACCOUNT_KEY)
+  const account = readStorage(ACCOUNT_KEY)
+  return isValidAccount(account) ? account : null
 }
 
 export function registerDemoAccount(account) {
@@ -28,7 +49,8 @@ export function registerDemoAccount(account) {
 }
 
 export function getSession() {
-  return readStorage(SESSION_KEY)
+  const session = readStorage(SESSION_KEY)
+  return isValidSession(session) ? session : null
 }
 
 export function startSession(account) {
@@ -48,7 +70,7 @@ export function clearSession() {
 }
 
 export function hasSession() {
-  return Boolean(getSession()?.email)
+  return Boolean(getSession())
 }
 
 export function isMatchingAccount(email, password) {

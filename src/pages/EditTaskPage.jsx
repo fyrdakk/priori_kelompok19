@@ -26,6 +26,7 @@ export default function EditTaskPage() {
   }))
 
   const [errors, setErrors] = useState({})
+  const [formError, setFormError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   if (!initialTask) {
@@ -43,6 +44,7 @@ export default function EditTaskPage() {
 
   const handleChange = (field) => (event) => {
     setValues((prev) => ({ ...prev, [field]: event.target.value }))
+    setFormError('')
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: '' }))
     }
@@ -58,10 +60,18 @@ export default function EditTaskPage() {
     }
 
     setIsSubmitting(true)
-    updateTask(taskId, values)
-    navigate(`/tasks/${taskId}`, {
+    const updatedTask = updateTask(taskId, values)
+    if (!updatedTask) {
+      setIsSubmitting(false)
+      setFormError(
+        'Perubahan tidak dapat disimpan. Periksa kapasitas penyimpanan browser Anda.',
+      )
+      return
+    }
+    navigate('/success', {
       state: {
-        message: `Perubahan tugas "${values.title}" berhasil disimpan.`,
+        title: 'Tugas Berhasil Diperbarui!',
+        message: `Perubahan tugas "${updatedTask.title}" berhasil disimpan.`,
       },
     })
   }
@@ -154,6 +164,7 @@ export default function EditTaskPage() {
             value={values.description}
             onChange={handleChange('description')}
           />
+          {formError ? <p className="form-error" role="alert">{formError}</p> : null}
 
           <div
             className="reference-row"

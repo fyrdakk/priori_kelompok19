@@ -1,11 +1,11 @@
-import { useMemo } from 'react'
+import { useMemo, useSyncExternalStore } from 'react'
 import { Link } from 'react-router-dom'
 import { EmptyState } from '../components/EmptyState.jsx'
-import { getTasks } from '../store/tasks.js'
+import { getTasksSnapshot, subscribeTasks } from '../store/tasks.js'
 import { getTaskNotifications } from '../utils/notifications.js'
 
 export default function NotificationsPage() {
-  const tasks = useMemo(() => getTasks(), [])
+  const tasks = useSyncExternalStore(subscribeTasks, getTasksSnapshot, () => [])
   const notifications = useMemo(() => getTaskNotifications(tasks), [tasks])
 
   return (
