@@ -26,6 +26,14 @@ create index if not exists tasks_user_id_deadline_idx
 alter table public.profiles enable row level security;
 alter table public.tasks enable row level security;
 
+drop policy if exists "Users can read their own profile" on public.profiles;
+drop policy if exists "Users can insert their own profile" on public.profiles;
+drop policy if exists "Users can update their own profile" on public.profiles;
+drop policy if exists "Users can read their own tasks" on public.tasks;
+drop policy if exists "Users can insert their own tasks" on public.tasks;
+drop policy if exists "Users can update their own tasks" on public.tasks;
+drop policy if exists "Users can delete their own tasks" on public.tasks;
+
 create policy "Users can read their own profile"
   on public.profiles for select
   using (auth.uid() = id);

@@ -85,11 +85,15 @@ function notifyTasksChanged() {
 
 export function subscribeTasks(listener) {
   if (typeof window === 'undefined') return () => {}
-  window.addEventListener(TASKS_CHANGED_EVENT, listener)
-  window.addEventListener('storage', listener)
+  const handleChange = () => {
+    tasksSnapshot = undefined
+    listener()
+  }
+  window.addEventListener(TASKS_CHANGED_EVENT, handleChange)
+  window.addEventListener('storage', handleChange)
   return () => {
-    window.removeEventListener(TASKS_CHANGED_EVENT, listener)
-    window.removeEventListener('storage', listener)
+    window.removeEventListener(TASKS_CHANGED_EVENT, handleChange)
+    window.removeEventListener('storage', handleChange)
   }
 }
 

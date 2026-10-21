@@ -1,5 +1,13 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { Menu, X, LayoutDashboard, ClipboardList, Bell, Settings, LogOut } from 'lucide-react'
+import {
+  Bell,
+  ClipboardList,
+  LayoutDashboard,
+  LogOut,
+  Menu,
+  Settings,
+  X,
+} from 'lucide-react'
 import { Button } from './Button.jsx'
 import { appNavigation } from './navigation.js'
 import { clearSession } from '../store/auth.js'
@@ -134,7 +142,7 @@ export function NavigationMenu({ onNavigate }) {
       <div className="drawer__logout">
         <Button
           variant="danger"
-          style={{ width: '100%' }}
+          className="drawer__logout-button"
           onClick={handleLogout}
         >
           <LogOut size={18} />

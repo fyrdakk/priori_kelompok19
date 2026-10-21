@@ -351,6 +351,10 @@ h1 {
   color: var(--color-on-danger);
 }
 
+.drawer__logout-button {
+  width: 100%;
+}
+
 .button--icon {
   background: transparent;
   border-color: var(--color-border);
