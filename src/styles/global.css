@@ -1995,3 +1995,64 @@ h1 {
     display: inline-flex !important;
   }
 }
+
+/* Footer polish: keep the shared footer quiet, readable, and consistent. */
+.shared-footer {
+  border-top-color: #e4e9f2;
+  gap: var(--space-4);
+  min-height: 5.5rem;
+  padding-bottom: var(--space-6);
+  padding-top: var(--space-6);
+}
+
+.shared-footer .shared-brand {
+  gap: var(--space-2);
+  transition: opacity 160ms ease;
+}
+
+.shared-footer .shared-brand:hover {
+  opacity: 0.78;
+}
+
+.shared-footer .shared-brand img {
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.shared-footer .shared-brand__dot {
+  color: #315ee8;
+}
+
+.shared-footer p {
+  line-height: 1.5;
+}
+
+.app-footer {
+  background: rgb(248 250 255 / 82%);
+}
+
+@media (max-width: 700px) {
+  .shared-footer {
+    gap: var(--space-3);
+    min-height: 0;
+    padding-bottom: var(--space-6);
+    padding-top: var(--space-6);
+  }
+
+  .shared-footer .shared-brand {
+    font-size: 1.125rem;
+  }
+
+  .shared-footer .shared-brand img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .shared-footer p {
+    max-width: 28rem;
+  }
+
+  .app-footer {
+    padding-bottom: calc(var(--space-6) + 3.5rem);
+  }
+}
