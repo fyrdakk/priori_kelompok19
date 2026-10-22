@@ -64,7 +64,7 @@ function AuthPage({ mode }) {
     }
 
     if (!isMatchingAccount(values.email, values.password)) {
-      setFormError('Email atau kata sandi tidak cocok dengan akun demo.')
+      setFormError('Email atau kata sandi tidak cocok dengan akun.')
       return
     }
     const account = getDemoAccount()
@@ -82,7 +82,7 @@ function AuthPage({ mode }) {
         <h1>{isRegistration ? 'Mari Kita Rapikan Tugasmu' : 'Selamat Datang'}</h1>
         <p className="page-intro">
           {isRegistration
-            ? 'Buat akun demo untuk mulai mengatur tugas kuliahmu dengan lebih teratur.'
+            ? 'Buat akun untuk mulai mengatur tugas kuliahmu dengan lebih teratur.'
             : 'Masuk untuk melihat ruang tugasmu dan melanjutkan progres belajar.'}
         </p>
         <Card className="auth-card">
