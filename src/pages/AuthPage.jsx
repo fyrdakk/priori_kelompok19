@@ -45,7 +45,13 @@ function AuthPage({ mode }) {
 
     try {
       if (isRegistration) {
-        await registerAccount(values)
+        const result = await registerAccount(values)
+        if (result.needsEmailConfirmation) {
+          setSuccessMessage(
+            'Registrasi berhasil. Periksa email kamu untuk mengonfirmasi akun sebelum login.',
+          )
+          return
+        }
         await initializeTasks()
         setSuccessMessage(
           isSupabaseConfigured

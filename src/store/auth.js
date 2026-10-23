@@ -119,16 +119,17 @@ export async function registerAccount({ name, email, password }) {
   const { data, error } = await supabase.auth.signUp({
     email: email.trim(),
     password,
-    options: { data: { name: name.trim() } },
+    options: {
+      data: { name: name.trim() },
+      emailRedirectTo: `${window.location.origin}/login`,
+    },
   })
   if (error) throw error
   if (!data.session) {
-    throw new Error(
-      'Registrasi berhasil. Periksa email untuk mengonfirmasi akun sebelum login.',
-    )
+    return { needsEmailConfirmation: true, email: data.user?.email || email }
   }
   authSnapshot = { email: data.user.email || email, name: name.trim() }
-  return authSnapshot
+  return { needsEmailConfirmation: false, session: authSnapshot }
 }
 
 export async function loginAccount({ email, password }) {
