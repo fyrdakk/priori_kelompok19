@@ -5,6 +5,7 @@ import { Card } from '../components/Card.jsx'
 import { Modal } from '../components/Modal.jsx'
 import { clearSession, getSession } from '../store/auth.js'
 import { getTasksSnapshot, subscribeTasks } from '../store/tasks.js'
+import { isSupabaseConfigured } from '../lib/supabase.js'
 
 export default function ProfilePage() {
   const navigate = useNavigate()
@@ -52,7 +53,7 @@ export default function ProfilePage() {
             <div className="info-item">
               <span className="info-item__label">Status Akun</span>
               <span className="info-item__value">
-                Simulasi Demo (localStorage)
+                {isSupabaseConfigured ? 'Supabase Auth' : 'Simulasi Demo (localStorage)'}
               </span>
             </div>
             <div className="info-item">
@@ -87,8 +88,9 @@ export default function ProfilePage() {
             </div>
           </div>
           <p className="card-note">
-            * Data tersimpan aman di browser Anda. Tidak ada sinkronisasi
-            eksternal ke server.
+            {isSupabaseConfigured
+              ? '* Data tersimpan di database Supabase dan terikat pada akun Anda.'
+              : '* Data tersimpan aman di browser Anda. Tidak ada sinkronisasi eksternal ke server.'}
           </p>
         </Card>
       </div>

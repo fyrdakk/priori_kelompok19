@@ -4,13 +4,14 @@ import { Button } from '../components/Button.jsx'
 import { Card } from '../components/Card.jsx'
 import { Modal } from '../components/Modal.jsx'
 import { resetTasks } from '../store/tasks.js'
+import { isSupabaseConfigured } from '../lib/supabase.js'
 
 export default function SettingsPage() {
   const [feedback, setFeedback] = useState('')
   const [isResetModalOpen, setIsResetModalOpen] = useState(false)
 
-  const handleResetData = () => {
-    const reset = resetTasks()
+  const handleResetData = async () => {
+    const reset = await resetTasks()
     setIsResetModalOpen(false)
     setFeedback(
       reset
@@ -28,7 +29,7 @@ export default function SettingsPage() {
         <div>
           <h1 id="settings-title">Pengaturan Aplikasi</h1>
           <p className="page-intro">
-            Kelola preferensi dan data prototipe Priori di perangkat Anda.
+            Kelola preferensi dan data Priori yang tersimpan di akun Anda.
           </p>
         </div>
         <Link to="/dashboard" className="button button--secondary">
@@ -57,14 +58,15 @@ export default function SettingsPage() {
             <h2>Manajemen Data Demo</h2>
           </div>
           <p>
-            Jika Anda ingin mengembalikan daftar tugas ke kondisi semula untuk
-            keperluan pengujian atau demonstrasi, Anda dapat menggunakan tombol
-            reset di bawah ini.
+            {isSupabaseConfigured
+              ? 'Mode database aktif. Reset seed lokal tidak tersedia agar data cloud tidak terhapus tanpa sengaja.'
+              : 'Jika Anda ingin mengembalikan daftar tugas ke kondisi semula untuk keperluan pengujian atau demonstrasi, Anda dapat menggunakan tombol reset di bawah ini.'}
           </p>
           <div className="card-actions settings-card__actions">
             <Button
               variant="secondary"
               onClick={() => setIsResetModalOpen(true)}
+              disabled={isSupabaseConfigured}
             >
               Reset Data Tugas ke Awal
             </Button>
@@ -83,11 +85,15 @@ export default function SettingsPage() {
             </div>
             <div className="info-item">
               <span className="info-item__label">Penyimpanan</span>
-              <span className="info-item__value">Browser LocalStorage</span>
+              <span className="info-item__value">
+                {isSupabaseConfigured ? 'Supabase PostgreSQL' : 'Browser LocalStorage'}
+              </span>
             </div>
             <div className="info-item">
               <span className="info-item__label">Backend / Server</span>
-              <span className="info-item__value">Tidak Ada (Simulasi)</span>
+              <span className="info-item__value">
+                {isSupabaseConfigured ? 'Supabase' : 'Tidak Ada (Simulasi)'}
+              </span>
             </div>
             <div className="info-item">
               <span className="info-item__label">Push Notification</span>

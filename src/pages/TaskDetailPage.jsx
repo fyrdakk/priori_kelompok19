@@ -52,36 +52,39 @@ export default function TaskDetailPage() {
     setStatusDraft({ taskId, value: event.target.value })
   }
 
-  const handleSaveStatus = (event) => {
+  const handleSaveStatus = async (event) => {
     event.preventDefault()
     if (selectedStatus === task.status) return
 
-    const updated = updateTaskStatus(task.id, selectedStatus)
-    if (updated) {
+    try {
+      const updated = await updateTaskStatus(task.id, selectedStatus)
+      if (!updated) throw new Error('save_failed')
       setStatusDraft({ taskId, value: updated.status })
       setFeedbackType('success')
       setFeedback('Status tugas berhasil diperbarui.')
-    } else {
+    } catch {
       setFeedbackType('error')
       setFeedback(
-        'Status tidak dapat disimpan. Periksa kapasitas penyimpanan browser Anda.',
+        'Status tidak dapat disimpan. Periksa koneksi atau konfigurasi database.',
       )
     }
   }
 
-  const handleConfirmDelete = () => {
-    const success = deleteTask(task.id)
-    if (success) {
+  const handleConfirmDelete = async () => {
+    try {
+      const success = await deleteTask(task.id)
+      if (!success) throw new Error('delete_failed')
       navigate('/tasks', {
         state: { message: `Tugas "${task.title}" berhasil dihapus.` },
       })
       return
+    } catch {
+      setIsDeleteModalOpen(false)
+      setFeedbackType('error')
+      setFeedback(
+        'Tugas tidak dapat dihapus. Periksa koneksi atau konfigurasi database.',
+      )
     }
-    setIsDeleteModalOpen(false)
-    setFeedbackType('error')
-    setFeedback(
-      'Tugas tidak dapat dihapus. Periksa kapasitas penyimpanan browser Anda.',
-    )
   }
 
   return (

@@ -1,8 +1,47 @@
 import { calculatePriority } from '../utils/priority.js'
+import { isSupabaseConfigured, supabase } from '../lib/supabase.js'
 
 const TASKS_STORAGE_KEY = 'priori.demo.tasks'
 export const TASKS_CHANGED_EVENT = 'priori:tasks-changed'
 let tasksSnapshot
+
+function fromDatabaseTask(task) {
+  return {
+    id: task.id,
+    title: task.title,
+    course: task.course,
+    deadline: task.deadline,
+    difficulty: task.difficulty,
+    status: task.status,
+    estimatedTime: task.estimated_time || '',
+    description: task.description || '',
+    createdAt: task.created_at,
+    updatedAt: task.updated_at,
+  }
+}
+
+function toDatabaseTask(data) {
+  const payload = {}
+  if (data.title !== undefined) payload.title = data.title.trim()
+  if (data.course !== undefined) payload.course = data.course.trim()
+  if (data.deadline !== undefined) payload.deadline = data.deadline
+  if (data.difficulty !== undefined) payload.difficulty = data.difficulty
+  if (data.status !== undefined) payload.status = data.status
+  if (data.estimatedTime !== undefined) {
+    payload.estimated_time = data.estimatedTime.trim()
+  }
+  if (data.description !== undefined) {
+    payload.description = data.description.trim()
+  }
+  return payload
+}
+
+async function getCurrentUserId() {
+  const { data, error } = await supabase.auth.getUser()
+  if (error) throw error
+  if (!data.user) throw new Error('Sesi Supabase tidak ditemukan.')
+  return data.user.id
+}
 
 function getInitialSeedTasks() {
   const now = new Date()
@@ -87,8 +126,8 @@ function writeStorage(key, value) {
   }
 }
 
-function notifyTasksChanged() {
-  tasksSnapshot = undefined
+function notifyTasksChanged(preserveSnapshot = false) {
+  if (!preserveSnapshot) tasksSnapshot = undefined
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new Event(TASKS_CHANGED_EVENT))
   }
@@ -96,8 +135,8 @@ function notifyTasksChanged() {
 
 export function subscribeTasks(listener) {
   if (typeof window === 'undefined') return () => {}
-  const handleChange = () => {
-    tasksSnapshot = undefined
+  const handleChange = (event) => {
+    if (event.type === 'storage') tasksSnapshot = undefined
     listener()
   }
   window.addEventListener(TASKS_CHANGED_EVENT, handleChange)
@@ -113,11 +152,31 @@ export function getTasksSnapshot() {
   return tasksSnapshot
 }
 
+export async function initializeTasks() {
+  if (!isSupabaseConfigured) {
+    tasksSnapshot = getTasks()
+    return tasksSnapshot
+  }
+
+  const { data, error } = await supabase
+    .from('tasks')
+    .select('*')
+    .order('deadline', { ascending: true })
+  if (error) throw error
+  tasksSnapshot = data.map((task) => {
+    const normalized = fromDatabaseTask(task)
+    return { ...normalized, priority: calculatePriority(normalized) }
+  })
+  notifyTasksChanged(true)
+  return tasksSnapshot
+}
+
 /**
  * Mengambil semua tugas dari localStorage. Jika kosong, menginisialisasi dengan seed data.
  * Menghitung prioritas dinamis untuk tiap tugas.
  */
 export function getTasks() {
+  if (isSupabaseConfigured) return tasksSnapshot || []
   let tasks = readStorage(TASKS_STORAGE_KEY)
   if (!tasks) {
     tasks = getInitialSeedTasks()
@@ -134,7 +193,7 @@ export function getTasks() {
  * Mengambil satu tugas berdasarkan ID.
  */
 export function getTaskById(id) {
-  const tasks = getTasks()
+  const tasks = getTasksSnapshot()
   const found = tasks.find((t) => String(t.id) === String(id))
   return found || null
 }
@@ -143,6 +202,26 @@ export function getTaskById(id) {
  * Menambahkan tugas baru.
  */
 export function createTask(data) {
+  if (isSupabaseConfigured) {
+    return getCurrentUserId().then((userId) =>
+      supabase
+        .from('tasks')
+        .insert({ ...toDatabaseTask(data), user_id: userId })
+        .select()
+        .single()
+        .then(({ data: created, error }) => {
+          if (error) throw error
+          const normalized = fromDatabaseTask(created)
+          tasksSnapshot = [normalized, ...(tasksSnapshot || [])].map((task) => ({
+            ...task,
+            priority: calculatePriority(task),
+          }))
+          notifyTasksChanged(true)
+          return normalized
+        }),
+    )
+  }
+
   const tasks = getTasks()
   const newTask = {
     id: `task-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
@@ -170,6 +249,26 @@ export function createTask(data) {
  * Memperbarui data tugas.
  */
 export function updateTask(id, updatedFields) {
+  if (isSupabaseConfigured) {
+    return supabase
+      .from('tasks')
+      .update(toDatabaseTask(updatedFields))
+      .eq('id', id)
+      .select()
+      .single()
+      .then(({ data: updated, error }) => {
+        if (error) throw error
+        const normalized = fromDatabaseTask(updated)
+        tasksSnapshot = (tasksSnapshot || []).map((task) =>
+          String(task.id) === String(id)
+            ? { ...normalized, priority: calculatePriority(normalized) }
+            : task,
+        )
+        notifyTasksChanged(true)
+        return normalized
+      })
+  }
+
   const tasks = getTasks()
   const index = tasks.findIndex((t) => String(t.id) === String(id))
   if (index === -1) return null
@@ -218,6 +317,21 @@ export function updateTaskStatus(id, newStatus) {
  * Menghapus tugas berdasarkan ID.
  */
 export function deleteTask(id) {
+  if (isSupabaseConfigured) {
+    return supabase
+      .from('tasks')
+      .delete()
+      .eq('id', id)
+      .then(({ error }) => {
+        if (error) throw error
+        tasksSnapshot = (tasksSnapshot || []).filter(
+          (task) => String(task.id) !== String(id),
+        )
+        notifyTasksChanged(true)
+        return true
+      })
+  }
+
   const tasks = getTasks()
   const filtered = tasks.filter((t) => String(t.id) !== String(id))
   if (filtered.length === tasks.length) return false
@@ -231,6 +345,10 @@ export function deleteTask(id) {
  * Reset data tugas ke seed data awal.
  */
 export function resetTasks() {
+  if (isSupabaseConfigured) {
+    return Promise.resolve([])
+  }
+
   const seed = getInitialSeedTasks()
   if (!writeStorage(TASKS_STORAGE_KEY, seed)) return null
   notifyTasksChanged()

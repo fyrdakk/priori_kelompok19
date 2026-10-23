@@ -57,7 +57,8 @@ Fitur yang menjadi ruang lingkup prototipe:
 - Pengelolaan tugas: tambah, lihat detail, edit, ubah status, dan hapus.
 - Pencarian tugas dan filter berdasarkan status.
 - Validasi formulir dan umpan balik untuk kondisi berhasil, kosong, atau error.
-- Penyimpanan data prototipe melalui `localStorage`.
+- Penyimpanan data melalui Supabase jika environment tersedia, dengan
+  `localStorage` sebagai fallback mode demo.
 - Tata letak yang dirancang untuk layar mobile dan desktop.
 - Informasi prioritas berdasarkan aturan sederhana yang berkaitan dengan deadline dan tingkat kesulitan, bukan model AI.
 
@@ -66,12 +67,12 @@ Fitur yang menjadi ruang lingkup prototipe:
 | Fitur | Keterangan |
 |---|---|
 | Navigasi dan routing | Digunakan untuk menghubungkan halaman dalam prototipe. |
-| Login dan registrasi | Simulasi lokal; bukan autentikasi produksi dan tidak menggunakan backend. |
-| Pengelolaan tugas | Data prototipe disimpan secara lokal melalui `localStorage`. |
+| Login dan registrasi | Menggunakan Supabase Auth saat env tersedia; fallback simulasi lokal tetap tersedia tanpa env. |
+| Pengelolaan tugas | CRUD tersimpan di tabel Supabase `tasks` dan dibatasi RLS per pengguna; fallback memakai `localStorage`. |
 | Sukses/Konfirmasi | Setelah tambah atau edit tugas berhasil, pengguna menerima umpan balik melalui halaman Sukses/Konfirmasi. |
 | Pengingat deadline | Informasi H-3, H-1, atau terlambat dihitung saat halaman Notifikasi dibuka; bukan notifikasi otomatis terjadwal. |
 | Profil dan Pengaturan | Halaman pendukung sesuai fungsi yang tersedia dalam prototipe. |
-| Database server dan sinkronisasi lintas perangkat | Tidak termasuk dalam cakupan prototipe yang didokumentasikan. |
+| Database server dan sinkronisasi lintas perangkat | Tersedia setelah project Supabase dikonfigurasi; belum aktif tanpa env. |
 | Push notification dan integrasi pihak ketiga | Tidak dinyatakan tersedia dalam implementasi ini. |
 | Machine learning | Tidak digunakan untuk menghitung prioritas tugas. |
 
@@ -131,7 +132,8 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 
 Jalankan isi [supabase/schema.sql](./supabase/schema.sql) pada SQL Editor project
 Supabase. Gunakan hanya URL dan anon key pada frontend; jangan masukkan
-`service_role` key ke `.env`, repository, atau Vercel.
+`service_role` key ke `.env`, repository, atau Vercel. Jika env belum diisi,
+aplikasi otomatis berjalan dalam mode demo localStorage.
 
 ### 6.4 Jalankan server pengembangan
 
@@ -159,7 +161,9 @@ Proyek mencantumkan Vitest sebagai teknologi pengujian. Periksa bagian `scripts`
 
 ### Akun demo
 
-Pengguna dapat mencoba alur registrasi pada aplikasi. README ini tidak mencantumkan email atau kata sandi demo karena kredensial demo khusus tidak tercantum dalam dokumentasi proyek. Autentikasi prototipe tidak ditujukan untuk menyimpan data sensitif.
+Pengguna dapat mencoba alur registrasi pada aplikasi. README ini tidak mencantumkan email atau kata sandi demo karena kredensial demo khusus tidak tercantum dalam dokumentasi proyek. Jika Supabase belum dikonfigurasi, autentikasi demo menyimpan kredensial lokal
+dan tidak ditujukan untuk menyimpan data sensitif. Saat Supabase aktif, akun
+ditangani oleh Supabase Auth dan tugas dipisahkan berdasarkan `user_id`.
 
 ## 7. Struktur Proyek
 

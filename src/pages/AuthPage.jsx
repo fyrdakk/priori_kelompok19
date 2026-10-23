@@ -5,11 +5,11 @@ import { Button } from '../components/Button.jsx'
 import { Card } from '../components/Card.jsx'
 import { Input } from '../components/Input.jsx'
 import {
-  getDemoAccount,
-  isMatchingAccount,
-  registerDemoAccount,
-  startSession,
+  loginAccount,
+  registerAccount,
 } from '../store/auth.js'
+import { isSupabaseConfigured } from '../lib/supabase.js'
+import { initializeTasks } from '../store/tasks.js'
 import { validateLogin, validateRegistration } from '../utils/validation.js'
 
 const initialValues = {
@@ -34,7 +34,7 @@ function AuthPage({ mode }) {
     setFormError('')
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
     const nextErrors = isRegistration
       ? validateRegistration(values)
@@ -43,36 +43,24 @@ function AuthPage({ mode }) {
     setSuccessMessage('')
     if (Object.values(nextErrors).some(Boolean)) return
 
-    if (isRegistration) {
-      const saved = registerDemoAccount({
-        name: values.name.trim(),
-        email: values.email.trim(),
-        password: values.password,
-      })
-      if (!saved) {
-        setFormError('Akun tidak dapat disimpan di browser ini.')
+    try {
+      if (isRegistration) {
+        await registerAccount(values)
+        await initializeTasks()
+        setSuccessMessage(
+          isSupabaseConfigured
+            ? 'Registrasi berhasil. Mengarahkan ke Dashboard...'
+            : 'Registrasi berhasil. Mengarahkan ke Dashboard...',
+        )
+        window.setTimeout(() => navigate('/dashboard'), 400)
         return
       }
-      setSuccessMessage('Registrasi berhasil. Mengarahkan ke Dashboard...')
-      const account = getDemoAccount()
-      if (!account || !startSession({ email: account.email, name: account.name })) {
-        setFormError('Sesi tidak dapat dimulai di browser ini.')
-        return
-      }
-      window.setTimeout(() => navigate('/dashboard'), 400)
-      return
+      await loginAccount(values)
+      await initializeTasks()
+      navigate('/dashboard')
+    } catch (error) {
+      setFormError(error.message || 'Autentikasi tidak dapat diproses.')
     }
-
-    if (!isMatchingAccount(values.email, values.password)) {
-      setFormError('Email atau kata sandi tidak cocok dengan akun demo.')
-      return
-    }
-    const account = getDemoAccount()
-    if (!account || !startSession({ email: account.email, name: account.name })) {
-      setFormError('Sesi tidak dapat dimulai di browser ini.')
-      return
-    }
-    navigate('/dashboard')
   }
 
   return (
@@ -142,7 +130,9 @@ function AuthPage({ mode }) {
           </Link>
         </p>
         <p className="simulation-note">
-          Mode simulasi: akun dan kata sandi disimpan secara lokal di browser, bukan untuk penggunaan produksi.
+          {isSupabaseConfigured
+            ? 'Akun dikelola dengan Supabase Auth.'
+            : 'Mode simulasi: akun dan kata sandi disimpan secara lokal di browser, bukan untuk penggunaan produksi.'}
         </p>
       </div>
     </section>

@@ -1,9 +1,11 @@
+import { useSyncExternalStore } from 'react'
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
-import { hasSession } from '../store/auth.js'
+import { getSession, subscribeAuth } from '../store/auth.js'
 
 export function ProtectedRoute() {
   const location = useLocation()
-  return hasSession() ? (
+  const session = useSyncExternalStore(subscribeAuth, getSession, () => null)
+  return session ? (
     <Outlet />
   ) : (
     <Navigate to="/login" replace state={{ from: location }} />
@@ -11,5 +13,6 @@ export function ProtectedRoute() {
 }
 
 export function GuestRoute() {
-  return hasSession() ? <Navigate to="/dashboard" replace /> : <Outlet />
+  const session = useSyncExternalStore(subscribeAuth, getSession, () => null)
+  return session ? <Navigate to="/dashboard" replace /> : <Outlet />
 }

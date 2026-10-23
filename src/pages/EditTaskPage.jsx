@@ -50,7 +50,7 @@ export default function EditTaskPage() {
     }
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const validationErrors = validateTask(values)
     setErrors(validationErrors)
@@ -60,20 +60,21 @@ export default function EditTaskPage() {
     }
 
     setIsSubmitting(true)
-    const updatedTask = updateTask(taskId, values)
-    if (!updatedTask) {
+    try {
+      const updatedTask = await updateTask(taskId, values)
+      if (!updatedTask) throw new Error('save_failed')
+      navigate('/success', {
+        state: {
+          title: 'Tugas Berhasil Diperbarui!',
+          message: `Perubahan tugas "${updatedTask.title}" berhasil disimpan.`,
+        },
+      })
+    } catch {
       setIsSubmitting(false)
       setFormError(
-        'Perubahan tidak dapat disimpan. Periksa kapasitas penyimpanan browser Anda.',
+        'Perubahan tidak dapat disimpan. Periksa koneksi atau konfigurasi database.',
       )
-      return
     }
-    navigate('/success', {
-      state: {
-        title: 'Tugas Berhasil Diperbarui!',
-        message: `Perubahan tugas "${updatedTask.title}" berhasil disimpan.`,
-      },
-    })
   }
 
   return (

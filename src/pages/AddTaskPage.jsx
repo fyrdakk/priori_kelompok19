@@ -33,7 +33,7 @@ export default function AddTaskPage() {
     }
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const validationErrors = validateTask(values)
     setErrors(validationErrors)
@@ -43,20 +43,21 @@ export default function AddTaskPage() {
     }
 
     setIsSubmitting(true)
-    const createdTask = createTask(values)
-    if (!createdTask) {
+    try {
+      const createdTask = await createTask(values)
+      if (!createdTask) throw new Error('save_failed')
+      navigate('/success', {
+        state: {
+          title: 'Tugas Berhasil Ditambahkan!',
+          message: `Tugas "${createdTask.title}" berhasil dicatat.`,
+        },
+      })
+    } catch {
       setIsSubmitting(false)
       setFormError(
-        'Tugas tidak dapat disimpan. Periksa kapasitas penyimpanan browser Anda.',
+        'Tugas tidak dapat disimpan. Periksa koneksi atau konfigurasi database.',
       )
-      return
     }
-    navigate('/success', {
-      state: {
-        title: 'Tugas Berhasil Ditambahkan!',
-        message: `Tugas "${createdTask.title}" berhasil dicatat.`,
-      },
-    })
   }
 
   return (
