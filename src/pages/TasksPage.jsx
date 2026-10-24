@@ -112,11 +112,13 @@ export default function TasksPage() {
         <div className="tasks-grid">
           {filteredTasks.map((task) => (
             <article key={task.id} className="task-card">
-              <span className="task-card__course">{task.course}</span>
+                <span className="task-card__course">{task.course}</span>
               <h2 className="task-card__title">{task.title}</h2>
 
               <div className="task-card__meta">
-                <span>Deadline: {formatDate(task.deadline)}</span>
+                  <span className="task-card__deadline">
+                    Deadline: {formatDate(task.deadline)}
+                  </span>
                 <span>Kesulitan: {task.difficulty}</span>
                 {task.estimatedTime ? (
                   <span>Estimasi: {task.estimatedTime}</span>

@@ -885,17 +885,19 @@ h1 {
 
 .task-card {
   background: var(--color-surface-task);
-  border: none;
+  border: 1px solid rgb(66 116 217 / 18%);
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  min-height: 13.5rem;
   padding: var(--space-4);
   text-decoration: none;
-  transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease, border-color 150ms ease;
 }
 
 .task-card:hover {
+  border-color: rgb(66 116 217 / 42%);
   box-shadow: var(--shadow-card);
 }
 
@@ -922,6 +924,11 @@ h1 {
   font-family: var(--font-family-body);
   font-size: var(--font-size-xs);
   gap: var(--space-2);
+}
+
+.task-card__deadline {
+  color: var(--color-brand-900);
+  font-weight: var(--font-weight-semibold);
 }
 
 .task-card .preview-card__actions {
@@ -2151,6 +2158,6 @@ h1 {
   }
 
   .app-footer {
-    padding-bottom: calc(var(--space-6) + 3.5rem);
+    display: none;
   }
 }

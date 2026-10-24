@@ -2,7 +2,7 @@
 .landing-page {
   --landing-navy: #142653;
   --landing-blue: #315ee8;
-  --landing-muted: #75819a;
+  --landing-muted: #52627c;
   --landing-border: #e7ecf5;
   background: #fff;
   color: #243451;
@@ -725,9 +725,13 @@
     font-size: 12px;
   }
 
-  .landing-nav nav a:first-child,
-  .landing-nav nav a:nth-child(2) {
+  .landing-nav nav a:first-child {
     display: none;
+  }
+
+  .landing-nav nav a:nth-child(2) {
+    display: inline-flex;
+    padding: 10px 4px;
   }
 
   .landing-nav nav .landing-nav-register {
@@ -904,6 +908,11 @@
     font-size: 11px;
   }
 
+  .landing-nav nav a:nth-child(2) {
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+
   .landing-nav nav .landing-nav-register {
     padding: 10px;
   }
@@ -951,7 +960,10 @@
 
 @media (max-width: 700px) {
 
-  .landing-nav nav a:first-child,
+  .landing-nav nav a:first-child {
+    display: none;
+  }
+
   .landing-nav nav a:nth-child(2) {
     display: inline-flex;
   }
