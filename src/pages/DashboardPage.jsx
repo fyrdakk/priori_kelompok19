@@ -31,11 +31,15 @@ export default function DashboardPage() {
     return tasks
       .filter((t) => t.status !== 'Selesai Dikerjakan')
       .sort((a, b) => {
-        // Prioritaskan prioritas 'Tinggi' dulu
         const pOrder = { Tinggi: 1, Sedang: 2, Rendah: 3 }
-        const diffP = (pOrder[a.priority] || 3) - (pOrder[b.priority] || 3)
-        if (diffP !== 0) return diffP
-        return new Date(a.deadline) - new Date(b.deadline)
+        const deadlineA = new Date(a.deadline).getTime()
+        const deadlineB = new Date(b.deadline).getTime()
+        const validDeadlineA = Number.isNaN(deadlineA) ? Number.MAX_SAFE_INTEGER : deadlineA
+        const validDeadlineB = Number.isNaN(deadlineB) ? Number.MAX_SAFE_INTEGER : deadlineB
+        const diffDeadline = validDeadlineA - validDeadlineB
+
+        if (diffDeadline !== 0) return diffDeadline
+        return (pOrder[a.priority] || 3) - (pOrder[b.priority] || 3)
       })
       .slice(0, 3)
   }, [tasks])
@@ -103,7 +107,9 @@ export default function DashboardPage() {
                 <span className="task-card__course">{task.course}</span>
                 <h3 className="task-card__title">{task.title}</h3>
                 <div className="task-card__meta">
-                  <span>Deadline: {formatDate(task.deadline)}</span>
+                  <span className="task-card__deadline">
+                    Deadline: {formatDate(task.deadline)}
+                  </span>
                   <span>Kesulitan: {task.difficulty}</span>
                   {task.estimatedTime ? (
                     <span>Estimasi: {task.estimatedTime}</span>
