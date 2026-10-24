@@ -1,5 +1,5 @@
 import { useMemo, useState, useSyncExternalStore } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import { EmptyState } from '../components/EmptyState.jsx'
 import { PriorityBadge } from '../components/PriorityBadge.jsx'
 import { StatusBadge } from '../components/StatusBadge.jsx'
@@ -15,9 +15,13 @@ const STATUS_FILTERS = [
 
 export default function TasksPage() {
   const location = useLocation()
+  const [searchParams] = useSearchParams()
   const tasks = useSyncExternalStore(subscribeTasks, getTasksSnapshot, () => [])
   const [searchTerm, setSearchTerm] = useState('')
-  const [activeFilter, setActiveFilter] = useState('Semua')
+  const [activeFilter, setActiveFilter] = useState(() => {
+    const requestedFilter = searchParams.get('status')
+    return STATUS_FILTERS.includes(requestedFilter) ? requestedFilter : 'Semua'
+  })
   const [feedback, setFeedback] = useState(() => location.state?.message || '')
 
   const filteredTasks = useMemo(() => {

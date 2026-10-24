@@ -1042,6 +1042,13 @@ h1 {
   flex-direction: column;
   gap: var(--space-1);
   padding: var(--space-3) var(--space-4);
+  text-decoration: none;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
 }
 
 .stat-card__value {

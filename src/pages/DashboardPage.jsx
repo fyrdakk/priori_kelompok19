@@ -54,22 +54,22 @@ export default function DashboardPage() {
           role="region"
           aria-label="Ringkasan status tugas"
         >
-          <div className="stat-card stat-card--total">
+          <Link to="/tasks" className="stat-card stat-card--total">
             <span className="stat-card__value">{stats.total}</span>
             <span className="stat-card__label">Total Tugas</span>
-          </div>
-          <div className="stat-card stat-card--done">
+          </Link>
+          <Link to="/tasks?status=Selesai%20Dikerjakan" className="stat-card stat-card--done">
             <span className="stat-card__value">{stats.completed}</span>
             <span className="stat-card__label">Selesai</span>
-          </div>
-          <div className="stat-card stat-card--progress">
+          </Link>
+          <Link to="/tasks?status=Sedang%20Dikerjakan" className="stat-card stat-card--progress">
             <span className="stat-card__value">{stats.inProgress}</span>
             <span className="stat-card__label">Sedang Dikerjakan</span>
-          </div>
-          <div className="stat-card stat-card--pending">
+          </Link>
+          <Link to="/tasks?status=Belum%20Dikerjakan" className="stat-card stat-card--pending">
             <span className="stat-card__value">{stats.notStarted}</span>
             <span className="stat-card__label">Belum Dikerjakan</span>
-          </div>
+          </Link>
         </div>
       </div>
 
