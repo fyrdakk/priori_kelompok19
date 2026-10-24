@@ -16,7 +16,9 @@ Proyek ini dikembangkan berdasarkan masalah penumpukan deadline, informasi tugas
 - **Dokumen PRD:** `docs/PRD.md`
 - **Peta desain:** `docs/design-map.md`
 - **Dokumen handover:** `docs/HANDOVER.md`
-- **Demo online:** Belum dicantumkan; jalankan aplikasi secara lokal mengikuti petunjuk di bawah.
+- **Website produksi:** https://priori.web.id/
+- **Hosting:** [Vercel](https://vercel.com/) — deployment website Priori.
+- **Database dan autentikasi:** [Supabase](https://supabase.com/) — PostgreSQL dan Supabase Auth.
 
 ## 2. Anggota dan Kontribusi
 
@@ -72,7 +74,7 @@ Fitur yang menjadi ruang lingkup prototipe:
 | Sukses/Konfirmasi | Setelah tambah atau edit tugas berhasil, pengguna menerima umpan balik melalui halaman Sukses/Konfirmasi. |
 | Pengingat deadline | Informasi H-3, H-1, atau terlambat dihitung saat halaman Notifikasi dibuka; bukan notifikasi otomatis terjadwal. |
 | Profil dan Pengaturan | Halaman pendukung sesuai fungsi yang tersedia dalam prototipe. |
-| Database server dan sinkronisasi lintas perangkat | Tersedia setelah project Supabase dikonfigurasi; belum aktif tanpa env. |
+| Database server dan sinkronisasi lintas perangkat | Proyek telah dihubungkan ke Supabase. Fitur ini bergantung pada konfigurasi environment Vercel dan kebijakan akses database (RLS). |
 | Push notification dan integrasi pihak ketiga | Tidak dinyatakan tersedia dalam implementasi ini. |
 | Machine learning | Tidak digunakan untuk menghitung prioritas tugas. |
 
@@ -91,7 +93,9 @@ Teknologi yang tercatat dalam dokumentasi proyek:
 - Prettier
 - Vitest
 - `localStorage` untuk penyimpanan data prototipe
-- Supabase Auth dan PostgreSQL sebagai opsi penyimpanan production saat environment Supabase dikonfigurasi
+- Supabase Auth untuk autentikasi pengguna
+- Supabase PostgreSQL sebagai database aplikasi
+- Vercel untuk deployment dan hosting website publik
 
 Design token dicatat berada di `src/styles/tokens.css`.
 
@@ -208,11 +212,11 @@ Keterangan folder:
 - `lib/`: integrasi layanan eksternal yang aman untuk frontend.
 - `docs/`: dokumentasi produk, pemetaan desain, dan handover.
 
-### Deploy ke Vercel
+### Deployment ke Vercel
 
-Import repository ini ke Vercel sebagai project Vite. Tambahkan environment
-variables berikut pada Project Settings → Environment Variables untuk Preview
-dan Production:
+Aplikasi Priori sudah di-deploy ke Vercel dan dapat diakses melalui domain publik [https://priori.web.id/](https://priori.web.id/). Repository GitHub menjadi sumber kode proyek, sedangkan Vercel digunakan untuk membangun dan menyajikan aplikasi.
+
+Jika konfigurasi deployment perlu diperbarui, pastikan project Vercel terhubung ke repository yang benar dan tambahkan environment variables berikut pada **Project Settings → Environment Variables** untuk environment Preview dan Production:
 
 ```text
 VITE_SUPABASE_URL
@@ -341,16 +345,60 @@ Daftar ini merupakan panduan pengujian. Status lulus hanya boleh dinyatakan sete
 
 ## 14. Batasan Proyek
 
-Priori merupakan prototipe web interaktif untuk kebutuhan akademik Modul 7.
+Priori merupakan aplikasi web pengelolaan tugas mahasiswa yang dikembangkan untuk kebutuhan akademik Modul 7 dan telah dipublikasikan melalui Vercel dengan domain [https://priori.web.id/](https://priori.web.id/). Database aplikasi telah dihubungkan ke Supabase. Ketersediaan fungsi tetap bergantung pada konfigurasi environment, implementasi, dan kebijakan akses yang aktif.
 
-- Login dan registrasi adalah simulasi lokal, bukan autentikasi produksi.
-- Data `localStorage` tidak otomatis tersinkronisasi lintas perangkat.
+- Jika aplikasi berjalan tanpa konfigurasi Supabase yang diperlukan, mode fallback `localStorage` dapat digunakan sesuai implementasi.
+- Data yang disimpan hanya di `localStorage` tidak otomatis tersinkronisasi lintas perangkat.
 - Informasi pengingat deadline dihitung ketika halaman Notifikasi dibuka, bukan dikirim otomatis sesuai jadwal.
-- Database server, push notification, dan integrasi pihak ketiga tidak dinyatakan tersedia.
+- Push notification dan integrasi pihak ketiga tidak dinyatakan tersedia.
 - Penentuan prioritas tidak menggunakan model machine learning.
 - Fitur yang belum dibuat atau belum diuji tidak boleh dinyatakan sudah berfungsi.
 
-## 15. Dokumentasi Terkait
+## 15. Pembaruan Implementasi dan Riwayat Commit (22–24 Oktober 2026)
+
+Bagian ini melengkapi log perbaikan sebelumnya berdasarkan tangkapan layar halaman commit GitHub yang diperiksa pada 24 Oktober 2026. Ringkasan ini merupakan tambahan atas catatan lama, bukan pengganti riwayat commit lengkap.
+
+| Tanggal | Perubahan yang tercatat | Akun | Bukti |
+|---|---|---|---|
+| 22 Okt 2026 | Memperbarui pesan error dan teks ajakan registrasi. | `fyrdakk` | [Commit `2633089`](https://github.com/fyrdakk/priori_kelompok19/commit/2633089) |
+| 22 Okt 2026 | Mengubah warna hover menjadi putih pada navigasi landing page. | `fyrdakk` | [Commit `faecaac`](https://github.com/fyrdakk/priori_kelompok19/commit/faecaac) |
+| 23 Okt 2026 | Menghubungkan aplikasi ke Supabase serta menambahkan auth dan task store. | `denihsb` | [Commit `05d9171`](https://github.com/fyrdakk/priori_kelompok19/commit/05d9171) |
+| 23 Okt 2026 | Menyelesaikan merge branch `main`, memperbaiki konflik `AuthPage.jsx`, dan memperbaiki URL Supabase. | `denihsb` | [Commit `dab3e67`](https://github.com/fyrdakk/priori_kelompok19/commit/dab3e67), [commit `3a1d989`](https://github.com/fyrdakk/priori_kelompok19/commit/3a1d989), [commit `1aab094`](https://github.com/fyrdakk/priori_kelompok19/commit/1aab094) |
+| 23 Okt 2026 | Menyiapkan proses pengiriman ulang konfirmasi melalui SMTP untuk mengantisipasi batas laju Supabase. | `denihsb` | [Commit `7fc4a16`](https://github.com/fyrdakk/priori_kelompok19/commit/7fc4a16) |
+| 24 Okt 2026 | Memperbaiki tampilan landing page, kontras hover Login, dan global styles. | `denihsb` | [Commit `e463707`](https://github.com/fyrdakk/priori_kelompok19/commit/e463707) |
+| 24 Okt 2026 | Memoles kartu tugas dan menyembunyikan footer pada tampilan mobile. | `denihsb` | [Commit `fb885ff`](https://github.com/fyrdakk/priori_kelompok19/commit/fb885ff) |
+| 24 Okt 2026 | Memperbaiki UI Dashboard dan halaman tugas, termasuk kartu tugas dan kartu statistik. | `denihsb` | [Commit `d7ba24b`](https://github.com/fyrdakk/priori_kelompok19/commit/d7ba24b) |
+| 24 Okt 2026 | Memperbaiki konsistensi kartu prioritas pada Dashboard. | `denihsb` | [Commit `35263f8`](https://github.com/fyrdakk/priori_kelompok19/commit/35263f8) |
+| 24 Okt 2026 | Memperbarui logo dan favicon ke logo Priori yang baru. | `denihsb` | [Commit `5fead72`](https://github.com/fyrdakk/priori_kelompok19/commit/5fead72) |
+
+Perubahan lain pada 21 Oktober 2026 yang terlihat pada riwayat commit meliputi perbaikan footer responsif, hierarki visual halaman Pengaturan, error build, penambahan `key` pada elemen daftar yang dirender dengan `map`, perbaikan UX mobile dan aksesibilitas, serta perapian struktur UI. Lihat [riwayat commit pada branch `main`](https://github.com/fyrdakk/priori_kelompok19/commits/main) untuk detail dan perubahan lengkap.
+
+### Status branch pada pemeriksaan 24 Oktober 2026
+
+Berdasarkan tangkapan layar halaman Branches GitHub, `main` tercatat sebagai default branch dan status pemeriksaan yang terlihat adalah 1/1. Beberapa branch lain masih tertinggal dari `main`; karena itu, jangan menganggap perubahan di branch tersebut sudah masuk ke deployment publik sebelum memeriksa merge dan commit yang aktif.
+
+| Branch | Informasi yang terlihat |
+|---|---|
+| `main` | Default branch; diperbarui sekitar 4 jam sebelum pemeriksaan; check status 1/1. |
+| `update-terbaru` | Terlihat 50 pada kolom Behind dan 1 pada kolom Ahead. |
+| `firda/rename` | Terlihat 47 pada kolom Behind dan 0 pada kolom Ahead; terkait PR #2. |
+| `polishing-ui` | Terlihat 12 pada kolom Behind dan 0 pada kolom Ahead. |
+| `build-perbaikan-cleanup` | Terlihat 15 pada kolom Behind dan 0 pada kolom Ahead. |
+| `feat/ui-figma-fidelity` | Terlihat 24 pada kolom Behind dan 0 pada kolom Ahead; terkait PR #4. |
+
+Tabel ini adalah catatan pada saat pemeriksaan, bukan status langsung. Periksa [halaman Branches](https://github.com/fyrdakk/priori_kelompok19/branches) dan [Pull requests](https://github.com/fyrdakk/priori_kelompok19/pulls) untuk kondisi terbaru.
+
+## 16. Tautan Akses dan Deployment
+
+- **Website Priori:** https://priori.web.id/
+- **Repository GitHub:** https://github.com/fyrdakk/priori_kelompok19
+- **Riwayat commit `main`:** https://github.com/fyrdakk/priori_kelompok19/commits/main
+- **Daftar branch:** https://github.com/fyrdakk/priori_kelompok19/branches
+- **Pull requests:** https://github.com/fyrdakk/priori_kelompok19/pulls
+
+Sebelum pengumpulan, buka website publik dan uji alur utama—registrasi/login, penambahan tugas, perubahan status, serta pemuatan data setelah halaman dimuat ulang. Pastikan juga environment variables Supabase di Vercel sesuai dan jangan pernah memasukkan `service_role` key ke kode frontend atau repository.
+
+## 17. Dokumentasi Terkait
 
 - `docs/PRD.md` — kebutuhan produk, user story, ruang lingkup, pembagian tanggung jawab, dan kriteria penerimaan.
 - `docs/design-map.md` — pemetaan desain Figma dan implementasi.
