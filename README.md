@@ -354,6 +354,7 @@ Priori merupakan aplikasi web pengelolaan tugas mahasiswa yang dikembangkan untu
 - Penentuan prioritas tidak menggunakan model machine learning.
 - Fitur yang belum dibuat atau belum diuji tidak boleh dinyatakan sudah berfungsi.
 
+## UPDATE TUGAS MODUL 8
 ## 15. Pembaruan Implementasi dan Riwayat Commit (22–24 Oktober 2026)
 
 Bagian ini melengkapi log perbaikan sebelumnya berdasarkan tangkapan layar halaman commit GitHub yang diperiksa pada 24 Oktober 2026. Ringkasan ini merupakan tambahan atas catatan lama, bukan pengganti riwayat commit lengkap.
