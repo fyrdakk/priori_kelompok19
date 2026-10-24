@@ -22,7 +22,7 @@ function AppFooter() {
         </nav>
       </div>
       <div className="footer-bottom">
-        <p>Priori · Modul 7 MVP</p>
+        <p>Priori · MVP</p>
         <span className="footer-status"><span aria-hidden="true" /> Data tersimpan di perangkat</span>
       </div>
     </footer>
