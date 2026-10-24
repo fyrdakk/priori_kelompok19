@@ -72,7 +72,11 @@
 }
 
 .landing-nav nav a:hover {
-  color: white;
+  color: var(--landing-navy);
+}
+
+.landing-nav nav a:focus-visible {
+  color: var(--landing-navy);
 }
 
 .landing-nav nav .landing-nav-register {
@@ -140,7 +144,7 @@
 }
 
 .landing-description {
-  color: #68758d;
+  color: #52627c;
   font-size: 16px;
   line-height: 1.9;
   margin: 0;
@@ -300,7 +304,7 @@
 }
 
 .preview-heading small {
-  color: #8c98ad;
+  color: #5f6d84;
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -313,7 +317,7 @@
 }
 
 .preview-heading p {
-  color: #8691a5;
+  color: #68758d;
   font-size: 9px;
   line-height: 1.6;
   margin: 0;
@@ -322,7 +326,7 @@
 .preview-date {
   background: #f3f6fc;
   border-radius: 6px;
-  color: #65728b;
+  color: #52627c;
   font-size: 9px;
   padding: 8px;
   white-space: nowrap;
@@ -347,7 +351,7 @@
 }
 
 .preview-stats small {
-  color: #7b879c;
+  color: #5f6d84;
   font-size: 9px;
 }
 
@@ -358,7 +362,7 @@
 }
 
 .preview-stats div>span {
-  color: #939db0;
+  color: #68758d;
   font-size: 8px;
   line-height: 1.4;
 }
@@ -389,7 +393,7 @@
 }
 
 .preview-list-heading>span {
-  color: #929cb0;
+  color: #68758d;
   font-size: 8px;
 }
 
@@ -448,7 +452,7 @@
 }
 
 .preview-task>div small {
-  color: #929db0;
+  color: #68758d;
   font-size: 8px;
 }
 
@@ -462,12 +466,12 @@
 
 .badge-high {
   background: #fff0f0;
-  color: #d34b56;
+  color: #a92f3c;
 }
 
 .badge-medium {
   background: #fff5df;
-  color: #b17b16;
+  color: #7a5200;
 }
 
 .badge-low {
@@ -509,7 +513,7 @@
 }
 
 .preview-progress>small {
-  color: #929db0;
+  color: #68758d;
   display: block;
   font-size: 8px;
   margin-top: 8px;
@@ -555,7 +559,7 @@
 }
 
 .landing-floating small {
-  color: #8490a6;
+  color: #68758d;
   font-size: 9px;
 }
 
