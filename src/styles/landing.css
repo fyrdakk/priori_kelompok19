@@ -48,9 +48,9 @@
 
 .landing-brand img {
   display: block;
-  height: 40px;
+  height: 44px;
   object-fit: contain;
-  width: 40px;
+  width: 32px;
 }
 
 .landing-brand>span>span {
@@ -713,8 +713,8 @@
   }
 
   .landing-brand img {
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 29px;
   }
 
   .landing-nav>nav {

@@ -6,7 +6,7 @@ function PublicFooter() {
       <div className="footer-main">
         <div className="footer-brand-block">
           <Link to="/" className="shared-brand" aria-label="Priori beranda">
-            <img src="/assets/priori_logo.svg" alt="" />
+            <img src="/assets/priori_logo.svg" alt="Logo Priori" />
             <span>priori<span className="shared-brand__dot">.</span></span>
           </Link>
           <p>Ruang sederhana untuk tugas yang lebih terarah.</p>

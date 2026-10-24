@@ -135,9 +135,9 @@ h1 {
 
 .brand--link img {
   display: block;
-  height: var(--space-8);
+  height: 2.75rem;
   object-fit: contain;
-  width: var(--space-8);
+  width: 2rem;
 }
 
 .public-main,
@@ -1367,9 +1367,9 @@ h1 {
 
 .shared-brand img {
   display: block;
-  height: 42px;
+  height: 2.75rem;
   object-fit: contain;
-  width: 42px;
+  width: 2rem;
 }
 
 .shared-brand__dot,
@@ -1453,8 +1453,8 @@ h1 {
 }
 
 .app-navbar .brand img {
-  height: 40px;
-  width: 40px;
+  height: 2.75rem;
+  width: 2rem;
 }
 
 .app-navbar__wordmark {
@@ -1485,8 +1485,8 @@ h1 {
   }
 
   .shared-brand img {
-    height: 36px;
-    width: 36px;
+    height: 2.5rem;
+    width: 1.875rem;
   }
 
   .shared-navbar nav {
@@ -1517,8 +1517,8 @@ h1 {
   }
 
   .app-navbar .brand img {
-    height: 36px;
-    width: 36px;
+    height: 2.5rem;
+    width: 1.875rem;
   }
 
   .app-footer {
@@ -1774,6 +1774,17 @@ h1 {
 
   .tasks-toolbar__filters {
     justify-self: end;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 899px) {
+  .tasks-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tasks-toolbar__filters {
+    justify-self: stretch;
+    width: 100%;
   }
 }
 

@@ -44,7 +44,7 @@ export function Navbar({ onMenuOpen, menuOpen = false }) {
         to="/dashboard"
         aria-label="Priori, ke Dashboard"
       >
-        <img src="/assets/priori_logo.svg" alt="" />
+        <img src="/assets/priori_logo.svg" alt="Logo Priori" />
         <span className="app-navbar__wordmark">
           priori<span>.</span>
         </span>
