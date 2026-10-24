@@ -81,7 +81,7 @@ export default function SettingsPage() {
           <div className="info-list">
             <div className="info-item">
               <span className="info-item__label">Versi Prototipe</span>
-              <span className="info-item__value">0.1.0 (Modul 7 MVP)</span>
+              <span className="info-item__value">0.1.0</span>
             </div>
             <div className="info-item">
               <span className="info-item__label">Penyimpanan</span>
