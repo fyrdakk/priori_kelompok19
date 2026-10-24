@@ -19,7 +19,7 @@ function PublicFooter() {
       </div>
       <div className="footer-bottom">
         <p>&copy; 2026 Kelompok 19</p>
-        <span>Prototipe web · Modul 7</span>
+        <span>Prototipe web</span>
       </div>
     </footer>
   )
