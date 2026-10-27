@@ -80,8 +80,8 @@ export default function SettingsPage() {
           </div>
           <div className="info-list">
             <div className="info-item">
-              <span className="info-item__label">Versi Prototipe</span>
-              <span className="info-item__value">0.1.0</span>
+              <span className="info-item__label">Versi Website</span>
+              <span className="info-item__value">v1.0-beta.1</span>
             </div>
             <div className="info-item">
               <span className="info-item__label">Penyimpanan</span>
