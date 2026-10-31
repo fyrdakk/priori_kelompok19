@@ -903,7 +903,8 @@ h1 {
 }
 
 .task-card:hover {
-  border-color: rgb(66 116 217 / 42%);
+  border-color: rgba(106, 156, 255, 0.42);
+  background-color: rgb(201, 220, 255);
   box-shadow: var(--shadow-card);
 }
 
