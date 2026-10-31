@@ -80,7 +80,7 @@ function AuthPage({ mode }) {
             : 'Masuk untuk melihat ruang tugasmu dan melanjutkan progres belajar.'}
         </p>
         <p className="page-intro-kedua">
-          Ketika registrasi berhasil mohon untuk mengecek email (semua kotak masuk dan spam) kamu untuk verifikasi terlebih dahulu.
+          Ketika registrasi berhasil mohon untuk mengecek semua email termasuk spam dan seluruh kotak masuk email kamu untuk verifikasi terlebih dahulu.
         </p>
         <Card className="auth-card">
           <form onSubmit={handleSubmit} noValidate>
