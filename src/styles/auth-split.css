@@ -101,6 +101,15 @@
   margin: 0 0 28px;
   max-width: 540px;
 }
+
+.auth-page--simple .page-intro-kedua {
+  color: orangered;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 10px;
+  max-width: 550px;
+}
+
 .auth-page--simple .card.auth-card {
   background: #fff;
   border: 1px solid #e3eaf6;
