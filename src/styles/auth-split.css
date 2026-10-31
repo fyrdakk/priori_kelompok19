@@ -94,13 +94,23 @@
   margin: 0 0 14px;
   max-width: none;
 }
+
 .auth-page--simple .page-intro {
   color: #68758d;
   font-size: 16px;
   line-height: 1.75;
-  margin: 0 0 28px;
+  margin: 0 0 15px;
   max-width: 540px;
 }
+
+.auth-page--simple .page-intro-kedua {
+  font-weight: var(--font-weight-bold);
+  color: orangered;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
 .auth-page--simple .card.auth-card {
   background: #fff;
   border: 1px solid #e3eaf6;

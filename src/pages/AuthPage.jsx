@@ -79,6 +79,9 @@ function AuthPage({ mode }) {
             ? 'Buat akun untuk mulai mengatur tugas kuliahmu dengan lebih teratur.'
             : 'Masuk untuk melihat ruang tugasmu dan melanjutkan progres belajar.'}
         </p>
+        <p className="page-intro-kedua">
+          Ketika registrasi berhasil mohon untuk mengecek semua email termasuk spam dan seluruh kotak masuk email kamu untuk verifikasi terlebih dahulu.
+        </p>
         <Card className="auth-card">
           <form onSubmit={handleSubmit} noValidate>
             {isRegistration ? (

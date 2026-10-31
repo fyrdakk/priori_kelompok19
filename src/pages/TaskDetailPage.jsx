@@ -185,6 +185,11 @@ export default function TaskDetailPage() {
             </form>
           </div>
 
+          <hr className="task-detail__divider2" />
+          <h2 className="task-detail__section-title2">
+            Tombol "Edit Semua Tugas" digunakan ketika ingin mengedit semua tugas, bukan menyimpan status tugas. Jika ingin menyimpan status tugas klik tombol "Simpan Status"
+          </h2>
+          
           {/* Aksi Utama */}
           <div className="task-detail__actions">
             <Link
