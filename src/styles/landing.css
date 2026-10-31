@@ -72,7 +72,7 @@
 }
 
 .landing-nav nav a:hover {
-  color: var(--landing-navy);
+  color: white;
 }
 
 .landing-nav nav a:focus-visible {
