@@ -103,6 +103,7 @@
 }
 
 .auth-page--simple .page-intro-kedua {
+  font-weight: var(--font-weight-bold);
   color: orangered;
   font-size: 16px;
   line-height: 1.5;
